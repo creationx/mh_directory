@@ -25,12 +25,25 @@ List of Cities
 #### Step 4
 All entries found in this location
 ![](http://mh-dev.de/mh_directory/list_step_4.png)
-
+##### Mail-Function
+User can send a mail to the company
+![](http://mh-dev.de/mh_directory/list_entry_mail.png)
+You can define in the TypoScript which field is required
+##### Redirecting
+If a user clicks the button for website, twitter or facebook, he will be redirectet to this page
+![](http://mh-dev.de/mh_directory/list_entry_mail.png)
+#### TypoScript
+* list_show_number_of_entries: Shows the badge behind a headline with the amount of entries inside
+* list_hide_empty: Hide empty "categories"
+* list_redirecting_time: The time in miliseconds when the user should be redirecting on the "Outgoing"-Page if a user clicks on the button for website, twitter or facebook
+* list_mail_required: insert here the required fields for the contact form of a entry (key == name of the input)
 #### ToDo
 Currently ToDo-List for the List-Function
 * Add GoogleMaps
 * Add detail-page for entry
 * Add broadcrump for navigation
+* Add stats for clicks in the "Redirection"-Page
+* Add stats for views and clicks on a entry
 
 ### Backend-Module
 
