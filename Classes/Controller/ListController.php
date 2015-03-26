@@ -80,6 +80,8 @@ class ListController
 					$aOutput[]	= array(
 						'uid'	=> $oState->getUid(),
 						'name'	=> $oState->getName(),
+						'description' => $oState->getDescription(),
+						'image'	=> $oState->getImage(),
 						'number_of_entries'	=> $iNumberOfEntries
 					);
 				}
@@ -141,12 +143,53 @@ class ListController
 
 	public function mailAction() {
 		$aRequest			= $this->request->getArguments();
+		$iUid 				= (int)$aRequest['uid'];
+		$aPost				= \TYPO3\CMS\Core\Utility\GeneralUtility::_POST('tx_mhdirectory_pi1');
 		$aRequiredFields	= explode(',', $this->settings['list_mail_required']);
+		$aError 			= array();
 
-		\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($aRequiredFields);
+		if($iUid > 0) {
+			$oEntry			= $this->entryRepository->findByUid($iUid);
 
+			if(strlen($oEntry->getMail()) != '' && \TYPO3\CMS\Core\Utility\GeneralUtility::validEmail($oEntry->getMail())) {
+				if(count($aPost) > 0) {
+					foreach($aPost AS $sKey => $sValue) {
+						if($sKey == '__referrer' OR $sKey == '__trustedProperties') continue;
+						$bValid = true;
+
+						if(in_array($sKey, $aRequiredFields) && strlen($sValue) == 0) $bValid = false;
+						if($sKey == 'list_form_mail' && (strlen($sValue) > 0 && !\TYPO3\CMS\Core\Utility\GeneralUtility::validEmail($sValue))) $bValid = false;
+
+						if(!$bValid) {
+							$aError[] = $sKey;
+						} else {
+							$sMailMessage .= \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate($sKey, 'mh_directory') . ": " . trim(htmlentities($sValue)) . "\n\n";
+						}
+					}
+				}
+
+				if(count($aError) == 0) {
+					$message = (new \TYPO3\CMS\Core\Mail\MailMessage())
+					->setFrom(array())
+					->setTo($oEntry->getMail())
+					->setSubject(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('list_mail_subject', 'mh_directory'))
+					->setBody($sMailMessage);
+				
+					$message->send();
+				
+					if(!$message->isSent()) $aError['status'] = 'error';
+				}
+			}
+
+			$this->view->assign('entry', $oEntry);
+		}
+
+		\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($aRequest);
+			\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($sMailMessage);
+
+		$this->view->assign('post', $aPost);
+		$this->view->assign('error', $aError);
 		$this->view->assign('required', $aRequiredFields);
-		$this->view->assign('requiredjs', json_encode($aRequiredFields));
 
 	}
 

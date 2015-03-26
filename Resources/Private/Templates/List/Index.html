@@ -11,6 +11,8 @@
 						<f:for each="{result}" as="row">
 							<li>
 
+								<f:if condition="{row.image}"><f:image src="uploads/tx_mhdirectory/{row.image}" height="100c" /></f:if>
+
 								<f:if condition="{status} == 2">
 									<h3><f:link.action arguments="{state: state, district: district, city: row.uid}">{row.name}</f:link.action></h3>
 								</f:if>
@@ -22,12 +24,14 @@
 								<f:if condition="{status} == 0">
 									<h3><f:link.action arguments="{state: row.uid}">{row.name}</f:link.action></h3>
 								</f:if>
-								
-								<f:if condition="{row.description}"><p class="description">{row.description}</p></f:if>
-								<f:if condition="{row.image}"><f:image src="{f:uri.resource(path:{row.image})}" width="200" height="150" alt="My Image" /></f:if>
+
 								<f:if condition="{settings.list_show_number_of_entries} == 1">
 									<span class="badge">{row.number_of_entries}</span>
 								</f:if>
+								
+								<f:if condition="{row.description}"><p class="description">{row.description}</p></f:if>
+								
+								<f:if condition="{row.image}"><br class="clear" /></f:if>
 							</li>
 						</f:for>
 					</ul>

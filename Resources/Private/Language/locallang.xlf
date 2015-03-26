@@ -344,7 +344,11 @@
                     </trans-unit>
 
                     <trans-unit id="list_mail_header" xml:space="preserve">
-                        <source>Contact Form</source>
+                        <source>Contact form</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_mail_text" xml:space="preserve">
+                        <source>Here you can send "%s" a mail. </source>
                     </trans-unit>
 
 
@@ -380,8 +384,38 @@
                         <source>Send mail</source>
                     </trans-unit>
 
+                    <trans-unit id="list_form_name_error" xml:space="preserve">
+                        <source>Error: Please check your name!</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_street_error" xml:space="preserve">
+                        <source>Error: Please check your street!</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_location_error" xml:space="preserve">
+                        <source>Error: Please check your location!</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_mail_error" xml:space="preserve">
+                        <source>Error: Please check your mail!</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_phone_error" xml:space="preserve">
+                        <source>Error: Please check your phone!</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_mobile_error" xml:space="preserve">
+                        <source>Error: Please check your mobile!</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_text_error" xml:space="preserve">
+                        <source>Error: Please check your message!</source>
+                    </trans-unit>
 
 
+                    <trans-unit id="list_mail_subject" xml:space="preserve">
+                        <source>MH-Directory mail</source>
+                    </trans-unit>
 
 
                     <trans-unit id="backend_headline_dashboard" xml:space="preserve">

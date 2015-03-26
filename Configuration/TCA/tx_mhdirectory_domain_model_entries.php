@@ -355,7 +355,7 @@ return array(
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_address,
                         address, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_city;2, phone, fax, link, mail, 
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_social,
-                        twitter, facebook, map_lng, map_lat,
+                        twitter, facebook, map_lat, map_lng, 
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_categories,
                         categories,
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_custom,

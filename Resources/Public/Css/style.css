@@ -1,8 +1,41 @@
 div.tx_mhdirectory br.clear {
 	clear: both;
 }
+div.tx_mhdirectory span.error {
+	display: block;
+	font-size: 12px;
+	color: red;
+	padding: 5px;
+}
 
 
+/* LIST 3-Steps */
+div.tx_mhdirectory ul.tx_mhdirectory_list_ul {
+	list-style-type: none;
+}
+	div.tx_mhdirectory ul.tx_mhdirectory_list_ul > li {
+		margin: 5px;
+		border-bottom:1px solid #ddd;
+	}
+			div.tx_mhdirectory ul.tx_mhdirectory_list_ul > li h3 {
+				display: inline-block;
+				font-size: 17px;
+				padding: 5px 10px;
+				margin: 0px;
+			}		
+
+			div.tx_mhdirectory ul.tx_mhdirectory_list_ul > li > img {
+				float:right;
+				padding: 10px;
+			}
+
+			div.tx_mhdirectory ul.tx_mhdirectory_list_ul > li p.description {
+				padding: 5px 10px;
+			}	
+
+
+
+/* LIST ENTRIES */
 div.tx_mhdirectory > div.entry {
 	position: relative;
 	border: 1px solid #ddd;
@@ -76,3 +109,15 @@ div.tx_mhdirectory > div.entry {
 			div.tx_mhdirectory ul.buttons > li:hover {
 				background-color:#ddd;
 			}
+
+
+	div.tx_mhdirectory dl.contact_form > dt {
+		clear: left;
+		float:left;
+		width: 130px;
+		padding: 5px;
+	}
+
+	div.tx_mhdirectory dl.contact_form > dd {
+		padding: 5px;
+	}

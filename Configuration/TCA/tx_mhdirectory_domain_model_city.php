@@ -129,7 +129,7 @@ return array(
         'showitem' => '--div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_city.tab_general,
                         hidden, relation_district, name, image, description,
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_city.tab_geo,
-                        map_lng, map_lat,
+                        map_lat, map_lng, 
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_city.tab_stats,
                         count_clicks, count_views; 
                         '),
