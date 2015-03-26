@@ -28,10 +28,11 @@ All entries found in this location
 ##### Mail-Function
 User can send a mail to the company
 ![](http://mh-dev.de/mh_directory/list_entry_mail.png)
+
 You can define in the TypoScript which field is required
 ##### Redirecting
 If a user clicks the button for website, twitter or facebook, he will be redirectet to this page
-![](http://mh-dev.de/mh_directory/list_entry_mail.png)
+![](http://mh-dev.de/mh_directory/list_entry_outgoing.png)
 #### TypoScript
 * list_show_number_of_entries: Shows the badge behind a headline with the amount of entries inside
 * list_hide_empty: Hide empty "categories"
