@@ -1,0 +1,14 @@
+plugin.tx_mhdirectory {
+	view {
+		# cat=plugin.tx_mhdirectory/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:mh_directory/Resources/Private/Templates/
+		# cat=plugin.tx_mhdirectory/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:mh_directory/Resources/Private/Partials/
+		# cat=plugin.tx_mhdirectory/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:mh_directory/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_mhdirectory//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

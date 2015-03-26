@@ -1,0 +1,20 @@
+<f:layout name="frontend" />
+<f:section name="content">
+	<h2><f:translate key="list_outgoing_header" /></h2>
+
+	<f:if condition="{result.link}">
+		<f:then>
+			<p><f:translate key="list_outgoing_message" /></p>
+			<p><f:translate key="list_outgoing_link" /> <f:link.external uri="{result.link}">{result.link}</f:link.external></p>
+
+			<script type="text/javascript">
+				window.setTimeout(function() {
+					window.location.href="{result.link}";
+				}, {settings.list_redirecting_time})
+			</script>
+		</f:then>
+		<f:else>
+			<f:translate key="list_outgoing_error" />
+		</f:else>
+	</f:if>
+</f:section>

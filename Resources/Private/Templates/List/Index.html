@@ -1,0 +1,41 @@
+<f:layout name="frontend" />
+<f:section name="content">
+	<f:if condition="{status}==3">
+		<f:then>
+			<f:render partial="Entry" arguments="{result: result, map: map}"/>
+		</f:then>
+		<f:else>
+			<f:if condition="{result}">
+				<f:then>
+					<ul class="tx_mhdirectory_list_ul">
+						<f:for each="{result}" as="row">
+							<li>
+
+								<f:if condition="{status} == 2">
+									<h3><f:link.action arguments="{state: state, district: district, city: row.uid}">{row.name}</f:link.action></h3>
+								</f:if>
+
+								<f:if condition="{status} == 1">
+										<h3><f:link.action arguments="{state: state, district: row.uid}">{row.name}</f:link.action></h3>
+								</f:if>
+								
+								<f:if condition="{status} == 0">
+									<h3><f:link.action arguments="{state: row.uid}">{row.name}</f:link.action></h3>
+								</f:if>
+								
+								<f:if condition="{row.description}"><p class="description">{row.description}</p></f:if>
+								<f:if condition="{row.image}"><f:image src="{f:uri.resource(path:{row.image})}" width="200" height="150" alt="My Image" /></f:if>
+								<f:if condition="{settings.list_show_number_of_entries} == 1">
+									<span class="badge">{row.number_of_entries}</span>
+								</f:if>
+							</li>
+						</f:for>
+					</ul>
+				</f:then>
+				<f:else>
+					<f:translate key="list_empty" />
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+</f:section>

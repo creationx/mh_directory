@@ -1,0 +1,122 @@
+<f:if condition="{result}">
+	<f:then>
+		<f:for each="{result}" as="row">
+		<div class="entry entry_{row.uid}">
+			<f:if condition="{row.image}">
+				<f:image src="uploads/tx_mhdirectory/{row.image}" alt="{row.company}" width="150c" height="150c" />
+			</f:if>		
+
+			<div class="inner">
+				<h2>{row.company}</h2>
+
+				<p>
+					{row.forename} {row.middlename} {row.lastname} <br />
+					{row.address} <br />
+					{row.zip} {row.city}
+				</p>
+
+				<p>
+					<f:if condition="{row.phone}"><f:translate key="list_row_phone" /> <a href="tel:{row.phone}">{row.phone}</a><br /></f:if>
+					<f:if condition="{row.fax}"><f:translate key="list_row_fax" /> <a href="fax:{row.fax}">{row.fax}</a><br /></f:if>
+				</p>
+
+				<!--
+				<dl>
+					<f:if condition="{row.forename}">
+						<dt class="list_forename"><f:translate key="list_row_forename" /></dt>
+						<dd>{row.forename}</dd>
+					</f:if>
+					
+					<f:if condition="{row.middlename}">
+						<dt class="list_middlename"><f:translate key="list_row_middlename" /></dt>
+						<dd>{row.middlename}</dd>
+					</f:if>
+					
+					<f:if condition="{row.lastname}">
+						<dt class="list_lastname"><f:translate key="list_row_lastname" /></dt>
+						<dd>{row.lastname}</dd>
+					</f:if>				
+
+					<f:if condition="{row.address}">
+						<dt class="list_address"><f:translate key="list_row_address" /></dt>
+						<dd>{row.address}</dd>
+					</f:if>				
+
+					<f:if condition="{row.zip}">
+						<dt class="list_zip"><f:translate key="list_row_zip" /></dt>
+						<dd>{row.zip}</dd>
+					</f:if>
+
+					<f:if condition="{row.city}">
+						<dt class="list_city"><f:translate key="list_row_city" /></dt>
+						<dd>{row.city}</dd>
+					</f:if>
+
+					<f:if condition="{row.phone}">
+						<dt class="list_phone"><f:translate key="list_row_phone" /></dt>
+						<dd><a href="tel:{row.phone}">{row.phone}</a></dd>
+					</f:if>
+
+					<f:if condition="{row.fax}">
+						<dt class="list_fax"><f:translate key="list_row_fax" /></dt>
+						<dd>{row.fax}</dd>
+					</f:if>
+				</dl>
+				-->
+			</div>
+			
+			<ul class="buttons">
+
+				<f:if condition="{row.link}">
+					<li>
+						<f:link.action action="out" arguments="{uid: row.uid, key: 'link'}">
+							<i class="fa fa-home"></i>&nbsp;<f:translate key="list_button_home" />
+						</f:link.action>
+					</li>
+				</f:if>
+
+				<f:if condition="{row.mail}">
+					<li>
+						<f:link.action action="mail" arguments="{uid: row.uid}">
+							<i class="fa fa-envelope-o"></i>&nbsp;<f:translate key="list_button_mail" />
+						</f:link.action>
+					</li>
+				</f:if>
+
+				<f:if condition="{row.twitter}">
+					<li>
+						<f:link.action action="out" arguments="{uid: row.uid, key: 'twitter'}">
+							<i class="fa fa-twitter"></i>&nbsp;<f:translate key="list_button_twitter" />
+						</f:link.action>
+					</li>
+				</f:if>
+
+				<f:if condition="{row.facebook}">
+					<li>
+						<f:link.action action="out" arguments="{uid: row.uid, key: 'facebook'}">
+							<i class="fa fa-facebook"></i>&nbsp;<f:translate key="list_button_facebook" />
+						</f:link.action>
+					</li>
+				</f:if>
+
+				<f:if condition="{map}">
+					<li>
+						<i class="fa fa-map-marker"></i>&nbsp;<f:translate key="list_button_map" />
+					</li>
+				</f:if>
+			</ul>
+
+			<br class="clear" />
+
+			
+
+			<p class="detailp">
+				<f:link.action class="detail_link" action="detail" arguments="{uid: row.uid}"><i class="fa fa-search"></i> <f:translate key="list_details" /></f:link.action>
+			</p>
+		</div>
+		</f:for>
+	</f:then>
+	<f:else>
+		<f:translate key="list_empty" />
+	</f:else>
+</f:if>

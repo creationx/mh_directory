@@ -1,0 +1,34 @@
+{namespace mhdev=Tx_MhDirectory_ViewHelpers}
+
+
+<f:layout name="frontend" />
+<f:section name="content">
+	<h2><f:translate key="list_mail_header" /></h2>
+	<f:form method="post" action="mail" name="contact" id="contactform">
+		<dl>
+			<dt><f:translate key="list_form_name" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_name', haystack: required)}==1">*</f:if></dt>
+			<dd><f:form.textfield name="name" value="" /></dd>		
+
+			<dt><f:translate key="list_form_street" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_street', haystack: required)}==1">*</f:if></dt>
+			<dd><f:form.textfield name="street" value="" /></dd>
+
+			<dt><f:translate key="list_form_location" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_location', haystack: required)}==1">*</f:if></dt>
+			<dd><f:form.textfield name="location" value="" /></dd>
+
+			<dt><f:translate key="list_form_mail" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_mail', haystack: required)}==1">*</f:if></dt>
+			<dd><f:form.textfield name="mail" value="" /></dd>
+
+			<dt><f:translate key="list_form_phone" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_phone', haystack: required)}==1">*</f:if></dt>
+			<dd><f:form.textfield name="phone" value="" /></dd>
+
+			<dt><f:translate key="list_form_mobile" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_mobile', haystack: required)}==1">*</f:if></dt>
+			<dd><f:form.textfield name="mobile" value="" /></dd>
+
+			<dt><f:translate key="list_form_text" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_text', haystack: required)}==1">*</f:if></dt>
+			<dd><f:form.textarea name="text" /></dd>
+		</dl>
+
+		<p><f:form.submit value="{f:translate(key:'list_form_mail_submit')}" /></p>
+	</f:form>
+
+</f:section>

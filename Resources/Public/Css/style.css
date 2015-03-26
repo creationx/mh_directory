@@ -1,0 +1,78 @@
+div.tx_mhdirectory br.clear {
+	clear: both;
+}
+
+
+div.tx_mhdirectory > div.entry {
+	position: relative;
+	border: 1px solid #ddd;
+}
+	div.tx_mhdirectory p.detailp {
+		margin: 10px;
+		text-align: right;
+	}
+
+	div.tx_mhdirectory a.detail_link:link,
+	div.tx_mhdirectory a.detail_link:active,
+	div.tx_mhdirectory a.detail_link:visited {
+		background-color: #f5f5f5;
+		border:1px solid #ddd;
+		padding: 5px 10px;
+		border-radius: 3px;
+	}
+
+	div.tx_mhdirectory > div.entry h2 {
+		margin: 0px;
+		padding: 5px 0px;
+	}
+	div.tx_mhdirectory > div.entry > img {
+		float: left;
+		width: 150px;
+		height: 150px;
+		padding: 10px;
+	}
+	
+	div.tx_mhdirectory > div.entry > div.inner {
+		float: left;
+		padding: 5px;
+	}
+
+		div.tx_mhdirectory > div.entry > div.inner > dl {
+
+		}
+
+		div.tx_mhdirectory > div.entry > div.inner > dl > dt {
+			clear: left;
+			float:left;
+			width: 130px;
+			border-bottom:1px solid #ddd;
+			padding: 5px;
+		}
+
+		div.tx_mhdirectory > div.entry > div.inner > dl > dd {
+			/*float: left;*/
+			padding: 5px;
+			border-bottom:1px solid #ddd;
+		}
+
+		div.tx_mhdirectory ul.buttons {
+			float: right;
+			list-style-type: none;
+			padding: 10px;
+		}
+			div.tx_mhdirectory ul.buttons > li {
+				padding: 5px;
+				margin: 3px 5px;
+				background-color: #f5f5f5;
+				border:1px solid #ddd;
+				border-radius: 3px;
+				font-size: 12px;
+				cursor: pointer;
+				width: 80px;
+				text-align: center;
+				display: inline;
+			}
+
+			div.tx_mhdirectory ul.buttons > li:hover {
+				background-color:#ddd;
+			}

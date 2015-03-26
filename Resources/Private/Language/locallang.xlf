@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+     <file source-language="en" datatype="plaintext" original="messages" date="2011-10-18T18:20:51Z" product-name="tx_mhdirectory">
+             <header/>
+             <body>                
+                     <trans-unit id="tx_mhdirectory_domain_model_entries" xml:space="preserve">
+                             <source>MH-Directory</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_general" xml:space="preserve">
+                             <source>General</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_address" xml:space="preserve">
+                             <source>Address &amp; Contact</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_social" xml:space="preserve">
+                             <source>Social &amp; Geo-Location</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_custom" xml:space="preserve">
+                             <source>Custom Fields</source>
+                     </trans-unit>
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_categories" xml:space="preserve">
+                             <source>Categories</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.palette_name" xml:space="preserve">
+                             <source>Name</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.palette_city" xml:space="preserve">
+                             <source>Location</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.hidden" xml:space="preserve">
+                             <source>Hidden</source>
+                     </trans-unit>  
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.relation_state" xml:space="preserve">
+                             <source>Federal State</source>
+                     </trans-unit>  
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.relation_district" xml:space="preserve">
+                             <source>Administrative District</source>
+                     </trans-unit>  
+                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.relation_city" xml:space="preserve">
+                             <source>City</source>
+                     </trans-unit>   
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.palette_relations" xml:space="preserve">
+                             <source>Location-Relation</source>
+                     </trans-unit>  
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.name_intern" xml:space="preserve">
+                             <source>Name (intern)</source>
+                     </trans-unit>
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.company" xml:space="preserve">
+                             <source>Company</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.forename" xml:space="preserve">
+                             <source>Forename</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.middlename" xml:space="preserve">
+                             <source>Middlename</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.lastname" xml:space="preserve">
+                             <source>Lastname</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.address" xml:space="preserve">
+                             <source>Address</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.zip" xml:space="preserve">
+                             <source>Zip</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.city" xml:space="preserve">
+                             <source>City</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.phone" xml:space="preserve">
+                             <source>Phone</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.fax" xml:space="preserve">
+                             <source>Fax</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.link" xml:space="preserve">
+                             <source>Link</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.mail" xml:space="preserve">
+                             <source>Mail</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.twitter" xml:space="preserve">
+                             <source>Twitter</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.facebook" xml:space="preserve">
+                             <source>Facebook</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.custom1" xml:space="preserve">
+                             <source>Custom 1</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.custom2" xml:space="preserve">
+                             <source>Custom 2</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.custom3" xml:space="preserve">
+                             <source>Custom 3</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.map_lng" xml:space="preserve">
+                             <source>Longitude</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.map_lat" xml:space="preserve">
+                             <source>Latitude</source>
+                     </trans-unit>
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.image" xml:space="preserve">
+                             <source>Images</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.description" xml:space="preserve">
+                             <source>Description</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_clicks" xml:space="preserve">
+                             <source>Clicks</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_views" xml:space="preserve">
+                             <source>Views</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_stats" xml:space="preserve">
+                             <source>Statistics</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_state" xml:space="preserve">
+                             <source>Federal State</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_state.tab_general" xml:space="preserve">
+                             <source>General</source>
+                     </trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_state.hidden" xml:space="preserve">
+                        <source>Hidden</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.name" xml:space="preserve">
+                        <source>Name</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.map_lng" xml:space="preserve">
+                        <source>Longitude</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.map_lat" xml:space="preserve">
+                        <source>Latitude</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.image" xml:space="preserve">
+                        <source>Image</source>
+                    </trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_state.description" xml:space="preserve">
+                        <source>Description</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.count_clicks" xml:space="preserve">
+                        <source>Clicks</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.count_views" xml:space="preserve">
+                        <source>Views</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.tab_geo" xml:space="preserve">
+                        <source>GEO-Location</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.tab_stats" xml:space="preserve">
+                        <source>Statistics</source>
+                    </trans-unit>
+
+
+                     <trans-unit id="tx_mhdirectory_domain_model_district" xml:space="preserve">
+                             <source>Administrative District</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_district.tab_general" xml:space="preserve">
+                             <source>General</source>
+                     </trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_district.hidden" xml:space="preserve">
+                        <source>Hidden</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.relation_state" xml:space="preserve">
+                        <source>Federal State</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.name" xml:space="preserve">
+                        <source>Name</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.map_lng" xml:space="preserve">
+                        <source>Longitude</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.map_lat" xml:space="preserve">
+                        <source>Latitude</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.image" xml:space="preserve">
+                        <source>Image</source>
+                    </trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_district.description" xml:space="preserve">
+                        <source>Description</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.count_clicks" xml:space="preserve">
+                        <source>Clicks</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.count_views" xml:space="preserve">
+                        <source>Views</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.tab_geo" xml:space="preserve">
+                        <source>GEO-Location</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.tab_stats" xml:space="preserve">
+                        <source>Statistics</source>
+                    </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_city" xml:space="preserve">
+                             <source>City</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_city.tab_general" xml:space="preserve">
+                             <source>General</source>
+                     </trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_city.hidden" xml:space="preserve">
+                        <source>Hidden</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.relation_district" xml:space="preserve">
+                        <source>Administrative District</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.name" xml:space="preserve">
+                        <source>Name</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.map_lng" xml:space="preserve">
+                        <source>Longitude</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.map_lat" xml:space="preserve">
+                        <source>Latitude</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.image" xml:space="preserve">
+                        <source>Image</source>
+                    </trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_city.description" xml:space="preserve">
+                        <source>Description</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.count_clicks" xml:space="preserve">
+                        <source>Clicks</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.count_views" xml:space="preserve">
+                        <source>Views</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.tab_geo" xml:space="preserve">
+                        <source>GEO-Location</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.tab_stats" xml:space="preserve">
+                        <source>Statistics</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_row_forename" xml:space="preserve">
+                        <source>Forename</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_row_middlename" xml:space="preserve">
+                        <source>Middlename</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_row_lastname" xml:space="preserve">
+                        <source>Lastname</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_row_address" xml:space="preserve">
+                        <source>Address</source>
+                    </trans-unit>
+                    <trans-unit id="list_row_zip" xml:space="preserve">
+                        <source>Zip</source>
+                    </trans-unit>
+                    <trans-unit id="list_row_city" xml:space="preserve">
+                        <source>City</source>
+                    </trans-unit>
+                    <trans-unit id="list_row_phone" xml:space="preserve">
+                        <source>Phone</source>
+                    </trans-unit>
+                    <trans-unit id="list_row_fax" xml:space="preserve">
+                        <source>Fax</source>
+                    </trans-unit>
+                    <trans-unit id="list_details" xml:space="preserve">
+                        <source>More</source>
+                    </trans-unit>
+
+
+                    <trans-unit id="list_button_mail" xml:space="preserve">
+                        <source>E-Mail</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_button_home" xml:space="preserve">
+                        <source>Website</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_button_twitter" xml:space="preserve">
+                        <source>Twitter</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_button_facebook" xml:space="preserve">
+                        <source>Facebook</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_button_map" xml:space="preserve">
+                        <source>Map</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_outgoing_header" xml:space="preserve">
+                        <source>Leaving ...</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_outgoing_message" xml:space="preserve">
+                        <source>You are leaving our site and will be redirected shortly.</source>
+                    </trans-unit>
+                    <trans-unit id="list_outgoing_link" xml:space="preserve">
+                        <source>Redirecting to:</source>
+                    </trans-unit>
+                    <trans-unit id="list_outgoing_error" xml:space="preserve">
+                        <source>Something is broken :-(</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_mail_header" xml:space="preserve">
+                        <source>Contact Form</source>
+                    </trans-unit>
+
+
+                    <trans-unit id="list_form_name" xml:space="preserve">
+                        <source>Your Name</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_street" xml:space="preserve">
+                        <source>Your Street</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_location" xml:space="preserve">
+                        <source>Your Zip &amp; City</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_mail" xml:space="preserve">
+                        <source>Your Mail</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_phone" xml:space="preserve">
+                        <source>Your Phone number</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_mobile" xml:space="preserve">
+                        <source>Your Mobile number</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_text" xml:space="preserve">
+                        <source>Your Message</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_mail_submit" xml:space="preserve">
+                        <source>Send mail</source>
+                    </trans-unit>
+
+
+
+
+
+                    <trans-unit id="backend_headline_dashboard" xml:space="preserve">
+                        <source>mh_directory - Dashboard</source>
+                    </trans-unit>
+             </body>
+     </file>
+</xliff>

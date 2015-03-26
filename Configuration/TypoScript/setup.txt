@@ -1,0 +1,22 @@
+plugin.tx_mhdirectory {
+	view {
+		templateRootPath = {$plugin.tx_mhdirectory.view.templateRootPath}
+		partialRootPath = {$plugin.tx_mhdirectory.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_mhdirectory.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_mhdirectory.persistence.storagePid}
+	}
+	settings {
+		startingpoint =
+		categories = 
+
+		list_show_number_of_entries = 1
+		list_hide_empty = 0
+		list_redirecting_time = 5000
+		list_mail_required = list_form_name,list_form_mail,list_form_text
+	}
+}
+
+page.includeCSS.tx_mhdirectory_fontawesome = EXT:mh_directory/Resources/Public/Css/font-awesome.min.css
+page.includeCSS.tx_mhdirectory_basic = EXT:mh_directory/Resources/Public/Css/style.css
