@@ -38,6 +38,7 @@ If a user clicks the button for website, twitter or facebook, he will be redirec
 * list_hide_empty: Hide empty "categories"
 * list_redirecting_time: The time in miliseconds when the user should be redirecting on the "Outgoing"-Page if a user clicks on the button for website, twitter or facebook
 * list_mail_required: insert here the required fields for the contact form of a entry (key == name of the input)
+
 #### ToDo
 Currently ToDo-List for the List-Function
 * Add GoogleMaps
