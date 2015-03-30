@@ -303,6 +303,15 @@ return array(
                 'maxitems' => 5
             ),
         ),
+        'last_calls'   => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.last_calls',
+            'config' => array(
+                'type' => 'text',
+                'cols' => 40,
+                'rows' => 15
+            ),
+        ),  
         'description'   => array(
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.description',
@@ -322,6 +331,27 @@ return array(
         'count_views'   => array(
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_views',
+            'config' => array(
+                'type' => 'none',
+            ),
+        ),    
+        'count_link'   => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_link',
+            'config' => array(
+                'type' => 'none',
+            ),
+        ),    
+        'count_twitter'   => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_twitter',
+            'config' => array(
+                'type' => 'none',
+            ),
+        ),    
+        'count_facebook'   => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_facebook',
             'config' => array(
                 'type' => 'none',
             ),
@@ -361,7 +391,7 @@ return array(
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_custom,
                         custom1, custom2, custom3,
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_stats,
-                        count_clicks, count_views,
+                        count_clicks, count_views, count_link, count_twitter, count_facebook
                         '),
 ),
 'palettes' => array(

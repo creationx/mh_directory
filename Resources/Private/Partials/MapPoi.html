@@ -1,0 +1,40 @@
+<script>
+var mapListPoi;
+
+
+<![CDATA[function initialize() {]]>
+
+	var locations = <f:format.raw>{pois}</f:format.raw>;
+	var zoom = {zoom};
+	var mapOptions = {
+		zoom: zoom,
+		center: new google.maps.LatLng(53.00, 12.00)
+	};
+
+
+	mapListPoi = new google.maps.Map(document.getElementById('gmap_listpoi'),mapOptions);
+
+	var marker = new google.maps.Marker({
+		map: mapListPoi
+	});
+
+	var infoWindow = new google.maps.InfoWindow();
+
+	var marker, i;
+
+	var bounds = new google.maps.LatLngBounds();
+
+	for(i = 0; i < locations.length; i++) {
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			map: mapListPoi
+		});
+		bounds.extend(new google.maps.LatLng(locations[i][1], locations[i][2]));
+	}
+	mapListPoi.fitBounds(bounds);
+<![CDATA[}]]>
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<div id="gmap_listpoi" class="mh_directory_gmap"></div>

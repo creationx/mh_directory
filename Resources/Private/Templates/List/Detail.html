@@ -1,1 +1,47 @@
-Detail-Branchenbuch
+<f:layout name="frontend" />
+
+<f:section name="content">
+<f:if condition="{result}">
+	<f:then>
+		<div class="detail_entry entry_{result.uid}">
+			<h2>{result.company}</h2>
+
+			<f:if condition="{result.image}">
+				<div class="inner_image"><f:image src="uploads/tx_mhdirectory/{result.image}" alt="{result.company}" /></div>
+			</f:if>		
+
+			<div class="inner">
+				<p>
+					{result.forename} {result.middlename} {result.lastname} <br />
+					{result.address} <br />
+					{result.zip} {result.city}
+				</p>
+
+				<div class="description"><f:format.html>{result.description}</f:format.html></div>
+
+				<p>
+					<f:if condition="{result.phone}"><f:translate key="list_row_phone" /> <a href="tel:{result.phone}">{result.phone}</a><br /></f:if>
+					<f:if condition="{result.fax}"><f:translate key="list_row_fax" /> <a href="fax:{result.fax}">{result.fax}</a><br /></f:if>
+				</p>
+
+			</div>
+
+
+			<f:if condition="{settings.googlemaps}=='1'">
+				<div class="inner_map">
+					<f:render partial="Map" arguments="{lat: result.mapLat, lng: result.mapLng, zoom: settings.googlemaps_zoom_detail, uid: result.uid}"/>
+				</div>
+			</f:if>
+
+			<br class="clear" />
+			<br /><br />
+			<f:render partial="Buttons" arguments="{result:result,detail:1}" />
+		</div>
+
+		<f:link.action action="index"></f:link.action>
+	</f:then>
+	<f:else>
+		<f:translate key="list_empty" />
+	</f:else>
+</f:if>
+</f:section>

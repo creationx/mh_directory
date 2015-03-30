@@ -14,12 +14,13 @@ class EntriesRepository
      *
      * @return mhdev\MhDirectory\Domain\Repository $query
      */
-	public function findByLocation($iStateUid, $iDistrictUid = 0, $iCityUid = 0, $bCount = true) {
+	public function findByLocation($iStateUid = 0, $iDistrictUid = 0, $iCityUid = 0, $bCount = true) {
 		$query 	= $this->createQuery();
 
 		$aWhere	= array();
 
-		$aWhere[]	= $query->equals('relation_state', (int)$iStateUid);
+		if($iStateUid > 0)
+			$aWhere[]	= $query->equals('relation_state', (int)$iStateUid);
 
 		if($iDistrictUid > 0)
 			$aWhere[]	= $query->equals('relation_district', (int)$iDistrictUid);

@@ -13,6 +13,7 @@ $pluginSignature = $extensionName.'_'.$pluginName;
     'MH-Directory (List)'
 );
 
+
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
     'mhdev.' . $_EXTKEY,
     'user',

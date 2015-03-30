@@ -120,6 +120,18 @@
                              <source>Views</source>
                      </trans-unit>
 
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_link" xml:space="preserve">
+                             <source>Link-Clicks</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_twitter" xml:space="preserve">
+                             <source>Twitter-Clicks</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_facebook" xml:space="preserve">
+                             <source>Facebook-Clicks</source>
+                     </trans-unit>
+
                      <trans-unit id="tx_mhdirectory_domain_model_entries.tab_stats" xml:space="preserve">
                              <source>Statistics</source>
                      </trans-unit>
@@ -410,6 +422,14 @@
 
                     <trans-unit id="list_form_text_error" xml:space="preserve">
                         <source>Error: Please check your message!</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_mail_success" xml:space="preserve">
+                        <source>Your message have been successfully sent.</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_form_recaptcha_error" xml:space="preserve">
+                        <source>Please validate this Captcha!</source>
                     </trans-unit>
 
 

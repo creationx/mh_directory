@@ -1,0 +1,26 @@
+<script>
+var map_{uid};
+function initialize() {
+	var lat = '{lat}';
+	var lng = '{lng}';
+	var zoom = {zoom};
+	var mapOptions = {
+		zoom: zoom,
+		center: new google.maps.LatLng(lat, lng)
+	};
+
+	var myLatLng_{uid} = new google.maps.LatLng(lat, lng);
+
+	map_{uid} = new google.maps.Map(document.getElementById('gmap_{uid}'),
+	mapOptions);
+
+	<![CDATA[var marker = new google.maps.Marker({]]>
+		position: myLatLng_{uid},
+		map: map_{uid}
+	 <![CDATA[});]]>
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<div id="gmap_{uid}" class="mh_directory_gmap"></div>

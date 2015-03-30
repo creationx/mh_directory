@@ -10,6 +10,27 @@
 </TCEforms>
 <type>array</type>
 <el>
+
+    <switchableControllerActions>
+        <TCEforms>
+            <label>Ansicht</label>
+            <onChange>reload</onChange>
+            <config>
+                <type>select</type>
+                <items type="array">
+                    <numIndex index="1" type="array">
+                        <numIndex index="0">Bundesland/Landkreis/Stadt-Ansicht</numIndex>
+                        <numIndex index="1">List->index</numIndex>
+                    </numIndex>
+                    <numIndex index="2" type="array">
+                        <numIndex index="0">Alle</numIndex>
+                        <numIndex index="1">All->index</numIndex>
+                    </numIndex>
+                </items>
+            </config>
+        </TCEforms>
+    </switchableControllerActions>
+
 <!-- startingpoint -->
 <settings.startingpoint>
     <TCEforms>

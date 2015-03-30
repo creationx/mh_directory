@@ -8,6 +8,10 @@ div.tx_mhdirectory span.error {
 	padding: 5px;
 }
 
+div.mh_directory_gmap {
+	min-height: 250px;
+}
+
 
 /* LIST 3-Steps */
 div.tx_mhdirectory ul.tx_mhdirectory_list_ul {
@@ -40,56 +44,42 @@ div.tx_mhdirectory > div.entry {
 	position: relative;
 	border: 1px solid #ddd;
 }
-	div.tx_mhdirectory p.detailp {
-		margin: 10px;
-		text-align: right;
-	}
 
-	div.tx_mhdirectory a.detail_link:link,
-	div.tx_mhdirectory a.detail_link:active,
-	div.tx_mhdirectory a.detail_link:visited {
-		background-color: #f5f5f5;
-		border:1px solid #ddd;
-		padding: 5px 10px;
-		border-radius: 3px;
-	}
 
 	div.tx_mhdirectory > div.entry h2 {
 		margin: 0px;
 		padding: 5px 0px;
 	}
-	div.tx_mhdirectory > div.entry > img {
+	div.tx_mhdirectory > div.entry > div.inner_image,
+	div.tx_mhdirectory > div.detail_entry > div.inner_image {
 		float: left;
-		width: 150px;
-		height: 150px;
+		width: 15%;
 		padding: 10px;
 	}
 	
-	div.tx_mhdirectory > div.entry > div.inner {
+	div.tx_mhdirectory > div.entry > div.inner,
+	div.tx_mhdirectory > div.detail_entry > div.inner {
+		width: 45%;
 		float: left;
 		padding: 5px;
 	}
 
-		div.tx_mhdirectory > div.entry > div.inner > dl {
+	div.tx_mhdirectory > div.entry > div.inner_map, 
+	div.tx_mhdirectory > div.detail_entry > div.inner_map {
+		float: right;
+		width: 40%;
+		border-left: 2px solid #ddd;
+		border-bottom: 2px solid #ddd;
+		border-radius: 5px;
+	}
 
-		}
-
-		div.tx_mhdirectory > div.entry > div.inner > dl > dt {
-			clear: left;
-			float:left;
-			width: 130px;
-			border-bottom:1px solid #ddd;
-			padding: 5px;
-		}
-
-		div.tx_mhdirectory > div.entry > div.inner > dl > dd {
-			/*float: left;*/
-			padding: 5px;
-			border-bottom:1px solid #ddd;
+		div.inner_map > div.mh_directory_gmap {
+			min-height: 200px;
 		}
 
 		div.tx_mhdirectory ul.buttons {
-			float: right;
+			margin:0px; 
+			padding:0px;
 			list-style-type: none;
 			padding: 10px;
 		}
@@ -121,3 +111,4 @@ div.tx_mhdirectory > div.entry {
 	div.tx_mhdirectory dl.contact_form > dd {
 		padding: 5px;
 	}
+

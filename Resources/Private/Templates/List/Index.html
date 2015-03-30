@@ -7,22 +7,36 @@
 		<f:else>
 			<f:if condition="{result}">
 				<f:then>
+					
+					<f:if condition="{settings.googlemaps}=='1'">
+						<f:render partial="MapPoi" arguments="{pois:gmap_pois, zoom: settings.googlemaps_zoom_list}"/>
+					</f:if>
+
 					<ul class="tx_mhdirectory_list_ul">
 						<f:for each="{result}" as="row">
 							<li>
-
 								<f:if condition="{row.image}"><f:image src="uploads/tx_mhdirectory/{row.image}" height="100c" /></f:if>
 
 								<f:if condition="{status} == 2">
-									<h3><f:link.action arguments="{state: state, district: district, city: row.uid}">{row.name}</f:link.action></h3>
+									<f:if condition="{row.number_of_entries} == 0">
+										<f:then><h3>{row.name}</h3></f:then>
+										<f:else><h3><f:link.action arguments="{state: state, district: district, city: row.uid}">{row.name}</f:link.action></h3></f:else>
+									</f:if>
+									
 								</f:if>
 
 								<f:if condition="{status} == 1">
-										<h3><f:link.action arguments="{state: state, district: row.uid}">{row.name}</f:link.action></h3>
+									<f:if condition="{row.number_of_entries} == 0">
+										<f:then><h3>{row.name}</h3></f:then>
+										<f:else><h3><f:link.action arguments="{state: state, district: row.uid}">{row.name}</f:link.action></h3></f:else>
+									</f:if>
 								</f:if>
 								
 								<f:if condition="{status} == 0">
-									<h3><f:link.action arguments="{state: row.uid}">{row.name}</f:link.action></h3>
+									<f:if condition="{row.number_of_entries} == 0">
+										<f:then><h3>{row.name}</h3></f:then>
+										<f:else><h3><f:link.action arguments="{state: row.uid}">{row.name}</f:link.action></h3></f:else>
+									</f:if>
 								</f:if>
 
 								<f:if condition="{settings.list_show_number_of_entries} == 1">

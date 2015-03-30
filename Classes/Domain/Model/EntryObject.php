@@ -22,7 +22,7 @@ class EntryObject extends AbstractEntity {
      *
      * @var string
      */
-    protected $name_intern;
+    protected $nameIntern;
  
     /**
      * company name
@@ -141,14 +141,14 @@ class EntryObject extends AbstractEntity {
      *
      * @var string
      */
-    protected $map_lng;
+    protected $mapLng;
     
     /**
      * map_lat
      *
      * @var string
      */
-    protected $map_lat;
+    protected $mapLat;
     
     /**
      * image
@@ -169,14 +169,42 @@ class EntryObject extends AbstractEntity {
      *
      * @var int
      */
-    protected $count_clicks;
+    protected $countClicks;
 
     /**
      * count_views
      *
      * @var int
      */
-    protected $count_views;
+    protected $countViews;
+
+    /**
+     * count_twitter
+     *
+     * @var int
+     */
+    protected $countTwitter;
+
+    /**
+     * count_facebook
+     *
+     * @var int
+     */
+    protected $countFacebook;
+
+    /**
+     * count_link
+     *
+     * @var int
+     */
+    protected $countLink;
+
+    /**
+     * last_calls
+     *
+     * @var string
+     */
+    protected $lastCalls;
 
     
     /**
@@ -199,9 +227,9 @@ class EntryObject extends AbstractEntity {
      *
      * @return string
      */
-    public function getName_intern()
+    public function getNameIntern()
     {
-        return $this->name_intern;
+        return $this->nameIntern;
     }
 
     /**
@@ -211,9 +239,9 @@ class EntryObject extends AbstractEntity {
      *
      * @return self
      */
-    public function setName_intern($name_intern)
+    public function setNameIntern($name_intern)
     {
-        $this->name_intern = $name_intern;
+        $this->nameIntern = $name_intern;
 
         return $this;
     }
@@ -607,9 +635,9 @@ class EntryObject extends AbstractEntity {
      *
      * @return string
      */
-    public function getMap_lng()
+    public function getMapLng()
     {
-        return $this->map_lng;
+        return $this->mapLng;
     }
 
     /**
@@ -619,9 +647,9 @@ class EntryObject extends AbstractEntity {
      *
      * @return self
      */
-    public function setMap_lng($map_lng)
+    public function setMapLng($map_lng)
     {
-        $this->map_lng = $map_lng;
+        $this->mapLng = $map_lng;
 
         return $this;
     }
@@ -631,9 +659,9 @@ class EntryObject extends AbstractEntity {
      *
      * @return string
      */
-    public function getMap_lat()
+    public function getMapLat()
     {
-        return $this->map_lat;
+        return $this->mapLat;
     }
 
     /**
@@ -643,9 +671,9 @@ class EntryObject extends AbstractEntity {
      *
      * @return self
      */
-    public function setMap_lat($map_lat)
+    public function setMapLat($map_lat)
     {
-        $this->map_lat = $map_lat;
+        $this->mapLat = $map_lat;
 
         return $this;
     }
@@ -709,9 +737,9 @@ class EntryObject extends AbstractEntity {
      *
      * @return int
      */
-    public function getCount_clicks()
+    public function getCountClicks()
     {
-        return $this->count_clicks;
+        return $this->countClicks;
     }
 
     /**
@@ -721,9 +749,81 @@ class EntryObject extends AbstractEntity {
      *
      * @return self
      */
-    public function setCount_clicks($count_clicks)
+    public function setCountClicks($count_clicks)
     {
-        $this->count_clicks = $count_clicks;
+        $this->countClicks = $count_clicks;
+
+        return $this;
+    }
+
+    /**
+     * Gets the count_twitter.
+     *
+     * @return int
+     */
+    public function getCountTwitter()
+    {
+        return $this->countTwitter;
+    }
+
+    /**
+     * Sets the count_twitter.
+     *
+     * @param int $count_twitter the twitter click count
+     *
+     * @return self
+     */
+    public function setCountTwitter($count_twitter)
+    {
+        $this->countTwitter = $count_twitter;
+
+        return $this;
+    }
+
+    /**
+     * Gets the count_facebook.
+     *
+     * @return int
+     */
+    public function getCountFacebook()
+    {
+        return $this->countFacebook;
+    }
+
+    /**
+     * Sets the count_facebook.
+     *
+     * @param int $count_facebook the facebook click count
+     *
+     * @return self
+     */
+    public function setCountFacebook($count_facebook)
+    {
+        $this->countFacebook = $count_facebook;
+
+        return $this;
+    }
+
+    /**
+     * Gets the count_link.
+     *
+     * @return int
+     */
+    public function getCountLink()
+    {
+        return $this->countLink;
+    }
+
+    /**
+     * Sets the count_link.
+     *
+     * @param int $count_link the link click count
+     *
+     * @return self
+     */
+    public function setCountLink($count_link)
+    {
+        $this->countLink = $count_link;
 
         return $this;
     }
@@ -733,9 +833,9 @@ class EntryObject extends AbstractEntity {
      *
      * @return int
      */
-    public function getCount_views()
+    public function getCountViews()
     {
-        return $this->count_views;
+        return $this->countViews;
     }
 
     /**
@@ -745,9 +845,33 @@ class EntryObject extends AbstractEntity {
      *
      * @return self
      */
-    public function setCount_views($count_views)
+    public function setCountViews($count_views)
     {
-        $this->count_views = $count_views;
+        $this->countViews = $count_views;
+
+        return $this;
+    }
+
+    /**
+     * Gets the last_calls.
+     *
+     * @return string
+     */
+    public function getLastCalls()
+    {
+        return $this->lastCalls;
+    }
+
+    /**
+     * Sets the last calls
+     *
+     * @param string $last_calls
+     *
+     * @return self
+     */
+    public function setLastCalls($last_calls)
+    {
+        $this->lastCalls = $last_calls;
 
         return $this;
     }

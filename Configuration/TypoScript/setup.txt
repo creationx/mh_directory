@@ -15,8 +15,19 @@ plugin.tx_mhdirectory {
 		list_hide_empty = 0
 		list_redirecting_time = 5000
 		list_mail_required = list_form_name,list_form_mail,list_form_text
+
+		recaptcha = 0
+		recaptcha_public = 
+		recaptcha_private = 
+
+		googlemaps = 1
+		googlemaps_zoom_detail = 16
+		googlemaps_zoom_list = 10
+		googlemaps_zoom_list_entry = 16
 	}
 }
 
 page.includeCSS.tx_mhdirectory_fontawesome = EXT:mh_directory/Resources/Public/Css/font-awesome.min.css
 page.includeCSS.tx_mhdirectory_basic = EXT:mh_directory/Resources/Public/Css/style.css
+
+page.includeJSFooter.tx_mhdirectory_fe = EXT:mh_directory/Resources/Public/Js/frontend.js

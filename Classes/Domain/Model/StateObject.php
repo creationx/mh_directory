@@ -17,14 +17,14 @@ class StateObject extends AbstractEntity {
      *
      * @var string
      */
-    protected $map_lng;
+    protected $mapLng;
     
     /**
      * map_lat
      *
      * @var string
      */
-    protected $map_lat;
+    protected $mapLat;
     
     /**
      * image
@@ -45,14 +45,14 @@ class StateObject extends AbstractEntity {
      *
      * @var int
      */
-    protected $count_clicks;
+    protected $countClicks;
 
     /**
      * count_views
      *
      * @var int
      */
-    protected $count_views;
+    protected $countViews;
 
 
     /**
@@ -84,9 +84,9 @@ class StateObject extends AbstractEntity {
      *
      * @return string
      */
-    public function getMap_lng()
+    public function getMapLng()
     {
-        return $this->map_lng;
+        return $this->mapLng;
     }
 
     /**
@@ -96,9 +96,9 @@ class StateObject extends AbstractEntity {
      *
      * @return self
      */
-    public function setMap_lng($map_lng)
+    public function setMapLng($map_lng)
     {
-        $this->map_lng = $map_lng;
+        $this->mapLng = $map_lng;
 
         return $this;
     }
@@ -108,9 +108,9 @@ class StateObject extends AbstractEntity {
      *
      * @return string
      */
-    public function getMap_lat()
+    public function getMapLat()
     {
-        return $this->map_lat;
+        return $this->mapLat;
     }
 
     /**
@@ -120,9 +120,9 @@ class StateObject extends AbstractEntity {
      *
      * @return self
      */
-    public function setMap_lat($map_lat)
+    public function setMapLat($map_lat)
     {
-        $this->map_lat = $map_lat;
+        $this->mapLat = $map_lat;
 
         return $this;
     }
@@ -186,9 +186,9 @@ class StateObject extends AbstractEntity {
      *
      * @return int
      */
-    public function getCount_clicks()
+    public function getCountClicks()
     {
-        return $this->count_clicks;
+        return $this->countClicks;
     }
 
     /**
@@ -198,9 +198,9 @@ class StateObject extends AbstractEntity {
      *
      * @return self
      */
-    public function setCount_clicks($count_clicks)
+    public function setCountClicks($count_clicks)
     {
-        $this->count_clicks = $count_clicks;
+        $this->countClicks = $count_clicks;
 
         return $this;
     }
@@ -210,9 +210,9 @@ class StateObject extends AbstractEntity {
      *
      * @return int
      */
-    public function getCount_views()
+    public function getCountViews()
     {
-        return $this->count_views;
+        return $this->countViews;
     }
 
     /**
@@ -222,9 +222,9 @@ class StateObject extends AbstractEntity {
      *
      * @return self
      */
-    public function setCount_views($count_views)
+    public function setCountViews($count_views)
     {
-        $this->count_views = $count_views;
+        $this->countViews = $count_views;
 
         return $this;
     }

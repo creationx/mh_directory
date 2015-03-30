@@ -31,9 +31,13 @@ CREATE TABLE tx_mhdirectory_domain_model_entries (
 	map_lat tinytext DEFAULT '' NOT NULL,
 	image blob,
 	description text DEFAULT '' NOT NULL,
+	last_calls tinytext DEFAULT '' NOT NULL,
 
 	count_clicks int(11) unsigned DEFAULT '0' NOT NULL,
 	count_views int(11) unsigned DEFAULT '0' NOT NULL,
+	count_twitter int(11) unsigned DEFAULT '0' NOT NULL,
+	count_facebook int(11) unsigned DEFAULT '0' NOT NULL,
+	count_link int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
