@@ -4,6 +4,9 @@
 <f:layout name="frontend" />
 <f:section name="content">
 	<f:if condition="{mhdev:Type(entry:entry, key: 'mail')}">
+		<f:if condition="{settings.breadcrumb}=='1'">
+			<f:render partial="Breadcrumb" arguments="{result:breadcrumb}"/>
+		</f:if>
 		<h2><f:translate key="list_mail_header" /></h2>
 		<p><f:translate key="list_mail_text" arguments="{0: entry.company}" /></p>
 
@@ -89,5 +92,7 @@
 				</f:form>
 			</f:else>
 		</f:if>
+
+		<f:render partial="Buttons" arguments="{result:entry,mail:1}" />
 	</f:if>
 </f:section>

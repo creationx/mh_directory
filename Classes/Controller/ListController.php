@@ -238,7 +238,6 @@ class ListController
 
 		if($iUid > 0) {
 			$oEntry			= $this->entryRepository->findByUid($iUid);
-
 			if(strlen($oEntry->getMail()) != '' && \TYPO3\CMS\Core\Utility\GeneralUtility::validEmail($oEntry->getMail())) {
 				if(count($aPost) > 0) {
 					foreach($aPost AS $sKey => $sValue) {
@@ -294,6 +293,9 @@ class ListController
 
 			if(!isset($aError['status'])) $aError['status'] = 'nothing';
 
+			$aBreadcrumb		= $this->getBreadcrumb(4, $iUid);
+			
+			$this->view->assign('breadcrumb', $aBreadcrumb);
 			$this->view->assign('recaptcha', $bRecaptcha);
 			$this->view->assign('entry', $oEntry);
 		}

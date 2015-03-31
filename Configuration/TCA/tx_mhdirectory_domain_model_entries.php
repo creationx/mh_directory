@@ -92,13 +92,11 @@ return array(
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.relation_type',
             'config' => array(
                 'type' => 'select',
-                'items' => array(
-                        array('', 0)
-                ),
+                'items' => array(),
                 'foreign_table' => 'tx_mhdirectory_domain_model_type',
                 'foreign_table_where' => 'ORDER BY name ASC',
                 'size' => 1,
-                'minitems' => 0,
+                'minitems' => 1,
                 'maxitems'  => 1,
             ),
         ),
