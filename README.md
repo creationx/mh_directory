@@ -15,7 +15,7 @@ It shows a 3-way-wizard for entries. You can categorize the entries in 3 "locati
 
 #### Step 1 
 List of Federal States
-![](http://mh-dev.de/mh_directory/list_step_1.png)
+![](http://mh-dev.de/mh_directory/list_step_1.png) 
 #### Step 2
 List of Administrative Districts
 ![](http://mh-dev.de/mh_directory/list_step_2.png)
