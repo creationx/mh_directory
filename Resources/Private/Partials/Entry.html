@@ -1,42 +1,54 @@
+{namespace mhdev=Tx_MhDirectory_ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
 <f:if condition="{result}">
 	<f:then>
-		<f:for each="{result}" as="row">
-		<div class="entry entry_{row.uid}">
-			<f:if condition="{row.image}">
-				<div class="inner_image"><f:image src="uploads/tx_mhdirectory/{row.image}" alt="{row.company}" /></div>
-			</f:if>		
+		<f:for each="{result->v:iterator.sort(order: 'ASC', sortBy: 'relationType.sorting')}" as="row">
+			<div class="entry entry_{row.uid} type_{row.relationType.uid}">
+				<f:if condition="{mhdev:Type(entry:row, key: 'image')}">
+					<f:if condition="{row.image}">
+						<div class="inner_image"><f:image src="uploads/tx_mhdirectory/{row.image}" alt="{row.company}" /></div>
+					</f:if>
+				</f:if>	
 
-			<div class="inner">
-				<h2>{row.company}</h2>
+				<div class="inner">
+					<h2>{row.company}</h2>
 
-				<p>
-					{row.forename} {row.middlename} {row.lastname} <br />
-					{row.address} <br />
-					{row.zip} {row.city}
-				</p>
+					<f:if condition="{mhdev:Type(entry:row, key: 'address')}">
+						<p class="address">
+							{row.forename} {row.middlename} {row.lastname} <br />
+							{row.address} <br />
+							{row.zip} {row.city}
+						</p>
+					</f:if>
 
-				<div class="description"><f:format.crop maxCharacters="100">{row.description}</f:format.crop></div>
+					<f:if condition="{mhdev:Type(entry:row, key: 'description')}">
+						<div class="description">
+							<f:format.crop maxCharacters="{settings.entry_description_crop}">
+								<f:format.html>{row.description}</f:format.html>
+							</f:format.crop>
+						</div>
+					</f:if>
 
-				<p>
-					<f:if condition="{row.phone}"><f:translate key="list_row_phone" /> <a href="tel:{row.phone}">{row.phone}</a><br /></f:if>
-					<f:if condition="{row.fax}"><f:translate key="list_row_fax" /> <a href="fax:{row.fax}">{row.fax}</a><br /></f:if>
-				</p>
+					<f:if condition="{mhdev:Type(entry:row, key: 'contact')}">
+						<p class="contact">
+							<f:if condition="{row.phone}"><f:translate key="list_row_phone" /> <a href="tel:{row.phone}">{row.phone}</a><br /></f:if>
+							<f:if condition="{row.mobile}"><f:translate key="list_row_mobile" /> <a href="tel:{row.mobile}">{row.mobile}</a><br /></f:if>
+							<f:if condition="{row.fax}"><f:translate key="list_row_fax" /> <a href="tel:{row.fax}">{row.fax}</a><br /></f:if>
+						</p>
+					</f:if>
+				</div>
 
 				
+				<f:if condition="{settings.googlemaps}=='1'">
+					<f:render partial="Map" arguments="{result: row, zoom: settings.googlemaps_zoom_list_entry}"/>
+				</f:if>
+
+				<br class="clear" />
+
+				<f:render partial="Buttons" arguments="{result:row}" />
+				
 			</div>
-
-			
-			<f:if condition="{settings.googlemaps}=='1'">
-				<div class="inner_map">
-					<f:render partial="Map" arguments="{lat: row.mapLat, lng: row.mapLng, zoom: settings.googlemaps_zoom_list_entry, uid: row.uid}"/>
-				</div>
-			</f:if>
-
-			<br class="clear" />
-
-			<f:render partial="Buttons" arguments="{result:row}" />
-			
-		</div>
 		</f:for>
 	</f:then>
 	<f:else>

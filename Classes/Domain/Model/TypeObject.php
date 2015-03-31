@@ -3,12 +3,7 @@ namespace mhdev\MhDirectory\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  
-class CityObject extends AbstractEntity {
-
-    /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\District>
-     */
-    protected $relationDistrict;
+class TypeObject extends AbstractEntity {
 
     /**
      * Title for internal use
@@ -18,18 +13,18 @@ class CityObject extends AbstractEntity {
     protected $name;
     
     /**
-     * map_lng
+     * price
      *
      * @var string
      */
-    protected $mapLng;
+    protected $price;
     
     /**
-     * map_lat
+     * options
      *
      * @var string
      */
-    protected $mapLat;
+    protected $options;
     
     /**
      * image
@@ -46,45 +41,12 @@ class CityObject extends AbstractEntity {
     protected $description;
 
     /**
-     * count_clicks
+     * sorting
      *
      * @var int
      */
-    protected $countClicks;
+    protected $sorting;
 
-    /**
-     * count_views
-     *
-     * @var int
-     */
-    protected $countViews;
-
-
-    public function __construct() {
-        $this->initalizeObjectStorages();
-    }
- 
-    /**
-     * initialize object storages
-     */
-    public function initializeObjectStorages() {
-        $this->relationDistrict = new ObjectStorage();
-    }
-
-
-    /**
-     * Gets the relation
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\District>
-     */
-    public function getRelationDistrict()
-    {
-        $this->relationDistrict->rewind();
-        if($this->relationDistrict->valid()) {
-            return $this->relationDistrict->current();
-        }
-        return $this->relationDistrict;
-    }    
 
 
     /**
@@ -112,49 +74,49 @@ class CityObject extends AbstractEntity {
     }
 
     /**
-     * Gets the map_lng.
+     * Gets the price.
      *
      * @return string
      */
-    public function getMapLng()
+    public function getPrice()
     {
-        return $this->mapLng;
+        return $this->price;
     }
 
     /**
-     * Sets the map_lng.
+     * Sets the price.
      *
-     * @param string $map_lng the map_lng
+     * @param string $price
      *
      * @return self
      */
-    public function setMapLng($map_lng)
+    public function setPrice($price)
     {
-        $this->mapLng = $map_lng;
+        $this->price = $price;
 
         return $this;
     }
 
     /**
-     * Gets the map_lat.
+     * Gets the options.
      *
      * @return string
      */
-    public function getMapLat()
+    public function getOptions()
     {
-        return $this->mapLat;
+        return $this->options;
     }
 
     /**
-     * Sets the map_lat.
+     * Sets the options.
      *
-     * @param string $map_lat the map_lat
+     * @param string options
      *
      * @return self
      */
-    public function setMapLat($map_lat)
+    public function setOptions($options)
     {
-        $this->mapLat = $map_lat;
+        $this->options = $options;
 
         return $this;
     }
@@ -213,51 +175,30 @@ class CityObject extends AbstractEntity {
         return $this;
     }
 
-    /**
-     * Gets the count_clicks.
-     *
-     * @return int
-     */
-    public function getCountClicks()
-    {
-        return $this->countClicks;
-    }
 
     /**
-     * Sets the count_clicks.
+     * Set the sorting.
      *
-     * @param int $count_clicks the count_clicks
+     * @param int $sorting
      *
      * @return self
      */
-    public function setCountClicks($count_clicks)
+    public function setSorting($sorting)
     {
-        $this->countClicks = $count_clicks;
+        $this->sorting = $sorting;
 
         return $this;
     }
 
     /**
-     * Gets the count_views.
+     * Gets the sorting.
      *
      * @return int
      */
-    public function getCountViews()
+    public function getSorting()
     {
-        return $this->countViews;
+        return $this->sorting;
     }
 
-    /**
-     * Sets the count_views.
-     *
-     * @param int $count_views the count_views
-     *
-     * @return self
-     */
-    public function setCountViews($count_views)
-    {
-        $this->countViews = $count_views;
 
-        return $this;
-    }
 }

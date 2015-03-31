@@ -432,14 +432,68 @@
                         <source>Please validate this Captcha!</source>
                     </trans-unit>
 
-
                     <trans-unit id="list_mail_subject" xml:space="preserve">
                         <source>MH-Directory mail</source>
                     </trans-unit>
 
-
                     <trans-unit id="backend_headline_dashboard" xml:space="preserve">
                         <source>mh_directory - Dashboard</source>
+                    </trans-unit>
+
+                    <trans-unit id="breadcrumb_home" xml:space="preserve">
+                        <source>Home</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_mail_back" xml:space="preserve">
+                        <source>Back</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type" xml:space="preserve">
+                        <source>Type</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.hidden" xml:space="preserve">
+                        <source>Hidden</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.name" xml:space="preserve">
+                        <source>Name</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.price" xml:space="preserve">
+                        <source>Price</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.image" xml:space="preserve">
+                        <source>Image</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.options" xml:space="preserve">
+                        <source>Options</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.description" xml:space="preserve">
+                        <source>Description</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_entries.relation_type" xml:space="preserve">
+                        <source>Type</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_entries.palette_phone" xml:space="preserve">
+                        <source>Contact</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_entries.mobile" xml:space="preserve">
+                        <source>Mobile</source>
+                    </trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_entries.palette_geo" xml:space="preserve">
+                        <source>GoogleMaps</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_row_mobile" xml:space="preserve">
+                        <source>Mobile</source>
                     </trans-unit>
              </body>
      </file>

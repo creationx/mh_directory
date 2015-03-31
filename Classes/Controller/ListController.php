@@ -38,6 +38,14 @@ class ListController
 	 */
 	protected $cityRepository;
 
+	/**
+	 * typeRepository
+	 *
+	 * @var \mhdev\MhDirectory\Domain\Repository\TypeRepository
+	 * @inject
+	 */
+	protected $typeRepository;
+
 	public function initializeAction() {
 		$this->contentObj = $this->configurationManager->getContentObject();
 	}
@@ -50,22 +58,25 @@ class ListController
 		$iStatus 		= 0;
 		$iMap 			= 0;
 		$oEntries 		= false;
-		$aBroadcrump	= array();
+		$aBroadcrumb	= array();
 		$aOutput		= array();
 
 		if($this->settings['googlemaps'] == 1)
 			$this->response->addAdditionalHeaderData('<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>');
 
 		if($iCityUid > 0) {
+			$iStatus			= 3;
 			$oResStates 		= $this->entryRepository->findByRelationCity($iCityUid);
+			$aBroadcrumb		= $this->getBreadcrumb($iStatus, $iCityUid);
 		} else if($iDistrictUid > 0) {
 			$iStatus 			= 2;
+			$aBroadcrumb		= $this->getBreadcrumb($iStatus, $iDistrictUid);
 			$oResStates 		= $this->cityRepository->findByDistrict($iDistrictUid);
 			$oEntries 			= $this->entryRepository->findByRelationDistrict($iDistrictUid);
 			$aGMapPois			= $this->generateGMapPois($oEntries);
 		} else if($iStateUid > 0) {
 			$iStatus 			= 1;
-			$aBroadcrump		= $this->getBroadcrump($iStateUid);
+			$aBroadcrumb		= $this->getBreadcrumb($iStatus, $iStateUid);
 			$oEntries 			= $this->entryRepository->findByRelationState($iStateUid);
 			$aGMapPois			= $this->generateGMapPois($oEntries);
 			$oResStates 		= $this->districtRepository->findByState($iStateUid);
@@ -122,10 +133,10 @@ class ListController
 		} else {
 			if(count($oResStates) > 0) {
 				$aOutput 	= $oResStates;
-				$iStatus	= 3;
 			}
 		}
 
+		$this->view->assign('breadcrumb', $aBroadcrumb);
 		$this->view->assign('status', $iStatus);
 		$this->view->assign('state', $iStateUid);
 		$this->view->assign('district', $iDistrictUid);
@@ -156,6 +167,8 @@ class ListController
 		$this->entryRepository->update($oEntry);
 
 		if($oEntry) {
+			$aBreadcrumb		= $this->getBreadcrumb(4, $iUid);
+			$this->view->assign('breadcrumb', $aBreadcrumb);
 			$this->view->assign('result', $oEntry);
 		}
 
@@ -201,6 +214,8 @@ class ListController
 		if($bStats)
 			$this->entryRepository->update($oEntry);
 
+		$this->view->assign('key', $sKey);
+		$this->view->assign('resultObject', $oEntry);
 		$this->view->assign('result', $aOutput);
 	}
 
@@ -209,7 +224,7 @@ class ListController
 		$iUid 				= (int)$aRequest['uid'];
 		$aPost				= \TYPO3\CMS\Core\Utility\GeneralUtility::_POST('tx_mhdirectory_pi1');
 		$aRequiredFields	= explode(',', $this->settings['list_mail_required']);
-		$aError 			= array('status' => 'nothing');
+		$aError 			= array();
 		$bRecaptcha 		= false;
 
 		// recaptcha-support
@@ -218,6 +233,9 @@ class ListController
 			$bRecaptcha = true;
 		}
 		
+		/** @var $logger \TYPO3\CMS\Core\Log\Logger */
+		$logger = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Core\Log\LogManager')->getLogger(__CLASS__);
+
 		if($iUid > 0) {
 			$oEntry			= $this->entryRepository->findByUid($iUid);
 
@@ -255,32 +273,128 @@ class ListController
 							$aError[] = 'list_form_recaptcha';
 					}
 
-					if(count($aError) == 0) {
+					if(count($aError) == 0 ) {
 						$message = (new \TYPO3\CMS\Core\Mail\MailMessage())
-						->setFrom(array())
+						->setFrom(array($aPost['list_form_mail']))
 						->setTo($oEntry->getMail())
 						->setSubject(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('list_mail_subject', 'mh_directory'))
 						->setBody($sMailMessage);
 					
 						$message->send();
-					
-						if($message->isSent()) $aError['status'] = 'done';
+
+						if($message->isSent()) {
+							$aError['status'] = 'done';
+							$logger->info('Mail send to ' . $oEntry->getCompany());
+						} else {
+							$logger->error('Error sending Mail to ' . $oEntry->getCompany());
+						}
 					}
 				}
 			}
+
+			if(!isset($aError['status'])) $aError['status'] = 'nothing';
 
 			$this->view->assign('recaptcha', $bRecaptcha);
 			$this->view->assign('entry', $oEntry);
 		}
 
+		$this->view->assign('uid', $iUid);
 		$this->view->assign('post', $aPost);
 		$this->view->assign('error', $aError);
 		$this->view->assign('required', $aRequiredFields);
 	}
 
 
-	public function getBroadcrump($iState, $iDistrict, $iCity) {
+	public function getBreadcrumb($iStatus, $iUniqueKey) {
+		$aOutput = array();
+		if((int)$iUniqueKey == 0) return $aOutput;
 
+		switch ($iStatus) {
+			case 1:
+				$oState = $this->stateRepository->findByUid($iUniqueKey);
+				$aOutput[] = array(
+					'name' 	=> $oState->getName(),
+					'uid'	=> $oState->getUid()
+				);
+				break;
+			case 2:
+				$oDistrict 	= $this->districtRepository->findByUid($iUniqueKey);
+				$oState 	= $oDistrict->getRelationState();
+
+				if($oState)
+					$aOutput[] = array(
+						'name' 	=> $oState->getName(),
+						'uid'	=> $oState->getUid()
+					);
+
+				$aOutput[] = array(
+					'name' 	=> $oDistrict->getName(),
+					'uid'	=> $oDistrict->getUid(),
+					'state' => $oDistrict->getRelationState()
+				);
+				break;
+
+			case 3: 
+				$oCity		= $this->cityRepository->findByUid($iUniqueKey);
+				$oDistrict 	= $oCity->getRelationDistrict();
+				$oState 	= $oDistrict->getRelationState();
+
+				if($oState)
+					$aOutput[] = array(
+						'name' 	=> $oState->getName(),
+						'uid'	=> $oState->getUid()
+					);
+
+				if($oDistrict)
+					$aOutput[] = array(
+						'name' 	=> $oDistrict->getName(),
+						'uid'	=> $oDistrict->getUid(),
+						'state' => $oDistrict->getRelationState()
+					);
+
+				$aOutput[] = array(
+					'name' 	=> $oCity->getName(),
+					'uid'	=> $oCity->getUid(),
+					'state' => $oState->getUid(),
+					'district' => $oDistrict->getUid()
+				);
+
+				break;
+			
+			case 4:
+				$oEntry 	= $this->entryRepository->findByUid($iUniqueKey);
+				$oCity		= $oEntry->getRelationCity();
+				$oDistrict 	= $oEntry->getRelationDistrict();
+				$oState 	= $oEntry->getRelationState();
+
+				if($oState)
+					$aOutput[] = array(
+						'name' 	=> $oState->getName(),
+						'uid'	=> $oState->getUid()
+					);
+
+				if($oDistrict)
+					$aOutput[] = array(
+						'name' 	=> $oDistrict->getName(),
+						'uid'	=> $oDistrict->getUid(),
+						'state' => $oDistrict->getRelationState()
+					);
+
+				if($oCity)
+					$aOutput[] = array(
+						'name' 	=> $oCity->getName(),
+						'uid'	=> $oCity->getUid(),
+						'state' => $oState->getUid(),
+						'district' => $oDistrict->getUid()
+					);
+
+				$aOutput[] = array(
+					'name' => $oEntry->getCompany()
+				);
+				break;
+		}
+
+		return $aOutput;
 	}
 
 	/**
@@ -300,6 +414,30 @@ class ListController
 		}
 
 		return json_encode($aLocations);
+	}
+
+	public function getTypeOptions($iValue) {
+		$aOptions 	= array(
+			0 => "detail", 
+			1 => "twitter", 
+			2 => "facebook", 
+			3 => "description", 
+			4 => "map", 
+			5 => "mail", 
+			6 => "link",
+			7 => "address",
+			8 => "contact",
+			9 => "custom1",
+			10 => "custom2",
+			11 => "custom3"
+		);
+		$aOutput 	= array();
+		for ($i=0; $i<(count($aOptions)-1); $i++) {
+			if (($iValue >> $i) & 1) {
+				$aOutput[] = $aOptions[$i];
+			}
+		}
+		return $aOutput;
 	}
 }
 ?>

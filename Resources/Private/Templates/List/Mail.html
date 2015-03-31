@@ -3,87 +3,91 @@
 
 <f:layout name="frontend" />
 <f:section name="content">
-	
-	<h2><f:translate key="list_mail_header" /></h2>
-	<p><f:translate key="list_mail_text" arguments="{0: entry.company}" /></p>
+	<f:if condition="{mhdev:Type(entry:entry, key: 'mail')}">
+		<h2><f:translate key="list_mail_header" /></h2>
+		<p><f:translate key="list_mail_text" arguments="{0: entry.company}" /></p>
 
-	<f:if condition="{error.status}=='done'">
-		<f:then>
-			<p class="success"><f:translate key="list_mail_success" /></p>
-		</f:then>
-		<f:else>
-			<f:form method="post" action="mail" arguments="{uid: entry.uid}" name="contact" id="contactform">
-				<dl class="contact_form">
-					<dt><f:translate key="list_form_name" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_name', haystack: required)}==1">*</f:if></dt>
-					<dd>
-						<f:form.textfield name="list_form_name" value="{post.list_form_name}" />
-						<f:if condition="{mhdev:inArray(needle:'list_form_name', haystack: error)}==1">
-							<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_name_error" htmlEscape="false" /></span>
-						</f:if>
-					</dd>		
+		<f:if condition="{error.status}=='done'">
+			<f:then>
+				<p class="success"><f:translate key="list_mail_success" /></p>
 
-					<dt><f:translate key="list_form_street" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_street', haystack: required)}==1">*</f:if></dt>
-					<dd>
-						<f:form.textfield name="list_form_street" value="{post.list_form_street}" />
-						<f:if condition="{mhdev:inArray(needle:'list_form_street', haystack: error)}==1">
-							<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_street_error" htmlEscape="false" /></span>
-						</f:if>
-					</dd>
+				<p><f:link.action class="detail_link" action="detail" arguments="{uid: uid}"><i class="fa fa-arrow-circle-left"></i> <f:translate key="list_mail_back" /></f:link.action></p>
 
-					<dt><f:translate key="list_form_location" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_location', haystack: required)}==1">*</f:if></dt>
-					<dd>
-						<f:form.textfield name="list_form_location" value="{post.list_form_location}" />
-						<f:if condition="{mhdev:inArray(needle:'list_form_location', haystack: error)}==1">
-							<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_location_error" htmlEscape="false" /></span>
-						</f:if>
-					</dd>
-
-					<dt><f:translate key="list_form_mail" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_mail', haystack: required)}==1">*</f:if></dt>
-					<dd>
-						<f:form.textfield name="list_form_mail" value="{post.list_form_mail}" />
-						<f:if condition="{mhdev:inArray(needle:'list_form_mail', haystack: error)}==1">
-							<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_mail_error" htmlEscape="false" /></span>
-						</f:if>
-					</dd>
-
-					<dt><f:translate key="list_form_phone" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_phone', haystack: required)}==1">*</f:if></dt>
-					<dd>
-						<f:form.textfield name="list_form_phone" value="{post.list_form_phone}" />
-						<f:if condition="{mhdev:inArray(needle:'list_form_phone', haystack: error)}==1">
-							<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_phone_error" htmlEscape="false" /></span>
-						</f:if>
-					</dd>
-
-					<dt><f:translate key="list_form_mobile" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_mobile', haystack: required)}==1">*</f:if></dt>
-					<dd>
-						<f:form.textfield name="list_form_mobile" value="{post.list_form_mobile}" />
-						<f:if condition="{mhdev:inArray(needle:'list_form_mobile', haystack: error)}==1">
-							<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_mobile_error" htmlEscape="false" /></span>
-						</f:if>
-					</dd>
-
-					<dt><f:translate key="list_form_text" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_text', haystack: required)}==1">*</f:if></dt>
-					<dd>
-						<f:form.textarea name="list_form_text" value="{post.list_form_text}" />
-						<f:if condition="{mhdev:inArray(needle:'list_form_text', haystack: error)}==1">
-							<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_text_error" htmlEscape="false" /></span>
-						</f:if>
-					</dd>
-
-					<f:if condition="{recaptcha}">
-						<dt></dt>
+			</f:then>
+			<f:else>
+				<f:form method="post" action="mail" arguments="{uid: entry.uid}" name="contact" id="contactform">
+					<dl class="contact_form">
+						<dt><f:translate key="list_form_name" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_name', haystack: required)}==1">*</f:if></dt>
 						<dd>
-							<div class="g-recaptcha" data-sitekey="{settings.recaptcha_public}"></div>
-							<f:if condition="{mhdev:inArray(needle:'list_form_recaptcha', haystack: error)}==1">
-								<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_recaptcha_error" htmlEscape="false" /></span>
+							<f:form.textfield name="list_form_name" value="{post.list_form_name}" />
+							<f:if condition="{mhdev:inArray(needle:'list_form_name', haystack: error)}==1">
+								<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_name_error" htmlEscape="false" /></span>
+							</f:if>
+						</dd>		
+
+						<dt><f:translate key="list_form_street" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_street', haystack: required)}==1">*</f:if></dt>
+						<dd>
+							<f:form.textfield name="list_form_street" value="{post.list_form_street}" />
+							<f:if condition="{mhdev:inArray(needle:'list_form_street', haystack: error)}==1">
+								<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_street_error" htmlEscape="false" /></span>
 							</f:if>
 						</dd>
-					</f:if>
-			
-				</dl>
 
-				<p><f:form.submit value="{f:translate(key:'list_form_mail_submit')}" /></p>
-			</f:form>
-		</f:else>
+						<dt><f:translate key="list_form_location" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_location', haystack: required)}==1">*</f:if></dt>
+						<dd>
+							<f:form.textfield name="list_form_location" value="{post.list_form_location}" />
+							<f:if condition="{mhdev:inArray(needle:'list_form_location', haystack: error)}==1">
+								<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_location_error" htmlEscape="false" /></span>
+							</f:if>
+						</dd>
+
+						<dt><f:translate key="list_form_mail" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_mail', haystack: required)}==1">*</f:if></dt>
+						<dd>
+							<f:form.textfield name="list_form_mail" value="{post.list_form_mail}" />
+							<f:if condition="{mhdev:inArray(needle:'list_form_mail', haystack: error)}==1">
+								<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_mail_error" htmlEscape="false" /></span>
+							</f:if>
+						</dd>
+
+						<dt><f:translate key="list_form_phone" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_phone', haystack: required)}==1">*</f:if></dt>
+						<dd>
+							<f:form.textfield name="list_form_phone" value="{post.list_form_phone}" />
+							<f:if condition="{mhdev:inArray(needle:'list_form_phone', haystack: error)}==1">
+								<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_phone_error" htmlEscape="false" /></span>
+							</f:if>
+						</dd>
+
+						<dt><f:translate key="list_form_mobile" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_mobile', haystack: required)}==1">*</f:if></dt>
+						<dd>
+							<f:form.textfield name="list_form_mobile" value="{post.list_form_mobile}" />
+							<f:if condition="{mhdev:inArray(needle:'list_form_mobile', haystack: error)}==1">
+								<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_mobile_error" htmlEscape="false" /></span>
+							</f:if>
+						</dd>
+
+						<dt><f:translate key="list_form_text" htmlEscape="false" /> <f:if condition="{mhdev:inArray(needle:'list_form_text', haystack: required)}==1">*</f:if></dt>
+						<dd>
+							<f:form.textarea name="list_form_text" value="{post.list_form_text}" />
+							<f:if condition="{mhdev:inArray(needle:'list_form_text', haystack: error)}==1">
+								<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_text_error" htmlEscape="false" /></span>
+							</f:if>
+						</dd>
+
+						<f:if condition="{recaptcha}">
+							<dt></dt>
+							<dd>
+								<div class="g-recaptcha" data-sitekey="{settings.recaptcha_public}"></div>
+								<f:if condition="{mhdev:inArray(needle:'list_form_recaptcha', haystack: error)}==1">
+									<span class="error"><i class="fa fa-exclamation-triangle"></i>&nbsp;<f:translate key="list_form_recaptcha_error" htmlEscape="false" /></span>
+								</f:if>
+							</dd>
+						</f:if>
+				
+					</dl>
+
+					<p><f:form.submit value="{f:translate(key:'list_form_mail_submit')}" /></p>
+				</f:form>
+			</f:else>
+		</f:if>
 	</f:if>
 </f:section>

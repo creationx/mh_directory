@@ -8,7 +8,22 @@ class EntryObject extends AbstractEntity {
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\State>
      */
-    protected $relation_state;
+    protected $relationState;
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\District>
+     */
+    protected $relationDistrict;
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\City>
+     */
+    protected $relationCity;
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\Type>
+     */
+    protected $relationType;
 
     /**
      * categories
@@ -78,7 +93,14 @@ class EntryObject extends AbstractEntity {
      *
      * @var string
      */
-    protected $phone;
+    protected $phone;   
+
+    /**
+     * mobile
+     *
+     * @var string
+     */
+    protected $mobile;
     
     /**
      * fax
@@ -218,9 +240,68 @@ class EntryObject extends AbstractEntity {
      * initialize object storages
      */
     public function initializeObjectStorages() {
-        $this->relation_state = new ObjectStorage();
+        $this->relationState = new ObjectStorage();
+        $this->relationDistrict = new ObjectStorage();
+        $this->relationCity = new ObjectStorage();
+        $this->relationType = new ObjectStorage();
         $this->categories = new ObjectStorage();
     }
+
+    /**
+     * Gets the relation
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\State>
+     */
+    public function getRelationState()
+    {
+        $this->relationState->rewind();
+        if($this->relationState->valid()) {
+            return $this->relationState->current();
+        }
+    }
+
+    /**
+     * Gets the relation
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\District>
+     */
+    public function getRelationDistrict()
+    {
+        $this->relationDistrict->rewind();
+        if($this->relationDistrict->valid()) {
+            return $this->relationDistrict->current();
+        }
+        return $this->relationDistrict;
+    }    
+
+    /**
+     * Gets the relation
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\City>
+     */
+    public function getRelationCity()
+    {
+        $this->relationCity->rewind();
+        if($this->relationCity->valid()) {
+            return $this->relationCity->current();
+        }
+        return $this->relationCity;
+    }       
+
+    /**
+     * Gets the relation
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\Type>
+     */
+    public function getRelationType()
+    {
+        $this->relationType->rewind();
+        if($this->relationType->valid()) {
+            return $this->relationType->current();
+        }
+        return $this->relationType;
+    }    
+
 
     /**
      * Gets the Title for internal use.
@@ -434,6 +515,30 @@ class EntryObject extends AbstractEntity {
     public function setPhone($phone)
     {
         $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets the mobile.
+     *
+     * @return string
+     */
+    public function getMobile()
+    {
+        return $this->mobile;
+    }
+
+    /**
+     * Sets the mobile.
+     *
+     * @param string $mobile the mobile
+     *
+     * @return self
+     */
+    public function setMobile($phone)
+    {
+        $this->mobile = $mobile;
 
         return $this;
     }

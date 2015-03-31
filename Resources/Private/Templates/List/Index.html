@@ -1,13 +1,26 @@
+
+
 <f:layout name="frontend" />
 <f:section name="content">
 	<f:if condition="{status}==3">
 		<f:then>
-			<f:render partial="Entry" arguments="{result: result, map: map}"/>
+
+			<f:if condition="{settings.breadcrumb}=='1'">
+				<f:render partial="Breadcrumb" arguments="{result:breadcrumb}"/>
+			</f:if>
+
+			
+			<f:render partial="Entry" arguments="{result: result}"/>
+			
 		</f:then>
 		<f:else>
 			<f:if condition="{result}">
 				<f:then>
 					
+					<f:if condition="{settings.breadcrumb}=='1'">
+						<f:render partial="Breadcrumb" arguments="{result:breadcrumb}"/>
+					</f:if>
+
 					<f:if condition="{settings.googlemaps}=='1'">
 						<f:render partial="MapPoi" arguments="{pois:gmap_pois, zoom: settings.googlemaps_zoom_list}"/>
 					</f:if>

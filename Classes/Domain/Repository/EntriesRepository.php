@@ -36,6 +36,5 @@ class EntriesRepository
 			return $query->count();
 
     	return $query->execute();
-	}	
-
+	}
 }

@@ -1,0 +1,26 @@
+<f:if condition="{result}">
+	<ul class="breadcrumb">
+		<li class="home">
+			<f:link.action><f:translate key="breadcrumb_home" /></f:link.action>
+		</li>
+	<f:for each="{result}" as="row" iteration="key">
+		<li>
+			<f:if condition="{key.index}==0">
+				<f:link.action arguments="{state: row.uid}">{row.name}</f:link.action>
+			</f:if>
+
+			<f:if condition="{key.index}==1">
+				<f:link.action arguments="{state: state, district: row.uid}">{row.name}</f:link.action>
+			</f:if>
+
+			<f:if condition="{key.index}==2">
+				<f:link.action arguments="{state: state, district: district, city: row.uid}">{row.name}</f:link.action>
+			</f:if>
+
+			<f:if condition="{key.index}==3">
+				{row.name}
+			</f:if>
+		</li>
+	</f:for>
+	</ul>
+</f:if>

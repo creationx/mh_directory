@@ -8,22 +8,22 @@ if (!defined('TYPO3_MODE')) {
     'Pi1',
 	array(
 		'List' => 'index,detail,out,mail',
-		'All' => 'index',
+		'All' => 'index,detail',
 	),
 	array(
 		'List' => 'index,detail,out,mail',
-		'All' => 'index',
+		'All' => 'index,detail',
 	)
 );
 
 if (TYPO3_MODE === 'BE') {
-	$class = 'TYPO3\\CMS\\Extbase\\SignalSlot\\Dispatcher';
-	$dispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance($class);
-	$dispatcher->connect(
-	    'TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Backend',
-	    'afterUpdateObject',
-	    'mhdev\\MhDirectory\\Slots\\AfterUpdate',
-	    'update'
-	);
+	// $class = 'TYPO3\\CMS\\Extbase\\SignalSlot\\Dispatcher';
+	// $dispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance($class);
+	// $dispatcher->connect(
+	//     'TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Backend',
+	//     'afterUpdateObject',
+	//     'mhdev\\MhDirectory\\Slots\\AfterUpdate',
+	//     'update'
+	// );
 }
 ?>

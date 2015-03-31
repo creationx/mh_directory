@@ -43,6 +43,16 @@ div.tx_mhdirectory ul.tx_mhdirectory_list_ul {
 div.tx_mhdirectory > div.entry {
 	position: relative;
 	border: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+
+div.tx_mhdirectory > div.entry.type_2 {
+	background-color:#f5f5f5;
+}
+
+div.tx_mhdirectory > div.entry.type_1 {
+	border:0px;
+	border-bottom: 1px solid #ddd;
 }
 
 

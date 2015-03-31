@@ -1,26 +1,30 @@
-<script>
-var map_{uid};
-function initialize() {
-	var lat = '{lat}';
-	var lng = '{lng}';
-	var zoom = {zoom};
-	var mapOptions = {
-		zoom: zoom,
-		center: new google.maps.LatLng(lat, lng)
-	};
+{namespace mhdev=Tx_MhDirectory_ViewHelpers}
+<f:if condition="{mhdev:Type(entry:result, key: 'map')}">
+	<div class="inner_map">
+		<script>
+		var map_{result.uid};
+		function initialize() {
+			var lat = '{result.mapLat}';
+			var lng = '{result.MapLng}';
+			var zoom = {zoom};
+			var mapOptions = {
+				zoom: zoom,
+				center: new google.maps.LatLng(lat, lng)
+			};
 
-	var myLatLng_{uid} = new google.maps.LatLng(lat, lng);
+			var myLatLng_{result.uid} = new google.maps.LatLng(lat, lng);
 
-	map_{uid} = new google.maps.Map(document.getElementById('gmap_{uid}'),
-	mapOptions);
+			map_{result.uid} = new google.maps.Map(document.getElementById('gmap_{result.uid}'),
+			mapOptions);
 
-	<![CDATA[var marker = new google.maps.Marker({]]>
-		position: myLatLng_{uid},
-		map: map_{uid}
-	 <![CDATA[});]]>
-}
+			<![CDATA[var marker = new google.maps.Marker({]]>
+				position: myLatLng_{result.uid},
+				map: map_{result.uid}
+			 <![CDATA[});]]>
+		}
 
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-
-<div id="gmap_{uid}" class="mh_directory_gmap"></div>
+		google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+		<div id="gmap_{result.uid}" class="mh_directory_gmap"></div>
+	</div>
+</f:if>
