@@ -1,17 +1,15 @@
 # mh_directory
 The next step to "mh_branchenbuch"; a TYPO3-Extension
 
+[Community-Forum](http://forum.mh-dev.de/threads/13-mh_directory.html) - [ToDo-List](https://github.com/mhdev/mh_directory/wiki/ToDo-List)
+
 ## Features
 
 In the beginning the extension will only have some basic features but i promise that it will be at least have ALL features which mh_branchenbuch has and much more!
 
-General ToDo-List
-* Add types for the entries: So you can add different types with different modes for example "Entry S" where the customer can not upload a image or set the link to facebook or twitter and so on ...
-* to be continued ...
-
 ### LIST-Function
 
-It shows a 3-way-wizard for entries. You can categorize the entries in 3 "location"-groups. Federal States, Administrative Districts and Cities. 
+It shows a 3-Way-System for entries. You can categorize the entries in 3 "location"-groups. Federal States, Administrative Districts and Cities. 
 
 #### Step 1 
 List of Federal States
@@ -39,13 +37,7 @@ If a user clicks the button for website, twitter or facebook, he will be redirec
 * list_redirecting_time: The time in miliseconds when the user should be redirecting on the "Outgoing"-Page if a user clicks on the button for website, twitter or facebook
 * list_mail_required: insert here the required fields for the contact form of a entry (key == name of the input)
 
-#### ToDo
-Currently ToDo-List for the List-Function
-* Add GoogleMaps
-* Add detail-page for entry
-* Add broadcrump for navigation
-* Add stats for clicks in the "Redirection"-Page
-* Add stats for views and clicks on a entry
+All values can be modified in the constant editor!
 
 ### Backend-Module
 
@@ -54,8 +46,6 @@ All entries can be modified and added in the default backend of TYPO3. I tried t
 
 There is also a backend module available but currently it is empty.
 
-#### ToDo
-Currently ToDo-List for the Backend-Module
-* Import-Function for the "mh_branchenbuch"-Extension
+[Community-Forum](http://forum.mh-dev.de/threads/13-mh_directory.html) - [ToDo-List](https://github.com/mhdev/mh_directory/wiki/ToDo-List)
 
 
