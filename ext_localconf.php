@@ -9,10 +9,12 @@ if (!defined('TYPO3_MODE')) {
 	array(
 		'List' => 'index,detail,out,mail',
 		'All' => 'index,detail',
+		'Alphabetical' => 'index,detail',
 	),
 	array(
 		'List' => 'index,detail,out,mail',
 		'All' => 'index,detail',
+		'Alphabetical' => 'index,detail',
 	)
 );
 

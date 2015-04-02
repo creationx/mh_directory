@@ -2,53 +2,7 @@
 namespace mhdev\MhDirectory\Controller;
 
 class ListController 
-	extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
-
-	public $contentObj;
-
-	/**
-	 * entryRepository
-	 *
-	 * @var \mhdev\MhDirectory\Domain\Repository\EntriesRepository
-	 * @inject
-	 */
-	protected $entryRepository;
-
-	/**
-	 * stateRepository
-	 *
-	 * @var \mhdev\MhDirectory\Domain\Repository\StateRepository
-	 * @inject
-	 */
-	protected $stateRepository;
-
-	/**
-	 * districtRepository
-	 *
-	 * @var \mhdev\MhDirectory\Domain\Repository\DistrictRepository
-	 * @inject
-	 */
-	protected $districtRepository;
-
-	/**
-	 * cityRepository
-	 *
-	 * @var \mhdev\MhDirectory\Domain\Repository\CityRepository
-	 * @inject
-	 */
-	protected $cityRepository;
-
-	/**
-	 * typeRepository
-	 *
-	 * @var \mhdev\MhDirectory\Domain\Repository\TypeRepository
-	 * @inject
-	 */
-	protected $typeRepository;
-
-	public function initializeAction() {
-		$this->contentObj = $this->configurationManager->getContentObject();
-	}
+	extends ActionController {
 
 	public function indexAction() {
 		$aRequest		= $this->request->getArguments();
@@ -396,49 +350,6 @@ class ListController
 				break;
 		}
 
-		return $aOutput;
-	}
-
-	/**
-	*	Generate Array for Google Map POI's
-	*	@param object $oEntries
-	*/
-	public function generateGMapPois($oEntries) {
-		$aLocations = array();
-		if(count($oEntries) > 0) {
-			foreach($oEntries AS $oEntry) {
-				$aLocations[] = array(
-					"" . $oEntry->getCompany() . "",
-					$oEntry->getMapLat(),
-					$oEntry->getMapLng()
-				);
-			}
-		}
-
-		return json_encode($aLocations);
-	}
-
-	public function getTypeOptions($iValue) {
-		$aOptions 	= array(
-			0 => "detail", 
-			1 => "twitter", 
-			2 => "facebook", 
-			3 => "description", 
-			4 => "map", 
-			5 => "mail", 
-			6 => "link",
-			7 => "address",
-			8 => "contact",
-			9 => "custom1",
-			10 => "custom2",
-			11 => "custom3"
-		);
-		$aOutput 	= array();
-		for ($i=0; $i<(count($aOptions)-1); $i++) {
-			if (($iValue >> $i) & 1) {
-				$aOutput[] = $aOptions[$i];
-			}
-		}
 		return $aOutput;
 	}
 }

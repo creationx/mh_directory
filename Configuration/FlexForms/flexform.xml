@@ -13,7 +13,7 @@
 
     <switchableControllerActions>
         <TCEforms>
-            <label>Ansicht</label>
+            <label>LLL:EXT:mh_directory/Resources/Private/Language/locallang_mod.xlf:flexform_view</label>
             <onChange>reload</onChange>
             <config>
                 <type>select</type>
@@ -25,6 +25,10 @@
                     <numIndex index="2" type="array">
                         <numIndex index="0">All</numIndex>
                         <numIndex index="1">All->index;All->detail</numIndex>
+                    </numIndex>
+                    <numIndex index="3" type="array">
+                        <numIndex index="0">Alphabetical</numIndex>
+                        <numIndex index="1">Alphabetical->index;Alphabetical->detail</numIndex>
                     </numIndex>
                 </items>
             </config>

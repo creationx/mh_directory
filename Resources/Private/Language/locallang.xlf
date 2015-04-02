@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <xliff version="1.0">
      <file source-language="en" datatype="plaintext" original="messages" date="2011-10-18T18:20:51Z" product-name="tx_mhdirectory">
              <header/>
              <body>                
-                     <trans-unit id="tx_mhdirectory_domain_model_entries" xml:space="preserve">
+                     <trans-unit id="tx_mhdirectory_domain_model_entries" xml:space="preserve" approved="yes">
                              <source>MH-Directory</source>
-                     </trans-unit>                     
+                     <target state="signed-off">MH-Directory</target></trans-unit>                     
                      <trans-unit id="tx_mhdirectory_domain_model_entries.tab_general" xml:space="preserve">
                              <source>General</source>
-                     </trans-unit>                     
+                     <target></target></trans-unit>                     
                      <trans-unit id="tx_mhdirectory_domain_model_entries.tab_address" xml:space="preserve">
                              <source>Address &amp; Contact</source>
-                     </trans-unit>                     
+                     <target></target></trans-unit>                     
                      <trans-unit id="tx_mhdirectory_domain_model_entries.tab_social" xml:space="preserve">
                              <source>Social &amp; Geo-Location</source>
                      </trans-unit>                     
@@ -494,6 +494,18 @@
 
                     <trans-unit id="list_row_mobile" xml:space="preserve">
                         <source>Mobile</source>
+                    </trans-unit>
+
+                    <trans-unit id="alphabetical_menu_home" xml:space="preserve">
+                        <source>ABC</source>
+                    </trans-unit>
+
+                    <trans-unit id="alphabetical_choose" xml:space="preserve">
+                        <source>Please choose a letter from the menu above.</source>
+                    </trans-unit>
+
+                    <trans-unit id="details_back" xml:space="preserve">
+                        <source>Back</source>
                     </trans-unit>
              </body>
      </file>

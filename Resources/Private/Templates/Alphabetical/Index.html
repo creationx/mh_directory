@@ -1,0 +1,25 @@
+{namespace mhdev=Tx_MhDirectory_ViewHelpers}
+
+
+<f:layout name="frontend" />
+<f:section name="content">
+	
+	<ul class="alphabetical_menu">
+		<li><f:translate key="alphabetical_menu_home" /></li>
+		<f:if condition="{menu}">
+			<f:for each="{menu}" as="row">
+				<li rel="letter_li_{row}" <f:if condition="{mhdev:obj(obj: result, prob: row) -> f:count()} == 0"> class="empty"</f:if>>{row}</li>
+			</f:for>
+		</f:if>
+	</ul>
+
+	<div class="letter_choose"><f:translate key="alphabetical_choose" /></div>
+	
+	<f:if condition="{result}">
+		<f:for each="{result}" as="row" key="char">
+			<div class="letter_{char} letter_entries">
+					<f:render partial="Entry" arguments="{result: row}"/>
+			</div>
+		</f:for>
+	</f:if>
+</f:section>

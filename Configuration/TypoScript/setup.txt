@@ -29,6 +29,8 @@ plugin.tx_mhdirectory {
 		breadcrumb = {$plugin.tx_mhdirectory.settings.breadcrumb}
 
 		entry_description_crop = {$plugin.tx_mhdirectory.settings.entry_description_crop}
+		
+		alphabetical_index = {$plugin.tx_mhdirectory.settings.alphabetical_index}
 	}
 }
 

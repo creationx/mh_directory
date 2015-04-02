@@ -49,5 +49,8 @@ plugin.tx_mhdirectory {
 
 		# cat=plugin.tx_mhdirectory//e; type=int; label=Description-Crop: Crop after X Chars in the overview
 		entry_description_crop = 150
+
+		# cat=plugin.tx_mhdirectory//f; type=string; label=Alphabetical-Menu Index: Define here the database field in which the entries should be assigned to the letters (company,name_intern,city,custom1,custom2,custom3)
+		alphabetical_index = company
 	}
 }

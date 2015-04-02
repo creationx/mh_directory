@@ -18,6 +18,9 @@
                 <trans-unit id="flexform_category" xml:space="preserve">
                     <source>Category</source>
                 </trans-unit>
+                <trans-unit id="flexform_view" xml:space="preserve">
+                    <source>View</source>
+                </trans-unit>
                 <trans-unit id="flexforms_tab.settings" xml:space="preserve">
                     <source>Settings</source>
                 </trans-unit>

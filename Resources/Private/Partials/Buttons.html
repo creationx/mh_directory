@@ -3,7 +3,13 @@
 <ul class="buttons">
 	<f:if condition="{mhdev:Type(entry:result, key: 'detail')}">
 		<f:if condition="{detail}==1">
-			<f:then></f:then>
+			<f:then>
+				<f:if condition="{from}">
+					<li>
+						<f:link.action class="detail_link" action="index" controller="{from}"><i class="fa fa-angle-double-left"></i> <f:translate key="details_back" /></f:link.action>
+					</li>
+				</f:if>
+			</f:then>
 			<f:else>
 				<li>
 					<f:link.action class="detail_link" action="detail" arguments="{uid: result.uid}"><i class="fa fa-search"></i> <f:translate key="list_details" /></f:link.action>
@@ -15,7 +21,7 @@
 	<f:if condition="{mhdev:Type(entry:result, key: 'link')}">
 		<f:if condition="{result.link}">
 			<li>
-				<f:link.action action="out" arguments="{uid: result.uid, key: 'link'}">
+				<f:link.action action="out" controller="List" arguments="{uid: result.uid, key: 'link'}">
 					<i class="fa fa-home"></i>&nbsp;<f:translate key="list_button_home" />
 				</f:link.action>
 			</li>
@@ -25,7 +31,7 @@
 	<f:if condition="{mhdev:Type(entry:result, key: 'mail')}">
 		<f:if condition="{result.mail}">
 			<li>
-				<f:link.action action="mail" arguments="{uid: result.uid}">
+				<f:link.action action="mail" controller="List" arguments="{uid: result.uid}">
 					<i class="fa fa-envelope-o"></i>&nbsp;<f:translate key="list_button_mail" />
 				</f:link.action>
 			</li>
@@ -35,7 +41,7 @@
 	<f:if condition="{mhdev:Type(entry:result, key: 'twitter')}">
 		<f:if condition="{result.twitter}">
 			<li>
-				<f:link.action action="out" arguments="{uid: result.uid, key: 'twitter'}">
+				<f:link.action action="out" controller="List" arguments="{uid: result.uid, key: 'twitter'}">
 					<i class="fa fa-twitter"></i>&nbsp;<f:translate key="list_button_twitter" />
 				</f:link.action>
 			</li>
@@ -45,7 +51,7 @@
 	<f:if condition="{mhdev:Type(entry:result, key: 'facebook')}">
 		<f:if condition="{result.facebook}">
 			<li>
-				<f:link.action action="out" arguments="{uid: result.uid, key: 'facebook'}">
+				<f:link.action action="out" controller="List" arguments="{uid: result.uid, key: 'facebook'}">
 					<i class="fa fa-facebook"></i>&nbsp;<f:translate key="list_button_facebook" />
 				</f:link.action>
 			</li>
