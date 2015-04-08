@@ -8,7 +8,14 @@
 			</f:if>
 
 			<div class="detail_entry entry_{result.uid} type_{result.relationType.uid}">
-				<h2>{result.company}</h2>
+				<h2>
+					{result.company} 
+					<f:if condition="{mhdev:Type(entry:result, key: 'opening')}">
+						<f:if condition="{settings.entry_opening_show_status}==1">
+							<mhdev:opening value="{result.opening}" opencheck="1" settings="{settings}" />
+						</f:if>
+					</f:if>
+				</h2>
 				
 				<f:if condition="{mhdev:Type(entry:result, key: 'image')}">
 					<f:if condition="{result.image}">
@@ -39,6 +46,10 @@
 
 				<f:if condition="{settings.googlemaps}=='1'">
 					<f:render partial="Map" arguments="{result:result, zoom: settings.googlemaps_zoom_detail}"/>
+				</f:if>
+
+				<f:if condition="{mhdev:Type(entry:result, key: 'opening')}">
+					<div class="inner_opening"><mhdev:opening value="{result.opening}" opencheck="0" settings="{settings}" /></div>
 				</f:if>
 
 				<br class="clear" />

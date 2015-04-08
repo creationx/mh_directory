@@ -31,6 +31,7 @@ CREATE TABLE tx_mhdirectory_domain_model_entries (
 	custom3 tinytext DEFAULT '' NOT NULL,
 	map_lng tinytext DEFAULT '' NOT NULL,
 	map_lat tinytext DEFAULT '' NOT NULL,
+	opening tinytext DEFAULT '' NOT NULL,
 	image blob,
 	description text DEFAULT '' NOT NULL,
 	last_calls tinytext DEFAULT '' NOT NULL,
@@ -263,4 +264,35 @@ CREATE TABLE tx_mhdirectory_domain_model_type (
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
 	KEY language (l10n_parent,sys_language_uid)
+);
+
+#
+# Table structure for table "tx_mhdirectory_domain_model_backend"
+#
+CREATE TABLE tx_mhdirectory_domain_model_backend (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+
+	relations_federal text,
+	relations_administrative text,
+	relations_cities text,
+	relations_entries text,
+	import_status text,
+
+	finished tinyint(1) DEFAULT '0' NOT NULL,
+
+	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
+	crdate int(11) unsigned DEFAULT '0' NOT NULL,
+	cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
+	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
+	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
+	starttime int(11) unsigned DEFAULT '0' NOT NULL,
+	endtime int(11) unsigned DEFAULT '0' NOT NULL,
+
+	sorting int(11) DEFAULT '0' NOT NULL,
+	t3_origuid int(11) DEFAULT '0' NOT NULL,
+	sys_language_uid int(11) DEFAULT '0' NOT NULL,
+
+	PRIMARY KEY (uid),
+	KEY parent (pid)
 );

@@ -104,6 +104,9 @@
                      </trans-unit>                     
                      <trans-unit id="tx_mhdirectory_domain_model_entries.map_lat" xml:space="preserve">
                              <source>Latitude</source>
+                     </trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.opening" xml:space="preserve">
+                             <source>Opening hours</source>
                      </trans-unit>
                      <trans-unit id="tx_mhdirectory_domain_model_entries.image" xml:space="preserve">
                              <source>Images</source>
@@ -506,6 +509,106 @@
 
                     <trans-unit id="details_back" xml:space="preserve">
                         <source>Back</source>
+                    </trans-unit>
+
+                    <trans-unit id="backend_dashboard_views_container" xml:space="preserve">
+                        <source>Top entries by views</source>
+                    </trans-unit>
+
+                    <trans-unit id="backend_dashboard_clicks_container" xml:space="preserve">
+                        <source>Top entries by clicks</source>
+                    </trans-unit>
+
+                    <trans-unit id="backend_dashboard_links_container" xml:space="preserve">
+                        <source>Top entries by Link-Clicks</source>
+                    </trans-unit>
+
+                    <trans-unit id="backend_dashboard_twitter_container" xml:space="preserve">
+                        <source>Top entries by Twitter-Clicks</source>
+                    </trans-unit>
+
+                    <trans-unit id="backend_dashboard_facebook_container" xml:space="preserve">
+                        <source>Top entries by Facebook-Clicks</source>
+                    </trans-unit>
+
+                    <trans-unit id="backend_headline_import" xml:space="preserve">
+                        <source>Import</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_clock_suffix_am" xml:space="preserve">
+                        <source>AM</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_clock_suffix_pm" xml:space="preserve">
+                        <source>PM</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_closed" xml:space="preserve">
+                        <source>closed</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_mon" xml:space="preserve">
+                        <source>Monday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_tue" xml:space="preserve">
+                        <source>Tuesday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_wed" xml:space="preserve">
+                        <source>Wednesday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_thu" xml:space="preserve">
+                        <source>Thursday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_fri" xml:space="preserve">
+                        <source>Friday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_sat" xml:space="preserve">
+                        <source>Saturday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_sun" xml:space="preserve">
+                        <source>Sunday</source>
+                    </trans-unit>                    
+
+                    <trans-unit id="opening_hours_day_mo" xml:space="preserve">
+                        <source>Monday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_di" xml:space="preserve">
+                        <source>Tuesday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_mi" xml:space="preserve">
+                        <source>Wednesday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_do" xml:space="preserve">
+                        <source>Thursday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_fr" xml:space="preserve">
+                        <source>Friday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_sa" xml:space="preserve">
+                        <source>Saturday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_day_so" xml:space="preserve">
+                        <source>Sunday</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_status_open" xml:space="preserve">
+                        <source>Open</source>
+                    </trans-unit>
+
+                    <trans-unit id="opening_hours_status_closed" xml:space="preserve">
+                        <source>Closed</source>
                     </trans-unit>
              </body>
      </file>

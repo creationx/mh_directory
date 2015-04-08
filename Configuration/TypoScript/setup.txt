@@ -29,9 +29,16 @@ plugin.tx_mhdirectory {
 		breadcrumb = {$plugin.tx_mhdirectory.settings.breadcrumb}
 
 		entry_description_crop = {$plugin.tx_mhdirectory.settings.entry_description_crop}
+		entry_opening_hide_closed = {$plugin.tx_mhdirectory.settings.entry_opening_hide_closed}
+		entry_opening_show_status = {$plugin.tx_mhdirectory.settings.entry_opening_show_status}
 		
 		alphabetical_index = {$plugin.tx_mhdirectory.settings.alphabetical_index}
 	}
+}
+
+
+module.tx_mhdirectory {
+
 }
 
 page.includeCSS.tx_mhdirectory_fontawesome = EXT:mh_directory/Resources/Public/Css/font-awesome.min.css

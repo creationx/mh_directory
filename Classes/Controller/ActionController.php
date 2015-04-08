@@ -99,18 +99,20 @@ class ActionController
 	*/
 	public function getTypeOptions($iValue) {
 		$aOptions 	= array(
-			0 => "detail", 
-			1 => "twitter", 
-			2 => "facebook", 
-			3 => "description", 
-			4 => "map", 
-			5 => "mail", 
-			6 => "link",
-			7 => "address",
-			8 => "contact",
-			9 => "custom1",
-			10 => "custom2",
-			11 => "custom3"
+			0 => "detail",
+			1 => "image",
+			2 => "twitter", 
+			3 => "facebook", 
+			4 => "description", 
+			5 => "map", 
+			6 => "mail", 
+			7 => "link",
+			8 => "address",
+			9 => "contact",
+			10 => "custom1",
+			11 => "custom2",
+			12 => "custom3",
+			13 => "opening"
 		);
 		$aOutput 	= array();
 		for ($i=0; $i<(count($aOptions)-1); $i++) {

@@ -20,7 +20,7 @@ $pluginSignature = $extensionName.'_'.$pluginName;
     'management',
     '',
     array(
-        'Backend' => 'index',
+        'Backend' => 'index,import',
     ),
     array(
         'access' => 'user,group',

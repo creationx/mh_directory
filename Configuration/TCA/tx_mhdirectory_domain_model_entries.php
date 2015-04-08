@@ -25,7 +25,7 @@ return array(
         'searchFields' => 'name_intern, company, lastname'
     ),
     'interface' => array(
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name_intern, company, forename, middlename, lastname, address, zip, city, phone, mobile, fax, link, mail, twitter, facebook, custom1, custom2, custom3, map_lng, map_lat, image, description, count_clicks, count_views',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name_intern, company, forename, middlename, lastname, address, zip, city, phone, mobile, fax, link, mail, twitter, facebook, custom1, custom2, custom3, map_lng, map_lat, opening, image, description, count_clicks, count_views',
     ),
     'columns' => array(
         'hidden'   => array(
@@ -344,6 +344,15 @@ return array(
                 'cols' => 40,
                 'rows' => 15
             ),
+        ),   
+        'opening'   => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.opening',
+            'config' => array(
+                'type' => 'text',
+                'cols' => 40,
+                'rows' => 15
+            ),
         ), 
         'count_clicks'   => array(
             'exclude' => 0,
@@ -407,7 +416,7 @@ return array(
         'showitem' => '--div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_general,
                         hidden, relation_type,--palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_relations;3,name_intern, company, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_name;1, image, description,
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_address,
-                        address, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_city;2, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_phone;4, link, mail, 
+                        address, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_city;2, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_phone;4, opening, link, mail, 
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_social,
                         twitter, facebook, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_geo;5, 
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_categories,

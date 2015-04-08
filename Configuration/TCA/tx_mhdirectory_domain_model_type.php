@@ -74,6 +74,7 @@ return array(
                     array('Custom 1', ''),
                     array('Custom 2', ''),
                     array('Custom 3', ''),
+                    array('Opening hours', ''),
                 ),
             ),
         ),        

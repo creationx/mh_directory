@@ -37,4 +37,23 @@ class EntriesRepository
 
     	return $query->execute();
 	}
+
+    /**
+     * Get entries ordered by views and a limit of 10
+     *
+     * @param string $sOrderBy
+     *
+     * @return mhdev\MhDirectory\Domain\Repository $query
+     */
+	public function getStats($sOrderBy) {
+		$query 	= $this->createQuery();
+
+		$aOrder = array();
+		$aOrder[$sOrderBy] = \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING;
+		
+		$query->setOrderings($aOrder);
+		$query->setLimit(10);
+
+		return $query->execute();
+	}
 }

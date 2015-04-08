@@ -1,0 +1,61 @@
+<f:layout name="default" />
+<f:section name="main">
+    <h1><f:translate key="backend_headline_import" /></h1>
+    <p>You can here import your old mh_branchenbuch stuff in to the new extension!</p>
+    <f:flashMessages renderMode="div" />
+
+
+    <f:if condition="{valid}">
+    	<f:then>
+    		<ul class="tables">
+    		<f:for each="{result}" as="row">
+    			<li>{row.name} (<strong>{row.count} row(s) found</strong>)</li>
+    		</f:for>
+    		</ul>
+    		<f:form action="import" name="import">
+                <f:form.textfield property="storagePid" size="7" placeholder="StoragePid" />
+ 		        <f:form.submit name="preview" value="Preview import" />
+		        <f:form.submit name="submit" value="Import now!" />
+		    </f:form>
+    	</f:then>
+    </f:if>
+
+    <f:if condition="{imports}">
+        <h2>Latest Imports</h2>
+        <table class="import_latest">
+            <tr><th>ID</th><th>Status</th><th>Relations</th><th>Date</th><th>Finished?</th><th></th></tr>
+            <f:for each="{imports}" as="row">
+                <tr>
+                    <td>{row.uid}</td>
+                    <td>{row.importStatus}</td>
+                    <td>
+                        <f:if condition="{row.relationsFederal}"><f:then>1</f:then><f:else>0</f:else></f:if>/
+                        <f:if condition="{row.relationsAdministrative}"><f:then>1</f:then><f:else>0</f:else></f:if>/
+                        <f:if condition="{row.relationsCities}"><f:then>1</f:then><f:else>0</f:else></f:if>/
+                        <f:if condition="{row.relationsEntries}"><f:then>1</f:then><f:else>0</f:else></f:if>
+                    </td>
+                    <td>{row.tstamp}</td>
+                    <td><f:if condition="{row.finished}==0"><f:then>N</f:then><f:else>Y</f:else></f:if></td>
+                    <td></td>
+                </tr>
+             </f:for>
+        </table>
+    </f:if>
+
+    <f:if condition="{preview}">
+        <h2>Preview</h2>
+    	<f:for each="{importResult.result}" key="type" as="entries">
+    		<table class="import_preview">
+    			<tr><th colspan="3">{type}</th></tr>
+    			<tr><th>ID</th><th>REL</th><th>NAME</th></tr>
+    			<f:for each="{entries}" as="row">
+    				<tr>
+    					<td>{row.new_uid}</td>
+    					<td>{row.relation_federal} {row.relation_district} {row.relation_city}</td>
+    					<td>{row.name}</td>
+    				</tr>
+    			</f:for>
+    		</table>
+    	</f:for>
+	</f:if>
+</f:section>

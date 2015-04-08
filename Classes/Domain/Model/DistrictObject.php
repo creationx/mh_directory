@@ -62,14 +62,14 @@ class DistrictObject extends AbstractEntity {
 
 
     public function __construct() {
-        $this->initalizeObjectStorages();
+        $this->initializeObjectStorages();
     }
  
     /**
      * initialize object storages
      */
     public function initializeObjectStorages() {
-        $this->relationState = new ObjectStorage();
+        $this->relationState = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -84,7 +84,7 @@ class DistrictObject extends AbstractEntity {
             return $this->relationState->current();
         }
         return $this->relationState;
-    }    
+    } 
 
     /**
      * Gets the Title for internal use.
@@ -256,6 +256,20 @@ class DistrictObject extends AbstractEntity {
     public function setCountViews($count_views)
     {
         $this->countViews = $count_views;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of relationState.
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\State> $relationState the relation state
+     *
+     * @return self
+     */
+    public function setRelationState(State $relationState)
+    {
+        $this->relationState = $relationState;
 
         return $this;
     }

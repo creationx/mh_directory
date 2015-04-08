@@ -12,7 +12,15 @@
 				</f:if>	
 
 				<div class="inner">
-					<h2>{row.company}</h2>
+					<h2>
+						{row.company} 
+
+						<f:if condition="{mhdev:Type(entry:row, key: 'opening')}">
+							<f:if condition="{settings.entry_opening_show_status}==1">
+								<mhdev:opening value="{row.opening}" opencheck="1" settings="{settings}" />
+							</f:if>
+						</f:if>
+					</h2>
 
 					<f:if condition="{mhdev:Type(entry:row, key: 'address')}">
 						<p class="address">

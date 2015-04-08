@@ -13,44 +13,52 @@ plugin.tx_mhdirectory {
 	}
 
 	settings {
-		# cat=plugin.tx_mhdirectory//a; type=boolean; label=Number of Entries: Show the amount of entries behind a Category
+		# cat=plugin.tx_mhdirectory//10; type=boolean; label=Number of Entries: Show the amount of entries behind a Category
 		list_show_number_of_entries = 1
 
-		# cat=plugin.tx_mhdirectory//b; type=boolean; label=Hide empty categories
+		# cat=plugin.tx_mhdirectory//20; type=boolean; label=Hide empty categories
 		list_hide_empty = 0
 
-		# cat=plugin.tx_mhdirectory//c; type=int+; label=Redirection-Time (Miliseconds): Amount of time when a user will be redirected, after he clicked on the link, twitter or facebook button (out-page)
+		# cat=plugin.tx_mhdirectory//30; type=int+; label=Redirection-Time (Miliseconds): Amount of time when a user will be redirected, after he clicked on the link, twitter or facebook button (out-page)
 		list_redirecting_time = 5000
 
-		# cat=plugin.tx_mhdirectory//d; type=string; label=Required Form-Fields: Comma seperated list with all fields which are required
+		# cat=plugin.tx_mhdirectory//40; type=string; label=Required Form-Fields: Comma seperated list with all fields which are required
 		list_mail_required = list_form_name,list_form_mail,list_form_text
 
-		# cat=plugin.tx_mhdirectory//k; type=boolean; label=ReCaptcha: Enable ReCaptcha
-		recaptcha = 0
+		# cat=plugin.tx_mhdirectory//50; type=int; label=Description-Crop: Crop after X Chars in the overview
+		entry_description_crop = 150		
 
-		# cat=plugin.tx_mhdirectory//l; type=string; label=ReCaptcha Public-Key
-		recaptcha_public = 
+		# cat=plugin.tx_mhdirectory//60; type=boolean; label=Hide closed: Hide the days where are closed in the opening hours
+		entry_opening_hide_closed = 0
 
-		# cat=plugin.tx_mhdirectory//m; type=string; label=ReCaptcha Private-Key
-		recaptcha_private = 
+		# cat=plugin.tx_mhdirectory//61; type=boolean; label=Show Open/Closed-Status: Display in the company title if its open or closed for business depends on opening hours!
+		entry_opening_show_status = 1
 
-		# cat=plugin.tx_mhdirectory//g; type=boolean; label=GoogleMaps: Enable GoogleMaps
-		googlemaps = 1
-
-		# cat=plugin.tx_mhdirectory//h; type=int; label=Zoom Detail: Zoom-Value for the detail view
-		googlemaps_zoom_detail = 16
-		# cat=plugin.tx_mhdirectory//i; type=int; label=Zoom Detail: Zoom-Value for the categories 
-		googlemaps_zoom_list = 10
-		# cat=plugin.tx_mhdirectory//j; type=int; label=Zoom List Entry: Zoom-Value for the entries in the list
-		googlemaps_zoom_list_entry = 16
-
-		# cat=plugin.tx_mhdirectory//f; type=boolean; label=Breadcrumb: Enable Breadcrumb
+		# cat=plugin.tx_mhdirectory//70; type=boolean; label=Breadcrumb: Enable Breadcrumb
 		breadcrumb = 1
 
-		# cat=plugin.tx_mhdirectory//e; type=int; label=Description-Crop: Crop after X Chars in the overview
-		entry_description_crop = 150
-
-		# cat=plugin.tx_mhdirectory//f; type=string; label=Alphabetical-Menu Index: Define here the database field in which the entries should be assigned to the letters (company,name_intern,city,custom1,custom2,custom3)
+		# cat=plugin.tx_mhdirectory//80; type=string; label=Alphabetical-Menu Index: Define here the database field in which the entries should be assigned to the letters (company,name_intern,city,custom1,custom2,custom3)
 		alphabetical_index = company
+
+		# cat=plugin.tx_mhdirectory//90; type=boolean; label=GoogleMaps: Enable GoogleMaps
+		googlemaps = 1
+
+		# cat=plugin.tx_mhdirectory//100; type=int; label=Zoom Detail: Zoom-Value for the detail view
+		googlemaps_zoom_detail = 16
+
+		# cat=plugin.tx_mhdirectory//110; type=int; label=Zoom Detail: Zoom-Value for the categories 
+		googlemaps_zoom_list = 10
+
+		# cat=plugin.tx_mhdirectory//120; type=int; label=Zoom List Entry: Zoom-Value for the entries in the list
+		googlemaps_zoom_list_entry = 16
+		
+		# cat=plugin.tx_mhdirectory//130; type=boolean; label=ReCaptcha: Enable ReCaptcha
+		recaptcha = 0
+
+		# cat=plugin.tx_mhdirectory//140; type=string; label=ReCaptcha Public-Key
+		recaptcha_public = 
+
+		# cat=plugin.tx_mhdirectory//150; type=string; label=ReCaptcha Private-Key
+		recaptcha_private = 
 	}
 }

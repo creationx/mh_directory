@@ -2,9 +2,9 @@
 
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'MH-Directory',
-	'description' => '',
+	'description' => 'Next-Generation of mh_branchenbuch. Generate a powerfull directory for your needs! Import old entries from mh_branchenbuch; Alphabetical-Menu; List-Function; Country-Based-List (Federal State, Administrative District, City); Define your own types for every Entry (Enable or disable features) and much more ... active development on GitHub!',
 	'category' => 'plugin',
-	'version' => '0.5.2',
+	'version' => '0.6.0',
 	'state' => 'beta',
 	'uploadfolder' => 1,
 	'createDirs' => 'uploads/tx_mhdirectory',

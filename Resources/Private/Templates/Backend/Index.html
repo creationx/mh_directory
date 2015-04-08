@@ -1,5 +1,67 @@
-
+<f:layout name="default" />
 <f:section name="main">
     <h1><f:translate key="backend_headline_dashboard" /></h1>
-        Currently here is nothing .-)
+    <p></p>
+    <f:flashMessages renderMode="div" />
+
+    <f:if condition="{views}">
+    	<div class="container views">
+    		<h3><f:translate key="backend_dashboard_views_container" /></h3>
+    		<ul>
+	    		<f:for each="{views}" as="entry">
+	    			<li><f:format.crop maxCharacters="50">{entry.company}</f:format.crop> ({entry.uid}) <span>{entry.countViews}</span></li>
+	    		</f:for>
+	    	</ul>
+    	</div>
+	</f:if>
+
+	<f:if condition="{clicks}">
+    	<div class="container clicks">
+    		<h3><f:translate key="backend_dashboard_clicks_container" /></h3>
+    		<ul>
+	    		<f:for each="{clicks}" as="entry">
+	    			<li><f:format.crop maxCharacters="50">{entry.company}</f:format.crop> ({entry.uid}) <span>{entry.countClicks}</span></li>
+	    		</f:for>
+	    	</ul>
+    	</div>
+	</f:if>
+	
+	<f:if condition="{links}">
+    	<div class="container links">
+    		<h3><f:translate key="backend_dashboard_links_container" /></h3>
+    		<ul>
+	    		<f:for each="{links}" as="entry">
+	    			<li><f:format.crop maxCharacters="50">{entry.company}</f:format.crop> ({entry.uid}) <span>{entry.countLink}</span></li>
+	    		</f:for>
+	    	</ul>
+    	</div>
+	</f:if>	
+
+	<f:if condition="{twitter}">
+    	<div class="container twitter">
+    		<h3><f:translate key="backend_dashboard_twitter_container" /></h3>
+    		<ul>
+	    		<f:for each="{twitter}" as="entry">
+	    			<li><f:format.crop maxCharacters="50">{entry.company}</f:format.crop> ({entry.uid}) <span>{entry.countTwitter}</span></li>
+	    		</f:for>
+	    	</ul>
+    	</div>
+	</f:if>	
+
+	<f:if condition="{facebook}">
+    	<div class="container facebook">
+    		<h3><f:translate key="backend_dashboard_facebook_container" /></h3>
+    		<ul>
+	    		<f:for each="{facebook}" as="entry">
+	    			<li><f:format.crop maxCharacters="50">{entry.company}</f:format.crop> ({entry.uid}) <span>{entry.countFacebook}</span></li>
+	    		</f:for>
+	    	</ul>
+    	</div>
+	</f:if>
+
+	<br class="clear" />
+
+	<p>
+		Need help? Visit the <a href="http://forum.mh-dev.de" target="_blank">forum</a>. Did you found any bug or think that your idea should be implemented in this Extension, then write a <a href="https://github.com/mhdev/mh_directory/issues" target="_blank">ISSUE on Github</a>.
+	</p>
 </f:section>

@@ -58,11 +58,20 @@ div.tx_mhdirectory > div.entry.type_1 {
 	border-bottom: 1px solid #ddd;
 }
 
-
 	div.tx_mhdirectory > div.entry h2 {
 		margin: 0px;
 		padding: 5px 0px;
 	}
+
+		div.tx_mhdirectory span.opening_hours_status.closed { 
+			background-color: red;
+			color: white;
+		}
+
+		div.tx_mhdirectory span.opening_hours_status.open { 
+			background-color: green;
+			color: white;
+		}
 
 	div.tx_mhdirectory > div.letter_entries > div.entry > div.inner_image, 
 	div.tx_mhdirectory > div.entry > div.inner_image,
@@ -82,13 +91,17 @@ div.tx_mhdirectory > div.entry.type_1 {
 
 	div.tx_mhdirectory > div.letter_entries > div.entry > div.inner_map, 
 	div.tx_mhdirectory > div.entry > div.inner_map, 
-	div.tx_mhdirectory > div.detail_entry > div.inner_map {
+	div.tx_mhdirectory > div.detail_entry > div.inner_map,
+	div.tx_mhdirectory div.inner_opening {
 		float: right;
 		width: 40%;
 		border-left: 2px solid #ddd;
+		border-right: 2px solid #ddd;
 		border-bottom: 2px solid #ddd;
-		border-radius: 5px;
+		border-radius: 3px;
 	}
+
+	div.tx_mhdirectory div.inner_opening { background-color: #f5f5f5; padding: 10px; }
 
 		div.inner_map > div.mh_directory_gmap {
 			min-height: 200px;
@@ -117,7 +130,22 @@ div.tx_mhdirectory > div.entry.type_1 {
 				background-color:#ddd;
 			}
 
+	div.tx_mhdirectory dl.opening_hours { 
+		position: relative;
+		font-size:12px;
+	}
 
+	div.tx_mhdirectory dl.opening_hours:before {
+	    position:absolute;
+	    font-family: "FontAwesome";
+	    top:0px;
+	    right: 10px;
+	    font-size: 100px;
+	    opacity: 0.3;
+	    content: "\f017";
+	}
+
+	div.tx_mhdirectory dl.opening_hours > dt, 
 	div.tx_mhdirectory dl.contact_form > dt {
 		clear: left;
 		float:left;
@@ -125,8 +153,15 @@ div.tx_mhdirectory > div.entry.type_1 {
 		padding: 5px;
 	}
 
+	div.tx_mhdirectory dl.opening_hours > dt { width: 80px; }
+
+	div.tx_mhdirectory dl.opening_hours > dd, 
 	div.tx_mhdirectory dl.contact_form > dd {
 		padding: 5px;
+	}
+
+	div.tx_mhdirectory dl.opening_hours > dd > span {
+		margin: 0px 5px;
 	}
 
 /* Alphabetical Menu */

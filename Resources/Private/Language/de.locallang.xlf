@@ -1,15 +1,615 @@
+<?xml version='1.0' encoding='utf-8'?>
 <xliff version="1.0">
-     <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2011-10-18T18:20:51Z" product-name="tx_mhdirectory">
+     <file source-language="en" datatype="plaintext" original="messages" date="2011-10-18T18:20:51Z" product-name="tx_mhdirectory">
              <header/>
-             <body>
-                     <trans-unit id="headerComment" xml:space="preserve">
-                             <source>The default Header Comment.</source>
-                             <target>Der Standard-Header-Kommentar.</target>
-                     </trans-unit>
-                     <trans-unit id="generator" xml:space="preserve">
-                             <source>The "Generator" Meta Tag.</source>
-                             <target>Der "Generator"-Meta-Tag.</target>
-                     </trans-unit>
+             <body>                
+                     <trans-unit id="tx_mhdirectory_domain_model_entries" xml:space="preserve" approved="yes">
+                             <source>MH-Directory</source>
+                     <target state="signed-off">MH-Directory</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_general" xml:space="preserve" approved="yes">
+                             <source>General</source>
+                     <target state="translated">Allgemein</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_address" xml:space="preserve" approved="yes">
+                             <source>Address &amp; Contact</source>
+                     <target state="translated">Adressen &amp; Kontakt</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_social" xml:space="preserve" approved="yes">
+                             <source>Social &amp; Geo-Location</source>
+                     <target state="translated">Soziales &amp; GEO-Positionen</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_custom" xml:space="preserve" approved="yes">
+                             <source>Custom Fields</source>
+                     <target state="translated">Benutzerdefinierte Felder</target></trans-unit>
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_categories" xml:space="preserve" approved="yes">
+                             <source>Categories</source>
+                     <target state="translated">Kategorien</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.palette_name" xml:space="preserve" approved="yes">
+                             <source>Name</source>
+                     <target state="translated">Name</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.palette_city" xml:space="preserve" approved="yes">
+                             <source>Location</source>
+                     <target state="translated">Standort</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.hidden" xml:space="preserve" approved="yes">
+                             <source>Hidden</source>
+                     <target state="translated">Versteckt</target></trans-unit>  
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.relation_state" xml:space="preserve" approved="yes">
+                             <source>Federal State</source>
+                     <target state="translated">Bundesland</target></trans-unit>  
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.relation_district" xml:space="preserve" approved="yes">
+                             <source>Administrative District</source>
+                     <target state="translated">Landkreis</target></trans-unit>  
+                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.relation_city" xml:space="preserve" approved="yes">
+                             <source>City</source>
+                     <target state="translated">Stadt</target></trans-unit>   
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.palette_relations" xml:space="preserve" approved="yes">
+                             <source>Location-Relation</source>
+                     <target state="translated">Standort-Relation</target></trans-unit>  
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.name_intern" xml:space="preserve" approved="yes">
+                             <source>Name (intern)</source>
+                     <target state="translated">Name (Intern)</target></trans-unit>
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.company" xml:space="preserve" approved="yes">
+                             <source>Company</source>
+                     <target state="translated">Firma</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.forename" xml:space="preserve" approved="yes">
+                             <source>Forename</source>
+                     <target state="translated">Vorname</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.middlename" xml:space="preserve" approved="yes">
+                             <source>Middlename</source>
+                     <target state="translated">Mittelname</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.lastname" xml:space="preserve" approved="yes">
+                             <source>Lastname</source>
+                     <target state="translated">Nachname</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.address" xml:space="preserve" approved="yes">
+                             <source>Address</source>
+                     <target state="translated">Adresse</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.zip" xml:space="preserve" approved="yes">
+                             <source>Zip</source>
+                     <target state="translated">PLZ</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.city" xml:space="preserve" approved="yes">
+                             <source>City</source>
+                     <target state="translated">Stadt</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.phone" xml:space="preserve" approved="yes">
+                             <source>Phone</source>
+                     <target state="translated">Telefon</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.fax" xml:space="preserve" approved="yes">
+                             <source>Fax</source>
+                     <target state="translated">Fax</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.link" xml:space="preserve" approved="yes">
+                             <source>Link</source>
+                     <target state="translated">Verweis</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.mail" xml:space="preserve" approved="yes">
+                             <source>Mail</source>
+                     <target state="translated">E-Mail</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.twitter" xml:space="preserve" approved="yes">
+                             <source>Twitter</source>
+                     <target state="translated">Twitter</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.facebook" xml:space="preserve" approved="yes">
+                             <source>Facebook</source>
+                     <target state="translated">Facebook</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.custom1" xml:space="preserve" approved="yes">
+                             <source>Custom 1</source>
+                     <target state="translated">Benutzerdef. Feld 1</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.custom2" xml:space="preserve" approved="yes">
+                             <source>Custom 2</source>
+                     <target state="translated">Benutzerdef. Feld 2</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.custom3" xml:space="preserve" approved="yes">
+                             <source>Custom 3</source>
+                     <target state="translated">Benutzerdef. Feld 3</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.map_lng" xml:space="preserve" approved="yes">
+                             <source>Longitude</source>
+                     <target state="translated">Längengrad</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.map_lat" xml:space="preserve" approved="yes">
+                             <source>Latitude</source>
+                     <target state="translated">Breitengrad</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.opening" xml:space="preserve" approved="yes">
+                             <source>Opening hours</source>
+                     <target state="translated">Öffnungszeiten</target></trans-unit>
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.image" xml:space="preserve" approved="yes">
+                             <source>Images</source>
+                     <target state="translated">Bilder</target></trans-unit>                     
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.description" xml:space="preserve" approved="yes">
+                             <source>Description</source>
+                     <target state="translated">Beschreibung</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_clicks" xml:space="preserve" approved="yes">
+                             <source>Clicks</source>
+                     <target state="translated">Klicks</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_views" xml:space="preserve" approved="yes">
+                             <source>Views</source>
+                     <target state="translated">Ansichten</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_link" xml:space="preserve" approved="yes">
+                             <source>Link-Clicks</source>
+                     <target state="translated">Verweis-Klicks</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_twitter" xml:space="preserve" approved="yes">
+                             <source>Twitter-Clicks</source>
+                     <target state="translated">Twitter-Klicks</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_facebook" xml:space="preserve" approved="yes">
+                             <source>Facebook-Clicks</source>
+                     <target state="translated">Facebook-Klicks</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.tab_stats" xml:space="preserve" approved="yes">
+                             <source>Statistics</source>
+                     <target state="translated">Statistiken</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_state" xml:space="preserve" approved="yes">
+                             <source>Federal State</source>
+                     <target state="translated">Bundesland</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_state.tab_general" xml:space="preserve" approved="yes">
+                             <source>General</source>
+                     <target state="translated">Allgemein</target></trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_state.hidden" xml:space="preserve" approved="yes">
+                        <source>Hidden</source>
+                    <target state="translated">Versteckt</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.name" xml:space="preserve" approved="yes">
+                        <source>Name</source>
+                    <target state="translated">Name</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.map_lng" xml:space="preserve" approved="yes">
+                        <source>Longitude</source>
+                    <target state="translated">Längengrad</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.map_lat" xml:space="preserve" approved="yes">
+                        <source>Latitude</source>
+                    <target state="translated">Breitengrad</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.image" xml:space="preserve" approved="yes">
+                        <source>Image</source>
+                    <target state="translated">Bilder</target></trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_state.description" xml:space="preserve" approved="yes">
+                        <source>Description</source>
+                    <target state="translated">Beschreibung</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.count_clicks" xml:space="preserve" approved="yes">
+                        <source>Clicks</source>
+                    <target state="translated">Klicks</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.count_views" xml:space="preserve" approved="yes">
+                        <source>Views</source>
+                    <target state="translated">Ansichten</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.tab_geo" xml:space="preserve" approved="yes">
+                        <source>GEO-Location</source>
+                    <target state="translated">GEO-Positionen</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_state.tab_stats" xml:space="preserve" approved="yes">
+                        <source>Statistics</source>
+                    <target state="translated">Statistiken</target></trans-unit>
+
+
+                     <trans-unit id="tx_mhdirectory_domain_model_district" xml:space="preserve" approved="yes">
+                             <source>Administrative District</source>
+                     <target state="translated">Landkreis</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_district.tab_general" xml:space="preserve" approved="yes">
+                             <source>General</source>
+                     <target state="translated">Allgemein</target></trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_district.hidden" xml:space="preserve" approved="yes">
+                        <source>Hidden</source>
+                    <target state="translated">Versteckt</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.relation_state" xml:space="preserve" approved="yes">
+                        <source>Federal State</source>
+                    <target state="translated">Bundesland</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.name" xml:space="preserve" approved="yes">
+                        <source>Name</source>
+                    <target state="translated">Name</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.map_lng" xml:space="preserve" approved="yes">
+                        <source>Longitude</source>
+                    <target state="translated">Längengrad</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.map_lat" xml:space="preserve" approved="yes">
+                        <source>Latitude</source>
+                    <target state="translated">Breitengrad</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.image" xml:space="preserve" approved="yes">
+                        <source>Image</source>
+                    <target state="translated">Bilder</target></trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_district.description" xml:space="preserve" approved="yes">
+                        <source>Description</source>
+                    <target state="translated">Beschreibung</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.count_clicks" xml:space="preserve" approved="yes">
+                        <source>Clicks</source>
+                    <target state="translated">Klicks</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.count_views" xml:space="preserve" approved="yes">
+                        <source>Views</source>
+                    <target state="translated">Ansichten</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.tab_geo" xml:space="preserve" approved="yes">
+                        <source>GEO-Location</source>
+                    <target state="translated">GEO-Positionen</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_district.tab_stats" xml:space="preserve" approved="yes">
+                        <source>Statistics</source>
+                    <target state="translated">Statistiken</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_city" xml:space="preserve" approved="yes">
+                             <source>City</source>
+                     <target state="translated">Stadt</target></trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_city.tab_general" xml:space="preserve" approved="yes">
+                             <source>General</source>
+                     <target state="translated">Allgemein</target></trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_city.hidden" xml:space="preserve" approved="yes">
+                        <source>Hidden</source>
+                    <target state="translated">Versteckt</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.relation_district" xml:space="preserve" approved="yes">
+                        <source>Administrative District</source>
+                    <target state="translated">Landkreis</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.name" xml:space="preserve" approved="yes">
+                        <source>Name</source>
+                    <target state="translated">Name</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.map_lng" xml:space="preserve" approved="yes">
+                        <source>Longitude</source>
+                    <target state="translated">Längengrad</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.map_lat" xml:space="preserve" approved="yes">
+                        <source>Latitude</source>
+                    <target state="translated">Breitengrad</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.image" xml:space="preserve" approved="yes">
+                        <source>Image</source>
+                    <target state="translated">Bilder</target></trans-unit>
+                    
+                    <trans-unit id="tx_mhdirectory_domain_model_city.description" xml:space="preserve" approved="yes">
+                        <source>Description</source>
+                    <target state="translated">Beschreibung</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.count_clicks" xml:space="preserve" approved="yes">
+                        <source>Clicks</source>
+                    <target state="translated">Klicks</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.count_views" xml:space="preserve" approved="yes">
+                        <source>Views</source>
+                    <target state="translated">Ansichten</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.tab_geo" xml:space="preserve" approved="yes">
+                        <source>GEO-Location</source>
+                    <target state="translated">GEO-Positionen</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_city.tab_stats" xml:space="preserve" approved="yes">
+                        <source>Statistics</source>
+                    <target state="translated">Statistiken</target></trans-unit>
+
+                    <trans-unit id="list_row_forename" xml:space="preserve" approved="yes">
+                        <source>Forename</source>
+                    <target state="translated">Vorname</target></trans-unit>
+
+                    <trans-unit id="list_row_middlename" xml:space="preserve" approved="yes">
+                        <source>Middlename</source>
+                    <target state="translated">Mittelname</target></trans-unit>
+
+                    <trans-unit id="list_row_lastname" xml:space="preserve" approved="yes">
+                        <source>Lastname</source>
+                    <target state="translated">Nachname</target></trans-unit>
+
+                    <trans-unit id="list_row_address" xml:space="preserve" approved="yes">
+                        <source>Address</source>
+                    <target state="translated">Adresse</target></trans-unit>
+                    <trans-unit id="list_row_zip" xml:space="preserve" approved="yes">
+                        <source>Zip</source>
+                    <target state="translated">PLZ</target></trans-unit>
+                    <trans-unit id="list_row_city" xml:space="preserve" approved="yes">
+                        <source>City</source>
+                    <target state="translated">Stadt</target></trans-unit>
+                    <trans-unit id="list_row_phone" xml:space="preserve" approved="yes">
+                        <source>Phone</source>
+                    <target state="translated">Telefon</target></trans-unit>
+                    <trans-unit id="list_row_fax" xml:space="preserve" approved="yes">
+                        <source>Fax</source>
+                    <target state="translated">Fax</target></trans-unit>
+                    <trans-unit id="list_details" xml:space="preserve" approved="yes">
+                        <source>More</source>
+                    <target state="translated">Mehr</target></trans-unit>
+
+
+                    <trans-unit id="list_button_mail" xml:space="preserve" approved="yes">
+                        <source>E-Mail</source>
+                    <target state="translated">E-Mail</target></trans-unit>
+
+                    <trans-unit id="list_button_home" xml:space="preserve" approved="yes">
+                        <source>Website</source>
+                    <target state="translated">Webseite</target></trans-unit>
+
+                    <trans-unit id="list_button_twitter" xml:space="preserve" approved="yes">
+                        <source>Twitter</source>
+                    <target state="translated">Twitter</target></trans-unit>
+
+                    <trans-unit id="list_button_facebook" xml:space="preserve" approved="yes">
+                        <source>Facebook</source>
+                    <target state="translated">Facebook</target></trans-unit>
+
+                    <trans-unit id="list_button_map" xml:space="preserve" approved="yes">
+                        <source>Map</source>
+                    <target state="translated">Karte</target></trans-unit>
+
+                    <trans-unit id="list_outgoing_header" xml:space="preserve" approved="yes">
+                        <source>Leaving ...</source>
+                    <target state="translated">Verlasse Seite ...</target></trans-unit>
+
+                    <trans-unit id="list_outgoing_message" xml:space="preserve" approved="yes">
+                        <source>You are leaving our site and will be redirected shortly.</source>
+                    <target state="translated">Sie verlassen diese Seite und werden in kürze weiter geleitet.</target></trans-unit>
+                    <trans-unit id="list_outgoing_link" xml:space="preserve" approved="yes">
+                        <source>Redirecting to:</source>
+                    <target state="translated">Weiterleitung nach:</target></trans-unit>
+                    <trans-unit id="list_outgoing_error" xml:space="preserve" approved="yes">
+                        <source>Something is broken :-(</source>
+                    <target state="translated">Irgendwas ist kaputt :-(</target></trans-unit>
+
+                    <trans-unit id="list_mail_header" xml:space="preserve" approved="yes">
+                        <source>Contact form</source>
+                    <target state="translated">Kontakt-Formular</target></trans-unit>
+
+                    <trans-unit id="list_mail_text" xml:space="preserve" approved="yes">
+                        <source>Here you can send "%s" a mail. </source>
+                    <target state="translated">Hier können Sie der Firma "%s" eine E-Mail zukommen lassen.</target></trans-unit>
+
+
+                    <trans-unit id="list_form_name" xml:space="preserve" approved="yes">
+                        <source>Your Name</source>
+                    <target state="translated">Ihr Name</target></trans-unit>
+
+                    <trans-unit id="list_form_street" xml:space="preserve" approved="yes">
+                        <source>Your Street</source>
+                    <target state="translated">Ihre Adresse</target></trans-unit>
+
+                    <trans-unit id="list_form_location" xml:space="preserve" approved="yes">
+                        <source>Your Zip &amp; City</source>
+                    <target state="translated">Ihre PLZ &amp; Stadt</target></trans-unit>
+
+                    <trans-unit id="list_form_mail" xml:space="preserve" approved="yes">
+                        <source>Your Mail</source>
+                    <target state="translated">Ihre E-Mail</target></trans-unit>
+
+                    <trans-unit id="list_form_phone" xml:space="preserve" approved="yes">
+                        <source>Your Phone number</source>
+                    <target state="translated">Ihre Telefonnummer</target></trans-unit>
+
+                    <trans-unit id="list_form_mobile" xml:space="preserve" approved="yes">
+                        <source>Your Mobile number</source>
+                    <target state="translated">Ihre Mobilnummer</target></trans-unit>
+
+                    <trans-unit id="list_form_text" xml:space="preserve" approved="yes">
+                        <source>Your Message</source>
+                    <target state="translated">Ihre Nachricht</target></trans-unit>
+
+                    <trans-unit id="list_form_mail_submit" xml:space="preserve" approved="yes">
+                        <source>Send mail</source>
+                    <target state="translated">E-Mail senden</target></trans-unit>
+
+                    <trans-unit id="list_form_name_error" xml:space="preserve" approved="yes">
+                        <source>Error: Please check your name!</source>
+                    <target state="translated">Fehler: Bitte prüfen Sie den Name!</target></trans-unit>
+
+                    <trans-unit id="list_form_street_error" xml:space="preserve" approved="yes">
+                        <source>Error: Please check your street!</source>
+                    <target state="translated">Fehler: Bitte prüfen Sie die Straße!</target></trans-unit>
+
+                    <trans-unit id="list_form_location_error" xml:space="preserve" approved="yes">
+                        <source>Error: Please check your location!</source>
+                    <target state="translated">Fehler: Bitte prüfen Sie die PLZ &amp; Ort!</target></trans-unit>
+
+                    <trans-unit id="list_form_mail_error" xml:space="preserve" approved="yes">
+                        <source>Error: Please check your mail!</source>
+                    <target state="translated">Fehler: Bitte prüfen Sie die E-Mail!</target></trans-unit>
+
+                    <trans-unit id="list_form_phone_error" xml:space="preserve" approved="yes">
+                        <source>Error: Please check your phone!</source>
+                    <target state="translated">Fehler: Bitte prüfen Sie die Telefonnummer!</target></trans-unit>
+
+                    <trans-unit id="list_form_mobile_error" xml:space="preserve" approved="yes">
+                        <source>Error: Please check your mobile!</source>
+                    <target state="translated">Fehler: Bitte prüfen Sie die Mobilnummer!</target></trans-unit>
+
+                    <trans-unit id="list_form_text_error" xml:space="preserve" approved="yes">
+                        <source>Error: Please check your message!</source>
+                    <target state="translated">Fehler: Bitte prüfen Sie die Nachricht!</target></trans-unit>
+
+                    <trans-unit id="list_mail_success" xml:space="preserve" approved="yes">
+                        <source>Your message have been successfully sent.</source>
+                    <target state="translated">Ihre Nachricht wurde erfolgreich abgeschickt.</target></trans-unit>
+
+                    <trans-unit id="list_form_recaptcha_error" xml:space="preserve" approved="yes">
+                        <source>Please validate this Captcha!</source>
+                    <target state="translated">Bitte validieren Sie dieses Captcha-Feld!</target></trans-unit>
+
+                    <trans-unit id="list_mail_subject" xml:space="preserve" approved="yes">
+                        <source>MH-Directory mail</source>
+                    <target state="translated">MH-Directory E-Mail-Formular</target></trans-unit>
+
+                    <trans-unit id="backend_headline_dashboard" xml:space="preserve" approved="yes">
+                        <source>mh_directory - Dashboard</source>
+                    <target state="translated">mh_directory - Dashboard</target></trans-unit>
+
+                    <trans-unit id="breadcrumb_home" xml:space="preserve" approved="yes">
+                        <source>Home</source>
+                    <target state="translated">Start</target></trans-unit>
+
+                    <trans-unit id="list_mail_back" xml:space="preserve" approved="yes">
+                        <source>Back</source>
+                    <target state="translated">Zurück</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type" xml:space="preserve" approved="yes">
+                        <source>Type</source>
+                    <target state="translated">Typ</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.hidden" xml:space="preserve" approved="yes">
+                        <source>Hidden</source>
+                    <target state="translated">Versteckt</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.name" xml:space="preserve" approved="yes">
+                        <source>Name</source>
+                    <target state="translated">Name</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.price" xml:space="preserve" approved="yes">
+                        <source>Price</source>
+                    <target state="translated">Preis</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.image" xml:space="preserve" approved="yes">
+                        <source>Image</source>
+                    <target state="translated">Bilder</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.options" xml:space="preserve" approved="yes">
+                        <source>Options</source>
+                    <target state="translated">Optionen</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.description" xml:space="preserve" approved="yes">
+                        <source>Description</source>
+                    <target state="translated">Beschreibung</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_entries.relation_type" xml:space="preserve" approved="yes">
+                        <source>Type</source>
+                    <target state="translated">Typ</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_entries.palette_phone" xml:space="preserve" approved="yes">
+                        <source>Contact</source>
+                    <target state="translated">Kontakt</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_entries.mobile" xml:space="preserve" approved="yes">
+                        <source>Mobile</source>
+                    <target state="translated">Mobil</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_entries.palette_geo" xml:space="preserve" approved="yes">
+                        <source>GoogleMaps</source>
+                    <target state="translated">GoogleMaps</target></trans-unit>
+
+                    <trans-unit id="list_row_mobile" xml:space="preserve" approved="yes">
+                        <source>Mobile</source>
+                    <target state="translated">Mobil</target></trans-unit>
+
+                    <trans-unit id="alphabetical_menu_home" xml:space="preserve" approved="yes">
+                        <source>ABC</source>
+                    <target state="translated">ABC</target></trans-unit>
+
+                    <trans-unit id="alphabetical_choose" xml:space="preserve" approved="yes">
+                        <source>Please choose a letter from the menu above.</source>
+                    <target state="translated">Bitte wählen Sie ein Buchstabe vom Menü aus.</target></trans-unit>
+
+                    <trans-unit id="details_back" xml:space="preserve" approved="yes">
+                        <source>Back</source>
+                    <target state="translated">Zurück</target></trans-unit>
+
+                    <trans-unit id="backend_dashboard_views_container" xml:space="preserve" approved="yes">
+                        <source>Top entries by views</source>
+                    <target state="translated">Top Einträge nach Ansichten</target></trans-unit>
+
+                    <trans-unit id="backend_dashboard_clicks_container" xml:space="preserve" approved="yes">
+                        <source>Top entries by clicks</source>
+                    <target state="translated">Top Einträge nach Klicks</target></trans-unit>
+
+                    <trans-unit id="backend_dashboard_links_container" xml:space="preserve" approved="yes">
+                        <source>Top entries by Link-Clicks</source>
+                    <target state="translated">Top Einträge nach Verweis-Klicks</target></trans-unit>
+
+                    <trans-unit id="backend_dashboard_twitter_container" xml:space="preserve" approved="yes">
+                        <source>Top entries by Twitter-Clicks</source>
+                    <target state="translated">Top Einträge nach Twitter-Klicks</target></trans-unit>
+
+                    <trans-unit id="backend_dashboard_facebook_container" xml:space="preserve" approved="yes">
+                        <source>Top entries by Facebook-Clicks</source>
+                    <target state="translated">Top Einträge nach Facebook-Klicks</target></trans-unit>
+
+                    <trans-unit id="backend_headline_import" xml:space="preserve" approved="yes">
+                        <source>Import</source>
+                    <target state="translated">Importieren</target></trans-unit>
+
+                    <trans-unit id="opening_hours_clock_suffix_am" xml:space="preserve" approved="yes">
+                        <source>AM</source>
+                    <target state="translated">Uhr</target></trans-unit>
+
+                    <trans-unit id="opening_hours_clock_suffix_pm" xml:space="preserve" approved="yes">
+                        <source>PM</source>
+                    <target state="translated">Uhr</target></trans-unit>
+
+                    <trans-unit id="opening_hours_closed" xml:space="preserve" approved="yes">
+                        <source>closed</source>
+                    <target state="translated">geschlossen</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_mon" xml:space="preserve" approved="yes">
+                        <source>Monday</source>
+                    <target state="translated">Montag</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_tue" xml:space="preserve" approved="yes">
+                        <source>Tuesday</source>
+                    <target state="translated">Dienstag</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_wed" xml:space="preserve" approved="yes">
+                        <source>Wednesday</source>
+                    <target state="translated">Mittwoch</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_thu" xml:space="preserve" approved="yes">
+                        <source>Thursday</source>
+                    <target state="translated">Donnerstag</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_fri" xml:space="preserve" approved="yes">
+                        <source>Friday</source>
+                    <target state="translated">Freitag</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_sat" xml:space="preserve" approved="yes">
+                        <source>Saturday</source>
+                    <target state="translated">Samstag</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_sun" xml:space="preserve" approved="yes">
+                        <source>Sunday</source>
+                    <target state="translated">Sonntag</target></trans-unit>                    
+
+                    <trans-unit id="opening_hours_day_mo" xml:space="preserve" approved="yes">
+                        <source>Monday</source>
+                    <target state="translated">Montag</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_di" xml:space="preserve" approved="yes">
+                        <source>Tuesday</source>
+                    <target state="translated">Dienstag</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_mi" xml:space="preserve" approved="yes">
+                        <source>Wednesday</source>
+                    <target state="translated">Mittwoch</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_do" xml:space="preserve" approved="yes">
+                        <source>Thursday</source>
+                    <target state="translated">Donnerstag</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_fr" xml:space="preserve" approved="yes">
+                        <source>Friday</source>
+                    <target state="translated">Freitag</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_sa" xml:space="preserve" approved="yes">
+                        <source>Saturday</source>
+                    <target state="translated">Samstag</target></trans-unit>
+
+                    <trans-unit id="opening_hours_day_so" xml:space="preserve" approved="yes">
+                        <source>Sunday</source>
+                    <target state="translated">Sonntag</target></trans-unit>
+
+                    <trans-unit id="opening_hours_status_open" xml:space="preserve" approved="yes">
+                        <source>Open</source>
+                    <target state="translated">offen</target></trans-unit>
+
+                    <trans-unit id="opening_hours_status_closed" xml:space="preserve" approved="yes">
+                        <source>Closed</source>
+                    <target state="translated">geschlossen</target></trans-unit>
              </body>
      </file>
 </xliff>

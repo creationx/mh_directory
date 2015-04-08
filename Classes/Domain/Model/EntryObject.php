@@ -170,7 +170,14 @@ class EntryObject extends AbstractEntity {
      *
      * @var string
      */
-    protected $mapLat;
+    protected $mapLat;    
+    
+    /**
+     * opening
+     *
+     * @var string
+     */
+    protected $opening;
     
     /**
      * image
@@ -233,18 +240,18 @@ class EntryObject extends AbstractEntity {
      * construction
      */
     public function __construct() {
-        $this->initalizeObjectStorages();
+        $this->initializeObjectStorages();
     }
  
     /**
      * initialize object storages
      */
     public function initializeObjectStorages() {
-        $this->relationState = new ObjectStorage();
-        $this->relationDistrict = new ObjectStorage();
-        $this->relationCity = new ObjectStorage();
-        $this->relationType = new ObjectStorage();
-        $this->categories = new ObjectStorage();
+        $this->relationState = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->relationDistrict = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->relationCity = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->relationType = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -1015,5 +1022,85 @@ class EntryObject extends AbstractEntity {
      */
     public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $category) {
         $this->categories = $category;
+    }
+
+    /**
+     * Sets the value of relationState.
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\State> $relationState the relation state
+     *
+     * @return self
+     */
+    public function setRelationState(State $relationState)
+    {
+        $this->relationState = $relationState;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of relationDistrict.
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\District> $relationDistrict the relation district
+     *
+     * @return self
+     */
+    public function setRelationDistrict(District $relationDistrict)
+    {
+        $this->relationDistrict = $relationDistrict;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of relationCity.
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\City> $relationCity the relation city
+     *
+     * @return self
+     */
+    public function setRelationCity(City $relationCity)
+    {
+        $this->relationCity = $relationCity;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of relationType.
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\Type> $relationType the relation type
+     *
+     * @return self
+     */
+    public function setRelationType(Type $relationType)
+    {
+        $this->relationType = $relationType;
+
+        return $this;
+    }
+
+    /**
+     * Gets the opening.
+     *
+     * @return string
+     */
+    public function getOpening()
+    {
+        return $this->opening;
+    }
+
+    /**
+     * Sets the opening.
+     *
+     * @param string $opening the opening
+     *
+     * @return self
+     */
+    public function setOpening($opening)
+    {
+        $this->opening = $opening;
+
+        return $this;
     }
 }

@@ -33,11 +33,12 @@ class Tx_MhDirectory_ViewHelpers_TypeViewHelper
 			9 => "contact",
 			10 => "custom1",
 			11 => "custom2",
-			12 => "custom3"
+			12 => "custom3",
+			13 => "opening"
 		);
 
 		$aOutput 	= array();
-		for ($i=0; $i<(count($aOptions)-1); $i++) {
+		for ($i=0; $i<(count($aOptions)); $i++) {
 			if (($iValue >> $i) & 1) {
 				$aOutput[] = $aOptions[$i];
 			}

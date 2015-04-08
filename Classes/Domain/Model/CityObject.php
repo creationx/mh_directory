@@ -61,14 +61,14 @@ class CityObject extends AbstractEntity {
 
 
     public function __construct() {
-        $this->initalizeObjectStorages();
+        $this->initializeObjectStorages();
     }
  
     /**
      * initialize object storages
      */
     public function initializeObjectStorages() {
-        $this->relationDistrict = new ObjectStorage();
+        $this->relationDistrict = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
 
@@ -257,6 +257,20 @@ class CityObject extends AbstractEntity {
     public function setCountViews($count_views)
     {
         $this->countViews = $count_views;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of relationDistrict.
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\mhdev\MhDirectory\Domain\Model\District> $relationDistrict the relation district
+     *
+     * @return self
+     */
+    public function setRelationDistrict(District $relationDistrict)
+    {
+        $this->relationDistrict = $relationDistrict;
 
         return $this;
     }
