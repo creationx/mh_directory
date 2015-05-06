@@ -24,11 +24,15 @@
                     </numIndex>
                     <numIndex index="2" type="array">
                         <numIndex index="0">All</numIndex>
-                        <numIndex index="1">All->index;All->detail</numIndex>
+                        <numIndex index="1">All->index;All->detail;List->out;List->mail</numIndex>
                     </numIndex>
                     <numIndex index="3" type="array">
                         <numIndex index="0">Alphabetical</numIndex>
-                        <numIndex index="1">Alphabetical->index;Alphabetical->detail</numIndex>
+                        <numIndex index="1">Alphabetical->index;Alphabetical->detail;List->out;List->mail</numIndex>
+                    </numIndex>
+                    <numIndex index="4" type="array">
+                        <numIndex index="0">Categories</numIndex>
+                        <numIndex index="1">Category->index;Category->detail;List->out;List->mail</numIndex>
                     </numIndex>
                 </items>
             </config>
@@ -50,6 +54,7 @@
                     </appearance>
                 </treeConfig>
                 <foreign_table>sys_category</foreign_table>
+                <foreign_table_where> AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.title ASC</foreign_table_where>
                 <size>10</size>
                 <autoSizeMax>20</autoSizeMax>
                 <minitems>0</minitems>
