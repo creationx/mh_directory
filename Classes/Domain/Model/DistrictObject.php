@@ -83,7 +83,6 @@ class DistrictObject extends AbstractEntity {
         if($this->relationState->valid()) {
             return $this->relationState->current();
         }
-        return $this->relationState;
     } 
 
     /**

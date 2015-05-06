@@ -83,7 +83,6 @@ class CityObject extends AbstractEntity {
         if($this->relationDistrict->valid()) {
             return $this->relationDistrict->current();
         }
-        return $this->relationDistrict;
     }    
 
 

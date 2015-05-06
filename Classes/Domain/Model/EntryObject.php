@@ -278,7 +278,6 @@ class EntryObject extends AbstractEntity {
         if($this->relationDistrict->valid()) {
             return $this->relationDistrict->current();
         }
-        return $this->relationDistrict;
     }    
 
     /**
@@ -292,7 +291,6 @@ class EntryObject extends AbstractEntity {
         if($this->relationCity->valid()) {
             return $this->relationCity->current();
         }
-        return $this->relationCity;
     }       
 
     /**
@@ -306,7 +304,6 @@ class EntryObject extends AbstractEntity {
         if($this->relationType->valid()) {
             return $this->relationType->current();
         }
-        return $this->relationType;
     }    
 
 
