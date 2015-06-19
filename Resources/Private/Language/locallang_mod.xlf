@@ -15,14 +15,23 @@
                 <trans-unit id="flexform_startingpoint" xml:space="preserve">
                     <source>Startingpoint</source>
                 </trans-unit>
-                <trans-unit id="flexform_category" xml:space="preserve">
+                <trans-unit id="flexforms_tab.category" xml:space="preserve">
                     <source>Category</source>
                 </trans-unit>
-                <trans-unit id="flexform_view" xml:space="preserve">
+                <trans-unit id="fflexforms_tab.view" xml:space="preserve">
                     <source>View</source>
                 </trans-unit>
                 <trans-unit id="flexforms_tab.settings" xml:space="preserve">
                     <source>Settings</source>
+                </trans-unit>
+                <trans-unit id="flexforms_tab.types_to_display" xml:space="preserve">
+                    <source>Only show following type of entries</source>
+                </trans-unit>
+                <trans-unit id="flexforms_tab.orderby" xml:space="preserve">
+                    <source>Order entries by</source>
+                </trans-unit>
+                <trans-unit id="flexforms_tab.itemsPerPage" xml:space="preserve">
+                    <source>Items per page</source>
                 </trans-unit>
              </body>
      </file>

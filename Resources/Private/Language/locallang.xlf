@@ -89,6 +89,12 @@
                      </trans-unit>                     
                      <trans-unit id="tx_mhdirectory_domain_model_entries.facebook" xml:space="preserve">
                              <source>Facebook</source>
+                     </trans-unit>                       
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.xing" xml:space="preserve">
+                             <source>XING</source>
+                     </trans-unit>                       
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.linkedin" xml:space="preserve">
+                             <source>LinkedIn</source>
                      </trans-unit>                     
                      <trans-unit id="tx_mhdirectory_domain_model_entries.custom1" xml:space="preserve">
                              <source>Custom 1</source>
@@ -133,6 +139,14 @@
 
                      <trans-unit id="tx_mhdirectory_domain_model_entries.count_facebook" xml:space="preserve">
                              <source>Facebook-Clicks</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_xing" xml:space="preserve">
+                             <source>XING-Clicks</source>
+                     </trans-unit>
+
+                     <trans-unit id="tx_mhdirectory_domain_model_entries.count_linkedin" xml:space="preserve">
+                             <source>LinkedIn-Clicks</source>
                      </trans-unit>
 
                      <trans-unit id="tx_mhdirectory_domain_model_entries.tab_stats" xml:space="preserve">
@@ -340,6 +354,14 @@
                         <source>Facebook</source>
                     </trans-unit>
 
+                    <trans-unit id="list_button_xing" xml:space="preserve">
+                        <source>XING</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_button_linkedin" xml:space="preserve">
+                        <source>LinkedIn</source>
+                    </trans-unit>
+
                     <trans-unit id="list_button_map" xml:space="preserve">
                         <source>Map</source>
                     </trans-unit>
@@ -471,6 +493,10 @@
                         <source>Image</source>
                     </trans-unit>
 
+                    <trans-unit id="tx_mhdirectory_domain_model_type.poi_image" xml:space="preserve">
+                        <source>GoogleMaps POI-Image</source>
+                    </trans-unit>
+
                     <trans-unit id="tx_mhdirectory_domain_model_type.options" xml:space="preserve">
                         <source>Options</source>
                     </trans-unit>
@@ -529,6 +555,14 @@
 
                     <trans-unit id="backend_dashboard_facebook_container" xml:space="preserve">
                         <source>Top entries by Facebook-Clicks</source>
+                    </trans-unit>
+
+                    <trans-unit id="backend_dashboard_xing_container" xml:space="preserve">
+                        <source>Top entries by XING-Clicks</source>
+                    </trans-unit>
+
+                    <trans-unit id="backend_dashboard_linkedin_container" xml:space="preserve">
+                        <source>Top entries by LinkedIn-Clicks</source>
                     </trans-unit>
 
                     <trans-unit id="backend_headline_import" xml:space="preserve">
@@ -609,6 +643,10 @@
 
                     <trans-unit id="opening_hours_status_closed" xml:space="preserve">
                         <source>Closed</source>
+                    </trans-unit>
+
+                    <trans-unit id="list_empty" xml:space="preserve">
+                        <source>No Results found.</source>
                     </trans-unit>
              </body>
      </file>

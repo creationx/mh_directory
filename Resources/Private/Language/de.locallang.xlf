@@ -14,10 +14,10 @@
                      <target state="translated">Adressen &amp; Kontakt</target></trans-unit>                     
                      <trans-unit id="tx_mhdirectory_domain_model_entries.tab_social" xml:space="preserve" approved="yes">
                              <source>Social &amp; Geo-Location</source>
-                     <target state="translated">Soziales &amp; GEO-Positionen</target></trans-unit>                     
+                     <target state="translated">Soziales &amp; GEO</target></trans-unit>                     
                      <trans-unit id="tx_mhdirectory_domain_model_entries.tab_custom" xml:space="preserve" approved="yes">
                              <source>Custom Fields</source>
-                     <target state="translated">Benutzerdefinierte Felder</target></trans-unit>
+                     <target state="translated">Benutzerdef. Felder</target></trans-unit>
                      <trans-unit id="tx_mhdirectory_domain_model_entries.tab_categories" xml:space="preserve" approved="yes">
                              <source>Categories</source>
                      <target state="translated">Kategorien</target></trans-unit>                     
@@ -340,6 +340,16 @@
                         <source>Facebook</source>
                     <target state="translated">Facebook</target></trans-unit>
 
+
+                    <trans-unit id="list_button_xing" xml:space="preserve" approved="yes">
+                        <source>XING</source>
+                    <target state="translated">XING</target></trans-unit>
+
+
+                    <trans-unit id="list_button_linkedin" xml:space="preserve" approved="yes">
+                        <source>LinkedIn</source>
+                    <target state="translated">LinkedIn</target></trans-unit>
+
                     <trans-unit id="list_button_map" xml:space="preserve" approved="yes">
                         <source>Map</source>
                     <target state="translated">Karte</target></trans-unit>
@@ -470,6 +480,10 @@
                     <trans-unit id="tx_mhdirectory_domain_model_type.image" xml:space="preserve" approved="yes">
                         <source>Image</source>
                     <target state="translated">Bilder</target></trans-unit>
+
+                    <trans-unit id="tx_mhdirectory_domain_model_type.poi_image" xml:space="preserve" approved="yes">
+                        <source>GoogleMaps POI-Image</source>
+                    <target state="translated">GoogleMaps Marker-Bild</target></trans-unit>
 
                     <trans-unit id="tx_mhdirectory_domain_model_type.options" xml:space="preserve" approved="yes">
                         <source>Options</source>
@@ -610,6 +624,10 @@
                     <trans-unit id="opening_hours_status_closed" xml:space="preserve" approved="yes">
                         <source>Closed</source>
                     <target state="translated">geschlossen</target></trans-unit>
+
+                    <trans-unit id="list_empty" xml:space="preserve" approved="yes">
+                        <source>No Results found.</source>
+                    <target state="translated">Keine Einträge gefunden.</target></trans-unit>
              </body>
      </file>
 </xliff>

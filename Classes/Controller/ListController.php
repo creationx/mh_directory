@@ -73,15 +73,19 @@ class ListController
 					if($this->settings['list_hide_empty'] == 1 && $iNumberOfEntries == 0)
 						continue; 
 
-					$aOutput[]	= array(
+					$aTmp	= array(
 						'uid'	=> $oState->getUid(),
 						'name'	=> $oState->getName(),
 						'description' => $oState->getDescription(),
-						'image'	=> $oState->getImage(),
 						'number_of_entries'	=> $iNumberOfEntries,
 						'mapLat' => $oState->getMapLat(),
 						'mapLng' => $oState->getMapLng()
 					);
+
+					if(is_file(PATH_site . '/uploads/tx_mhdirectory/' . $oState->getImage()))
+						$aTmp['image'] = $oState->getImage();
+
+					$aOutput[] = $aTmp;
 				}
 			}
 		} else {
@@ -99,36 +103,36 @@ class ListController
 		$this->view->assign('gmap_pois', $aGMapPois);
 	}
 
-	public function detailAction() {
-		$aRequest		= $this->request->getArguments();
-		$iUid 			= (int)$aRequest['uid'];
-		$aOutput 		= array();
+	// public function detailAction() {
+	// 	$aRequest		= $this->request->getArguments();
+	// 	$iUid 			= (int)$aRequest['uid'];
+	// 	$aOutput 		= array();
 
-		$oEntry			= $this->entryRepository->findByUid($iUid);
+	// 	$oEntry			= $this->entryRepository->findByUid($iUid);
 
-		$sIpAdress	= $_SERVER['REMOTE_ADDR'];
-		$aLastCalls	= (array)unserialize($oEntry->getLastCalls());
+	// 	$sIpAdress	= $_SERVER['REMOTE_ADDR'];
+	// 	$aLastCalls	= (array)unserialize($oEntry->getLastCalls());
 
-		if(!in_array($sIpAdress, $aLastCalls['main'])) {
-			$oEntry->setCountClicks(($oEntry->getCountClicks+1));
-			$aLastCalls['main'][]	= $_SERVER['REMOTE_ADDR'];
-			if(count($aLastCalls) > 30) unset($aLastCalls['main'][(count($aLastCalls)-1)]);
-			$oEntry->setLastCalls(serialize($aLastCalls));
-		}
+	// 	if(!in_array($sIpAdress, $aLastCalls['main'])) {
+	// 		$oEntry->setCountClicks(($oEntry->getCountClicks+1));
+	// 		$aLastCalls['main'][]	= $_SERVER['REMOTE_ADDR'];
+	// 		if(count($aLastCalls) > 30) unset($aLastCalls['main'][(count($aLastCalls)-1)]);
+	// 		$oEntry->setLastCalls(serialize($aLastCalls));
+	// 	}
 
-		$oEntry->setCountViews(($oEntry->getCountViews() + 1));
+	// 	$oEntry->setCountViews(($oEntry->getCountViews() + 1));
 
-		$this->entryRepository->update($oEntry);
+	// 	$this->entryRepository->update($oEntry);
 
-		if($oEntry) {
-			$aBreadcrumb		= $this->getBreadcrumb(4, $iUid);
-			$this->view->assign('breadcrumb', $aBreadcrumb);
-			$this->view->assign('result', $oEntry);
-		}
+	// 	if($oEntry) {
+	// 		$aBreadcrumb		= $this->getBreadcrumb(4, $iUid);
+	// 		$this->view->assign('breadcrumb', $aBreadcrumb);
+	// 		$this->view->assign('result', $oEntry);
+	// 	}
 
-		if($this->settings['googlemaps'] == 1)
-			$this->response->addAdditionalHeaderData('<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>');
-	}
+	// 	if($this->settings['googlemaps'] == 1)
+	// 		$this->response->addAdditionalHeaderData('<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>');
+	// }
 
 	public function outAction() {
 		$aRequest		= $this->request->getArguments();
@@ -142,13 +146,19 @@ class ListController
 		$sIpAdress		= $_SERVER['REMOTE_ADDR'];
 		$aLastCalls		= (array)unserialize($oEntry->getLastCalls());
 
-		if(!in_array($sIpAdress, $aLastCalls['out'][$sKey])) {
+		if(isset($aLastCalls['out'][$sKey])){
+			if(!in_array($sIpAdress, $aLastCalls['out'][$sKey])) {
+				$aLastCalls['out'][$sKey][]	= $_SERVER['REMOTE_ADDR'];
+				if(count($aLastCalls) > 30) unset($aLastCalls['out'][$sKey][(count($aLastCalls)-1)]);
+				$bStats = true;
+				$oEntry->setLastCalls(serialize($aLastCalls));
+			}
+		} else {
 			$aLastCalls['out'][$sKey][]	= $_SERVER['REMOTE_ADDR'];
-			if(count($aLastCalls) > 30) unset($aLastCalls['out'][$sKey][(count($aLastCalls)-1)]);
 			$bStats = true;
 			$oEntry->setLastCalls(serialize($aLastCalls));
 		}
-
+ 
 		if($oEntry) {
 			switch ($sKey) {
 				case 'link':
@@ -162,6 +172,15 @@ class ListController
 				case 'facebook':
 					$aOutput['link']	= 'http://facebook.com/' . $oEntry->getFacebook();
 					if($bStats) $oEntry->setCountFacebook(($oEntry->getCountFacebook+1));
+					break;
+				case 'xing':
+					$aOutput['link']	= $oEntry->getXing();
+					if($bStats) $oEntry->setCountXing(($oEntry->getCountXing+1));
+					break;
+				case 'linkedin':
+					$aOutput['link']	= $oEntry->getLinkedin();
+					if($bStats) $oEntry->setCountLinkedin(($oEntry->getCountLinkedin+1));
+					break;
 			}
 		}
 
@@ -172,94 +191,6 @@ class ListController
 		$this->view->assign('resultObject', $oEntry);
 		$this->view->assign('result', $aOutput);
 	}
-
-	public function mailAction() {
-		$aRequest			= $this->request->getArguments();
-		$iUid 				= (int)$aRequest['uid'];
-		$aPost				= \TYPO3\CMS\Core\Utility\GeneralUtility::_POST('tx_mhdirectory_pi1');
-		$aRequiredFields	= explode(',', $this->settings['list_mail_required']);
-		$aError 			= array();
-		$bRecaptcha 		= false;
-
-		// recaptcha-support
-		if($this->settings['recaptcha'] == 1 && ($this->settings['recaptcha_public'] != '' && $this->settings['recaptcha_private'] != '')) {
-			$this->response->addAdditionalHeaderData('<script src="https://www.google.com/recaptcha/api.js"></script>');
-			$bRecaptcha = true;
-		}
-		
-		/** @var $logger \TYPO3\CMS\Core\Log\Logger */
-		$logger = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Core\Log\LogManager')->getLogger(__CLASS__);
-
-		if($iUid > 0) {
-			$oEntry			= $this->entryRepository->findByUid($iUid);
-			if(strlen($oEntry->getMail()) != '' && \TYPO3\CMS\Core\Utility\GeneralUtility::validEmail($oEntry->getMail())) {
-				if(count($aPost) > 0) {
-					foreach($aPost AS $sKey => $sValue) {
-						if($sKey == '__referrer' OR $sKey == '__trustedProperties') continue;
-						$bValid = true;
-
-						if(in_array($sKey, $aRequiredFields) && strlen($sValue) == 0) $bValid = false;
-						if($sKey == 'list_form_mail' && (strlen($sValue) > 0 && !\TYPO3\CMS\Core\Utility\GeneralUtility::validEmail($sValue))) $bValid = false;
-
-						if(!$bValid) {
-							$aError[] = $sKey;
-						} else {
-							$sMailMessage .= \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate($sKey, 'mh_directory') . ": " . trim(htmlentities($sValue)) . "\n\n";
-						}
-					}
-
-					// validate recaptcha
-					if($bRecaptcha) {
-						$sGResponse = $_POST['g-recaptcha-response'];
-
-						$sGUrl = 'https://www.google.com/recaptcha/api/siteverify';
-						$aGData = array(
-							'secret' 	=> $this->settings['recaptcha_private'],
-							'response' 	=> $sGResponse,
-							'remoteip'	=> $_SERVER['remote_addr']
-						);
-
-						$oGContext  = stream_context_create(array('http' => array('method' => 'POST', 'content' => http_build_query($aGData))));
-						$aGResult 	= (array)json_decode(file_get_contents($sGUrl, false, $oGContext));
-
-						if(!$aGResult['success'])
-							$aError[] = 'list_form_recaptcha';
-					}
-
-					if(count($aError) == 0 ) {
-						$message = (new \TYPO3\CMS\Core\Mail\MailMessage())
-						->setFrom(array($aPost['list_form_mail']))
-						->setTo($oEntry->getMail())
-						->setSubject(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('list_mail_subject', 'mh_directory'))
-						->setBody($sMailMessage);
-					
-						$message->send();
-
-						if($message->isSent()) {
-							$aError['status'] = 'done';
-							$logger->info('Mail send to ' . $oEntry->getCompany());
-						} else {
-							$logger->error('Error sending Mail to ' . $oEntry->getCompany());
-						}
-					}
-				}
-			}
-
-			if(!isset($aError['status'])) $aError['status'] = 'nothing';
-
-			$aBreadcrumb		= $this->getBreadcrumb(4, $iUid);
-			
-			$this->view->assign('breadcrumb', $aBreadcrumb);
-			$this->view->assign('recaptcha', $bRecaptcha);
-			$this->view->assign('entry', $oEntry);
-		}
-
-		$this->view->assign('uid', $iUid);
-		$this->view->assign('post', $aPost);
-		$this->view->assign('error', $aError);
-		$this->view->assign('required', $aRequiredFields);
-	}
-
 
 	public function getBreadcrumb($iStatus, $iUniqueKey) {
 		$aOutput = array();

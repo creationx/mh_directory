@@ -1,5 +1,4 @@
 {namespace mhdev=Tx_MhDirectory_ViewHelpers}
-
 <f:layout name="frontend" />
 <f:section name="content">
 	<f:if condition="{mhdev:Type(entry:resultObject, key: key)}">
@@ -9,7 +8,7 @@
 			<f:then>
 				<p><f:translate key="list_outgoing_message" /></p>
 				<p><f:translate key="list_outgoing_link" /> <f:link.external uri="{result.link}">{result.link}</f:link.external></p>
-
+				
 				<script type="text/javascript">
 					window.setTimeout(function() {
 						window.location.href="{result.link}";

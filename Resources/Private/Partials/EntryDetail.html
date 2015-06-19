@@ -4,7 +4,7 @@
 		<f:then>
 
 			<f:if condition="{settings.breadcrumb}=='1'">
-				<f:render partial="Breadcrumb" arguments="{result:breadcrumb}"/>
+				<f:render partial="Breadcrumb" arguments="{result:breadcrumb, request: request}"/>
 			</f:if>
 
 			<div class="detail_entry entry_{result.uid} type_{result.relationType.uid}">
@@ -52,9 +52,20 @@
 					<div class="inner_opening"><mhdev:opening value="{result.opening}" opencheck="0" settings="{settings}" /></div>
 				</f:if>
 
+				<f:if condition="{settings.twitter_widget_id}!=''">
+					<f:if condition="{mhdev:Type(entry:result, key: 'twitter_timeline')}">
+						<div class="twitter_timeline">
+							<a class="twitter-timeline" href="https://twitter.com/{result.twitter}" data-widget-id="{settings.twitter_widget_id}">Tweets von @{result.twitter} </a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						</div>
+					</f:if>
+				</f:if>
+
+				
+
 				<br class="clear" />
 				<br /><br />
-				<f:render partial="Buttons" arguments="{result:result,detail:1, from: from}" />
+				<f:render partial="Buttons" arguments="{result:result, request: request, detail:1, ref: ref}" />
 			</div>
 		</f:then>
 		<f:else>

@@ -60,12 +60,16 @@ class BackendController
         $oEntriesLink 			= $this->entryRepository->getStats('count_link');
         $oEntriesTwitter 		= $this->entryRepository->getStats('count_twitter');
         $oEntriesFacebook 		= $this->entryRepository->getStats('count_facebook');
+        $oEntriesXing 			= $this->entryRepository->getStats('count_xing');
+        $oEntriesLinkedIn 		= $this->entryRepository->getStats('count_linkedin');
 
         $this->view->assign('views', $oEntriesView);
         $this->view->assign('clicks', $oEntriesClicks);
         $this->view->assign('links', $oEntriesLink);
         $this->view->assign('twitter', $oEntriesTwitter);
         $this->view->assign('facebook', $oEntriesFacebook);
+        $this->view->assign('xing', $oEntriesXing);
+        $this->view->assign('linkedin', $oEntriesLinkedIn);
 	}
 
 	public function importAction() {

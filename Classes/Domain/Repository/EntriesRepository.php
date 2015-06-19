@@ -56,4 +56,111 @@ class EntriesRepository
 
 		return $query->execute();
 	}
+
+	/**
+	*	Creates a query with defined filter
+	*
+	*	@param array $aFilter
+	*
+	*	@return mhdev\MhDirectory\Domain\Repository $query
+	*/
+	public function getFiltered($aFilter) {
+		$query 	= $this->createQuery();
+		$aWhere	= array();
+
+		/* Only show entries in this category */
+		if(isset($aFilter['categories']) && count($aFilter['categories']) > 0) {
+			$aTmpWhere = array();
+			foreach($aFilter['categories'] AS $aRow) {
+				$aTmpWhere[] = $query->equals('uid', (int)$aRow['uid_local']);
+			}
+			$aWhere[] = $query->logicalOr($aTmpWhere);
+		}
+
+		/* Only display this type of entries ... */
+		if(isset($aFilter['typesToDisplay']) && strlen($aFilter['typesToDisplay']) > 0) {
+			$aWhere[] = $query->in('relationType', explode(',', $aFilter['typesToDisplay']));
+		}	
+
+		/* Collect all where conditions */
+		if(count($aWhere) > 0) {
+			$query->matching(
+				$query->logicalAnd($aWhere)
+			);
+		}
+
+		/* Order By ... */
+		if(isset($aFilter['orderby']) && strlen($aFilter['orderby']) > 0) {
+			switch ($aFilter['orderby']) {
+				case 'relation_type1':
+				default:
+					$query->setOrderings(
+						array(
+							'relationType.sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+							'company' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+						)
+					);
+					break;
+
+				case 'relation_type2':
+					$query->setOrderings(
+						array(
+							'relationType.sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+							'crdate' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
+						)
+					);
+					break;
+
+				case 'relation_type3':
+					$query->setOrderings(
+						array(
+							'relationType.sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+							'sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+						)
+					);
+					break;
+
+				case 'company':
+					$query->setOrderings(
+						array(
+							'company' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+						)
+					);
+					break;
+
+				case 'crdate':
+					$query->setOrderings(
+						array(
+							'crdate' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
+						)
+					);
+					break;
+
+				case 'sorting':
+					$query->setOrderings(
+						array(
+							'sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+						)
+					);
+					break;
+			}
+		}
+
+		return $query->execute();
+	}
+
+
+    /**
+     * Get entries by categories
+     *
+     * @param array $categories
+     *
+     * @return mhdev\MhDirectory\Domain\Repository $query
+     */
+	public function findByCategories(array $categories) {
+		$query 	= $this->createQuery();
+		$query->getQuerySettings()->setReturnRawQueryResult(TRUE);
+		$query->statement('SELECT `uid_local` FROM `tx_mhdirectory_entries__mm` WHERE FIND_IN_SET(uid_foreign, "' . implode(',', $categories) . '")');
+		return $query->execute();
+	}
 }

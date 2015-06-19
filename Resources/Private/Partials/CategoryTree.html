@@ -1,0 +1,13 @@
+<f:if condition="{result}">
+	<ul class="categories">
+		<f:for each="{result}" as="row" iteration="key">
+			<li class="category_{row.uid}">
+				<span><f:link.action arguments="{category: row.uid}">{row.title}</f:link.action></span>
+				<f:if condition="{row.subcategories}">
+					<f:render partial="CategoryTree" arguments="{result: row.subcategories}"/>
+				</f:if>
+			</li>
+	</f:for>
+	</ul>
+</f:if>
+

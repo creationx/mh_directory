@@ -135,7 +135,21 @@ class EntryObject extends AbstractEntity {
      *
      * @var string
      */
-    protected $facebook;
+    protected $facebook;  
+
+    /**
+     * xing
+     *
+     * @var string
+     */
+    protected $xing;   
+
+    /**
+     * linkedin
+     *
+     * @var string
+     */
+    protected $linkedin;
     
     /**
      * custom1
@@ -220,6 +234,20 @@ class EntryObject extends AbstractEntity {
      * @var int
      */
     protected $countFacebook;
+
+    /**
+     * count_xing
+     *
+     * @var int
+     */
+    protected $countXing;
+
+    /**
+     * count_linkedin
+     *
+     * @var int
+     */
+    protected $countLinkedin;
 
     /**
      * count_link
@@ -1097,6 +1125,104 @@ class EntryObject extends AbstractEntity {
     public function setOpening($opening)
     {
         $this->opening = $opening;
+
+        return $this;
+    }
+
+    /**
+     * Gets the xing.
+     *
+     * @return string
+     */
+    public function getXing()
+    {
+        return $this->xing;
+    }
+
+    /**
+     * Gets the linkedin.
+     *
+     * @return string
+     */
+    public function getLinkedin()
+    {
+        return $this->linkedin;
+    }
+
+    /**
+     * Gets the count_xing.
+     *
+     * @return int
+     */
+    public function getCountXing()
+    {
+        return $this->countXing;
+    }
+
+    /**
+     * Gets the count_linkedin.
+     *
+     * @return int
+     */
+    public function getCountLinkedin()
+    {
+        return $this->countLinkedin;
+    }
+
+
+
+    /**
+     * Sets the xing.
+     *
+     * @param string $xing the xing
+     *
+     * @return self
+     */
+    public function setXing($xing)
+    {
+        $this->xing = $xing;
+
+        return $this;
+    }
+
+    /**
+     * Sets the linkedin.
+     *
+     * @param string $linkedin the linkedin
+     *
+     * @return self
+     */
+    public function setLinkedin($linkedin)
+    {
+        $this->linkedin = $linkedin;
+
+        return $this;
+    }
+
+    /**
+     * Sets the count_xing.
+     *
+     * @param int $count_xing the count xing
+     *
+     * @return self
+     */
+    public function setCountXing($count_xing)
+    {
+        $this->countXing = $count_xing;
+
+        return $this;
+    }
+
+    /**
+     * Sets the count_linkedin.
+     *
+     * @param int $count_linkedin the count linkedin
+     *
+     * @return self
+     */
+    public function setCountLinkedin($count_linkedin)
+    {
+        $this->countLinkedin = $count_linkedin;
 
         return $this;
     }

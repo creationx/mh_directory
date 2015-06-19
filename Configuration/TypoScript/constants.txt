@@ -60,5 +60,8 @@ plugin.tx_mhdirectory {
 
 		# cat=plugin.tx_mhdirectory//150; type=string; label=ReCaptcha Private-Key
 		recaptcha_private = 
+
+		# cat=plugin.tx_mhdirectory//160; type=string; label=Twitter Widget-ID: Create a Widget (https://twitter.com/settings/widgets/new) and copy the id from it
+		twitter_widget_id = 
 	}
 }

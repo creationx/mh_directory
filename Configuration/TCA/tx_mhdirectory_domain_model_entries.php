@@ -25,7 +25,7 @@ return array(
         'searchFields' => 'name_intern, company, lastname'
     ),
     'interface' => array(
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name_intern, company, forename, middlename, lastname, address, zip, city, phone, mobile, fax, link, mail, twitter, facebook, custom1, custom2, custom3, map_lng, map_lat, opening, image, description, count_clicks, count_views',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name_intern, company, forename, middlename, lastname, address, zip, city, phone, mobile, fax, link, mail, twitter, facebook, xing, linkedin, custom1, custom2, custom3, map_lng, map_lat, opening, image, description, count_clicks, count_views',
     ),
     'columns' => array(
         'hidden'   => array(
@@ -261,6 +261,26 @@ return array(
                 'max' => 255,
                 'eval' => 'trim'
             ),
+        ),         
+        'xing'   => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.xing',
+            'config' => array(
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255,
+                'eval' => 'trim'
+            ),
+        ),         
+        'linkedin'   => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.linkedin',
+            'config' => array(
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255,
+                'eval' => 'trim'
+            ),
         ),        
         'custom1'   => array(
             'exclude' => 0,
@@ -388,6 +408,20 @@ return array(
             'config' => array(
                 'type' => 'none',
             ),
+        ),      
+        'count_xing'   => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_xing',
+            'config' => array(
+                'type' => 'none',
+            ),
+        ),      
+        'count_linkedin'   => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_linkedin',
+            'config' => array(
+                'type' => 'none',
+            ),
         ),  
         'categories'    => array(
             'exclude' => 0,
@@ -418,13 +452,13 @@ return array(
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_address,
                         address, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_city;2, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_phone;4, opening, link, mail, 
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_social,
-                        twitter, facebook, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_geo;5, 
+                        twitter, facebook, xing, linkedin, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_geo;5, 
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_categories,
                         categories,
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_custom,
                         custom1, custom2, custom3,
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_stats,
-                        count_clicks, count_views, count_link, count_twitter, count_facebook
+                        count_clicks, count_views, count_link, count_twitter, count_facebook, count_xing, count_linkedin
                         '),
 ),
 'palettes' => array(

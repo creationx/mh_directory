@@ -24,7 +24,7 @@ return array(
         'searchFields' => 'name'
     ),
     'interface' => array(
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, price, image, description',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, price, image, description, poi_image',
     ),
     'columns' => array(
         'hidden'   => array(
@@ -75,12 +75,30 @@ return array(
                     array('Custom 2', ''),
                     array('Custom 3', ''),
                     array('Opening hours', ''),
+                    array('XING', ''),
+                    array('LinkedIn', ''),
+                    array('Twitter-Timeline', '')
                 ),
             ),
         ),        
         'image'   => array(
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_type.image',
+            'config' => array(
+                'type' => 'group',
+                'internal_type' => 'file',
+                'uploadfolder'  => 'uploads/tx_mhdirectory',
+                'show_thumbs' => 1,
+                'size' => 1,
+                'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+                'disallowed' => '',
+                'minitems' => 0,
+                'maxitems' => 1
+            ),
+        ),        
+        'poi_image'   => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_type.poi_image',
             'config' => array(
                 'type' => 'group',
                 'internal_type' => 'file',
@@ -115,7 +133,7 @@ return array(
     ),
 'types' => array(
     '1' => array(
-        'showitem' => 'hidden, name, price, options, image, description'),
+        'showitem' => 'hidden, name, price, options, image, description, poi_image'),
 ),
 'palettes' => array(
     '1' => array('showitem' => ''),

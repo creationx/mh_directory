@@ -34,7 +34,10 @@ class Tx_MhDirectory_ViewHelpers_TypeViewHelper
 			10 => "custom1",
 			11 => "custom2",
 			12 => "custom3",
-			13 => "opening"
+			13 => "opening",
+			14 => "xing",
+			15 => "linkedin",
+			16 => "twitter_timeline"
 		);
 
 		$aOutput 	= array();

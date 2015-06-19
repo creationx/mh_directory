@@ -59,6 +59,28 @@
     	</div>
 	</f:if>
 
+	<f:if condition="{xing}">
+    	<div class="container xing">
+    		<h3><f:translate key="backend_dashboard_xing_container" /></h3>
+    		<ul>
+	    		<f:for each="{xing}" as="entry">
+	    			<li><f:format.crop maxCharacters="50">{entry.company}</f:format.crop> ({entry.uid}) <span>{entry.countXing}</span></li>
+	    		</f:for>
+	    	</ul>
+    	</div>
+	</f:if>
+
+	<f:if condition="{linkedin}">
+    	<div class="container linkedin">
+    		<h3><f:translate key="backend_dashboard_linkedin_container" /></h3>
+    		<ul>
+	    		<f:for each="{linkedin}" as="entry">
+	    			<li><f:format.crop maxCharacters="50">{entry.company}</f:format.crop> ({entry.uid}) <span>{entry.countLinkedin}</span></li>
+	    		</f:for>
+	    	</ul>
+    	</div>
+	</f:if>
+
 	<br class="clear" />
 
 	<p>

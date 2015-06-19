@@ -5,8 +5,10 @@ class AlphabeticalController
 	extends ActionController {
 
 	public function indexAction() {
+		$aRequest	= $this->request->getArguments();
 		$aOutput	= array();
-		$oEntries	= $this->entryRepository->findAll();
+		$aFilter	= $this->getFilter();
+		$oEntries	= $this->entryRepository->getFiltered($aFilter);
 		$aMenu 		= range('a', 'z');
 		$aMenu[]	= '123';
 		$aCount		= array();
@@ -57,8 +59,13 @@ class AlphabeticalController
 				}
 			}
 		}
+
+		if(isset($aRequest['ref']))
+			$this->view->assign('ref', strtolower($aRequest['ref']));
+
 		$this->view->assign('count', $aCount);
 		$this->view->assign('menu', $aMenu);
 		$this->view->assign('result', $aOutput);
+		$this->view->assign('request', $aRequest);
 	}
 }

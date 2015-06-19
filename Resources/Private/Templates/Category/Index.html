@@ -1,0 +1,28 @@
+<f:layout name="frontend" />
+<f:section name="content">
+	<h1>Kategorie-Ansicht</h1>
+	<f:if condition="{breadcrumb}">
+		<ul class="breadcrumb">
+			<li class="home">
+				<f:link.action><f:translate key="breadcrumb_home" /></f:link.action>
+			</li>
+			<f:for each="{breadcrumb}" as="row" iteration="key">
+				<li>
+					<f:link.action arguments="{category: row.uid}">{row.title}</f:link.action>
+				</li>
+			</f:for>
+		</ul>
+	</f:if>
+
+	<div class="category-view-tree">
+		<f:if condition="{categories}">
+			<f:render partial="CategoryTree" arguments="{result: categories}"/>
+			<br style="clear:left;" />
+		</f:if>
+	</div>
+
+	<f:if condition="{getEntries}">
+		<f:render partial="Entry" arguments="{result: result, request: request}"/>
+	</f:if>
+</f:section>
+

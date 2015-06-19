@@ -6,8 +6,17 @@ plugin.tx_mhdirectory {
 	}
 	persistence {
 		storagePid = {$plugin.tx_mhdirectory.persistence.storagePid}
+		classes {
+			mhdev\MhDirectory\Domain\Model\Categories {
+				mapping {
+					tableName = sys_category
+				}
+			}
+		}
 	}
-
+	features {
+		skipDefaultArguments = 0
+	}
 	settings {
 		startingpoint =
 		categories = 
@@ -33,6 +42,8 @@ plugin.tx_mhdirectory {
 		entry_opening_show_status = {$plugin.tx_mhdirectory.settings.entry_opening_show_status}
 		
 		alphabetical_index = {$plugin.tx_mhdirectory.settings.alphabetical_index}
+
+		twitter_widget_id = {$plugin.tx_mhdirectory.settings.twitter_widget_id}
 	}
 }
 

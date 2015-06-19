@@ -1,14 +1,12 @@
 {namespace mhdev=Tx_MhDirectory_ViewHelpers}
-
-
 <f:layout name="frontend" />
 <f:section name="content">
 	
 	<ul class="alphabetical_menu">
-		<li><f:translate key="alphabetical_menu_home" /></li>
+		<li class="abc_all"><f:translate key="alphabetical_menu_home" /></li>
 		<f:if condition="{menu}">
-			<f:for each="{menu}" as="row">
-				<li rel="letter_li_{row}" <f:if condition="{mhdev:obj(obj: result, prob: row) -> f:count()} == 0"> class="empty"</f:if>>{row}</li>
+			<f:for each="{menu}" as="row">	
+				<li rel="letter_li_{row}" class="letter_li<f:if condition="{ref}"><f:if condition="{ref}=={row}"> active</f:if></f:if><f:if condition="{mhdev:obj(obj: result, prob: row) -> f:count()} == 0"> empty</f:if>">{row}</li>
 			</f:for>
 		</f:if>
 	</ul>
@@ -18,7 +16,7 @@
 	<f:if condition="{result}">
 		<f:for each="{result}" as="row" key="char">
 			<div class="letter_{char} letter_entries">
-					<f:render partial="Entry" arguments="{result: row}"/>
+				<f:render partial="EntryNoPaginate" arguments="{result: row, request: request, hashtag: char}"/>
 			</div>
 		</f:for>
 	</f:if>
