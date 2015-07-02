@@ -11,17 +11,19 @@ if (!defined('TYPO3_MODE')) {
 		'All' => 'index,detail',
 		'Alphabetical' => 'index,detail',
 		'Category' => 'index,detail',
+		'Search' => 'index,detail',
 	),
 	array(
 		'List' => 'index,detail,out,mail',
 		'All' => 'index,detail',
 		'Alphabetical' => 'index,detail',
 		'Category' => 'index,detail',
+		'Search' => 'index,detail',
 	)
 );
 
 // Hook
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = '\\mhdev\\MhDirectory\\Hooks\AfterUpdateHook';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = 'mhdev\\MhDirectory\\Hooks\AfterUpdateHook';
 
 // RealUrl
 // if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('realurl')) {

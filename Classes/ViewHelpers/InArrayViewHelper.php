@@ -1,7 +1,7 @@
 <?php
 
 class Tx_MhDirectory_ViewHelpers_InArrayViewHelper 
-	extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+	extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	*	@param string $needle

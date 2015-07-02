@@ -6,10 +6,24 @@ class AfterUpdateHook {
 	*
 	**/
 	function processDatamap_postProcessFieldArray($status, $table, $id, &$fieldArray, &$pObj) {
-		if($table == 'tx_mhdirectory_domain_model_entries' && $status =='update') {
+
+		$aValidTables = array(
+			'tx_mhdirectory_domain_model_state',
+			'tx_mhdirectory_domain_model_entries',
+			'tx_mhdirectory_domain_model_district',
+			'tx_mhdirectory_domain_model_city'
+		);
+
+		if(in_array($table, $aValidTables) && $status =='update') {
 			$row = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($table, $id);
 			if($row) {
-				$sAddress 	= $row['zip'] . ' ' . $row['city'] . ' ' . $row['address'];
+
+				if($table == 'tx_mhdirectory_domain_model_entries') {
+					$sAddress 	= $row['zip'] . ' ' . $row['city'] . ' ' . $row['address'];
+				} else {
+					$sAddress	= $row['name'];
+				}
+				
 				$sAddress 	= urlencode($sAddress);
 				$sUrl 		= "https://maps.googleapis.com/maps/api/geocode/json?address=" .$sAddress;
 
