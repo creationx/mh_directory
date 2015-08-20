@@ -485,6 +485,11 @@
                         <source>GoogleMaps POI-Image</source>
                     <target state="translated">GoogleMaps Marker-Bild</target></trans-unit>
 
+                     <trans-unit id="tx_mhdirectory_domain_model_type.poi_select" xml:space="preserve" approved="yes">
+                        <source>POI-Marker Icon</source>
+                        <target state="translated">POI-Marker Icon</target>
+                    </trans-unit>
+
                     <trans-unit id="tx_mhdirectory_domain_model_type.options" xml:space="preserve" approved="yes">
                         <source>Options</source>
                     <target state="translated">Optionen</target></trans-unit>

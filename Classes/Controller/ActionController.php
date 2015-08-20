@@ -57,6 +57,7 @@ class ActionController
 		$aOutput 		= array();
 		$sImgDir		= PATH_site . '/uploads/tx_mhdirectory/';
 
+
 		$oEntry			= $this->entryRepository->findByUid($iUid);
 
 		if($aRequest['controller'] == 'Alphabetical') {
@@ -71,9 +72,32 @@ class ActionController
 				case 'name_intern':
 					$sChar = $oEntry->getNameIntern()[0];
 					break;
+				case 'city':
+					$sChar = $oEntry->getCity()[0];
+					break;
+				case 'custom1':
+					$sChar = $oEntry->getCustom1()[0];
+					break;
+				case 'custom2':
+					$sChar = $oEntry->getCustom2()[0];
+					break;
+				case 'custom3':
+					$sChar = $oEntry->getCustom3()[0];
+					break;
+			}
+		} elseif($aRequest['controller'] == 'List') {
+			if($oState = $oEntry->getRelationState()) {
+				$aRequest['state'] = $oState->getUid();
+			}			
+
+			if($oDist = $oEntry->getRelationDistrict()) {
+				$aRequest['district'] = $oDist->getUid();
+			}		
+
+			if($oCity = $oEntry->getRelationCity()) {
+				$aRequest['city'] = $oCity->getUid();
 			}
 		}
-
 
 		$sIpAdress	= $_SERVER['REMOTE_ADDR'];
 		$aLastCalls	= (array)unserialize($oEntry->getLastCalls());
@@ -111,6 +135,7 @@ class ActionController
 			$this->response->addAdditionalHeaderData('<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>');
 
 		$this->view->assign('request', $aRequest);
+		$this->view->assign('map_icon', $sMapIcon);
 	}
 
 
@@ -123,8 +148,15 @@ class ActionController
 		$aLocations = array();
 		if(count($oEntries) > 0) {
 			foreach($oEntries AS $oEntry) {
-				$oType = $oEntry->getRelationType();
+				$sMapIcon 	= '';
+				$oType 		= $oEntry->getRelationType();
 				if(count($oType) == 0) continue;
+
+				if((int)$oType->getPoiSelect() > 0) {
+					$sMapIcon = 'typo3conf/ext/mh_directory/Resources/Public/Icons/pin' . $oType->getPoiSelect() . '.png';
+				} else {
+					$sMapIcon = 'typo3conf/ext/mh_directory/Resources/Public/Icons/pin3.png';
+				}
 
 				$aOptions = $this->getTypeOptions($oType->getOptions());
 				if(!in_array('map', $aOptions)) continue;
@@ -132,7 +164,8 @@ class ActionController
 				$aLocations[] = array(
 					"" . $oEntry->getCompany() . "",
 					$oEntry->getMapLat(),
-					$oEntry->getMapLng()
+					$oEntry->getMapLng(),
+					$sMapIcon
 				);
 			}
 		}

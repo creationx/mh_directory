@@ -42,6 +42,9 @@ plugin.tx_mhdirectory {
 
 		# cat=plugin.tx_mhdirectory//90; type=boolean; label=GoogleMaps: Enable GoogleMaps
 		googlemaps = 1
+		
+		# cat=plugin.tx_mhdirectory//91; type=boolean; label=GoogleMaps: Enable GoogleMaps in the All-View
+		googlemaps_all = 1
 
 		# cat=plugin.tx_mhdirectory//100; type=int; label=Zoom Detail: Zoom-Value for the detail view
 		googlemaps_zoom_detail = 16
@@ -62,6 +65,9 @@ plugin.tx_mhdirectory {
 		recaptcha_private = 
 
 		# cat=plugin.tx_mhdirectory//160; type=string; label=Twitter Widget-ID: Create a Widget (https://twitter.com/settings/widgets/new) and copy the id from it
-		twitter_widget_id = 
+		twitter_widget_id =  
+
+		# cat=plugin.tx_mhdirectory//170; type=string; label=Search-Radius: Distance selection ...
+		search_radius = 10,20,30,50,100 
 	}
 }

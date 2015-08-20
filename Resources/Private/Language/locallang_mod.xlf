@@ -32,6 +32,12 @@
                 </trans-unit>
                 <trans-unit id="flexforms_tab.itemsPerPage" xml:space="preserve">
                     <source>Items per page</source>
+                </trans-unit> 
+                <trans-unit id="flexforms_tab.paginateAbove" xml:space="preserve">
+                    <source>Show pagination above entries</source>
+                </trans-unit>
+                <trans-unit id="flexforms_tab.paginateBelow" xml:space="preserve">
+                    <source>Show pagination below entries</source>
                 </trans-unit>
              </body>
      </file>

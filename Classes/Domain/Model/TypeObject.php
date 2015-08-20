@@ -32,6 +32,20 @@ class TypeObject extends AbstractEntity {
      * @var string
      */
     protected $image;
+    
+    /**
+     * poi_image
+     *
+     * @var string
+     */
+    protected $poiImage;
+    
+    /**
+     * poi_select
+     *
+     * @var string
+     */
+    protected $poiSelect;
 
     /**
      * description
@@ -198,6 +212,54 @@ class TypeObject extends AbstractEntity {
     public function getSorting()
     {
         return $this->sorting;
+    }
+
+    /**
+     * Set the poi_image.
+     *
+     * @param string $poi_image
+     *
+     * @return self
+     */
+    public function setPoiImage($poi_image)
+    {
+        $this->poiImage = $poi_image;
+
+        return $this;
+    }
+
+    /**
+     * Gets the poi_image.
+     *
+     * @return string
+     */
+    public function getPoiImage()
+    {
+        return $this->poiImage;
+    }
+
+    /**
+     * Set the poi_select.
+     *
+     * @param string $poi_select
+     *
+     * @return self
+     */
+    public function setPoiSelect($poi_select)
+    {
+        $this->poiSelect = $poi_select;
+
+        return $this;
+    }
+
+    /**
+     * Gets the poi_select.
+     *
+     * @return string
+     */
+    public function getPoiSelect()
+    {
+        return $this->poiSelect;
     }
 
 

@@ -34,7 +34,11 @@ jQuery(function() {
 				var sMapId = jQuery('div.mh_directory_gmap', v).attr('id');
 				if(typeof sMapId != 'undefined') {
 					setTimeout(function() {
-						google.maps.event.trigger(jQuery('#' + sMapId)[0], 'resize');
+						var oTmpMapDom = jQuery('#' + sMapId)[0];
+						google.maps.event.trigger(oTmpMapDom, 'resize');
+						var aTmpMapId	= sMapId.split('_')
+						var oTmpMap = 'map_' + aTmpMapId[1];
+						eval(oTmpMap).setCenter(aMapPos[aTmpMapId[1]]);
 					}, 1000);
 				}
 			});

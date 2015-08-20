@@ -1,7 +1,7 @@
 {namespace mhdev=Tx_MhDirectory_ViewHelpers}
 <f:if condition="{result}">
 	<f:then>
-		<f:widget.paginate objects="{result}" as="paginatedResults" configuration="{itemsPerPage: settings.itemsPerPage}">
+		<f:widget.paginate objects="{result}" as="paginatedResults" configuration="{itemsPerPage: settings.itemsPerPage, insertAbove: settings.paginateAbove, insertBelow: settings.paginateBelow}">
 			<f:for each="{paginatedResults}" as="row">
 				<div class="entry entry_{row.uid} type_{row.relationType.uid}">
 					<f:if condition="{mhdev:Type(entry:row, key: 'image')}">

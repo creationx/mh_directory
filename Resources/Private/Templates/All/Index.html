@@ -1,4 +1,11 @@
 <f:layout name="frontend" />
 <f:section name="content">
+
+
+	<f:if condition="{settings.googlemaps_all}=='1'">
+		<f:render partial="MapPoi" arguments="{pois:gmap_pois, zoom: settings.googlemaps_zoom_list}"/>
+	</f:if>
+
+
 	<f:render partial="Entry" arguments="{result: result, request: request}"/>
 </f:section>

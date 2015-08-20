@@ -20,7 +20,7 @@
                 <items type="array">
                     <numIndex index="1" type="array">
                         <numIndex index="0">3-Way-View</numIndex>
-                        <numIndex index="1">List->index;List->out;List->mail</numIndex>
+                        <numIndex index="1">List->index;List->out;List->mail;List->detail</numIndex>
                     </numIndex>
                     <numIndex index="2" type="array">
                         <numIndex index="0">All</numIndex>
@@ -33,6 +33,10 @@
                     <numIndex index="4" type="array">
                         <numIndex index="0">Categories</numIndex>
                         <numIndex index="1">Category->index;Category->detail;List->out;Category->mail</numIndex>
+                    </numIndex>
+                    <numIndex index="5" type="array">
+                        <numIndex index="0">Search-Form</numIndex>
+                        <numIndex index="1">Search->index;Search->detail;List->out;Search->mail</numIndex>
                     </numIndex>
                 </items>
             </config>
@@ -98,6 +102,25 @@
         </TCEforms>
     </settings.types_to_display>
 
+    <settings.paginateAbove>
+        <TCEforms>
+            <label>LLL:EXT:mh_directory/Resources/Private/Language/locallang_mod.xlf:flexforms_tab.paginateAbove</label>
+            <config>
+                <type>check</type>
+            </config>
+        </TCEforms>
+    </settings.paginateAbove>
+
+    <settings.paginateBelow>
+        <TCEforms>
+            <label>LLL:EXT:mh_directory/Resources/Private/Language/locallang_mod.xlf:flexforms_tab.paginateBelow</label>
+            <config>
+                <type>check</type>
+                <default>1</default>
+            </config>
+        </TCEforms>
+    </settings.paginateBelow>
+
     <settings.itemsPerPage>
         <TCEforms>
             <label>LLL:EXT:mh_directory/Resources/Private/Language/locallang_mod.xlf:flexforms_tab.itemsPerPage</label>
@@ -109,6 +132,7 @@
             </config>
         </TCEforms>
     </settings.itemsPerPage>
+
 
     <!-- Category -->
     <settings.categories>

@@ -5,13 +5,14 @@
 		var map_{result.uid};
 		function initialize() {
 			var lat = '{result.mapLat}';
-			var lng = '{result.MapLng}';
+			var lng = '{result.mapLng}';
 			var zoom = {zoom};
 			var mapOptions = {
 				zoom: zoom,
 				center: new google.maps.LatLng(lat, lng)
 			};
 
+			aMapPos[{result.uid}]		= new google.maps.LatLng(lat, lng);
 			var myLatLng_{result.uid} = new google.maps.LatLng(lat, lng);
 
 			map_{result.uid} = new google.maps.Map(document.getElementById('gmap_{result.uid}'),
@@ -19,7 +20,9 @@
 
 			<![CDATA[var marker = new google.maps.Marker({]]>
 				position: myLatLng_{result.uid},
-				map: map_{result.uid}
+				map: map_{result.uid},
+				title: "{result.company}",
+				icon: "{mhdev:MapIcon(entry:result)}"
 			 <![CDATA[});]]>
 		}
 		

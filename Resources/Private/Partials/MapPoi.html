@@ -12,24 +12,22 @@ var mapListPoi;
 	};
 
 
-	mapListPoi = new google.maps.Map(document.getElementById('gmap_listpoi'),mapOptions);
-
-	var marker = new google.maps.Marker({
-		map: mapListPoi
-	});
+	mapListPoi = new google.maps.Map(document.getElementById('gmap_listpoi'), mapOptions);
 
 	var infoWindow = new google.maps.InfoWindow();
 
-	var marker, i;
+	var i;
 
 	var bounds = new google.maps.LatLngBounds();
 
 	for(i = 0; i < locations.length; i++) {
-		marker = new google.maps.Marker({
+		var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-			map: mapListPoi
+			title: locations[i][0],
+			icon: locations[i][3]
 		});
 		bounds.extend(new google.maps.LatLng(locations[i][1], locations[i][2]));
+		marker.setMap(mapListPoi);
 	}
 	mapListPoi.fitBounds(bounds);
 <![CDATA[}]]>

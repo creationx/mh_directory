@@ -103,37 +103,6 @@ class ListController
 		$this->view->assign('gmap_pois', $aGMapPois);
 	}
 
-	// public function detailAction() {
-	// 	$aRequest		= $this->request->getArguments();
-	// 	$iUid 			= (int)$aRequest['uid'];
-	// 	$aOutput 		= array();
-
-	// 	$oEntry			= $this->entryRepository->findByUid($iUid);
-
-	// 	$sIpAdress	= $_SERVER['REMOTE_ADDR'];
-	// 	$aLastCalls	= (array)unserialize($oEntry->getLastCalls());
-
-	// 	if(!in_array($sIpAdress, $aLastCalls['main'])) {
-	// 		$oEntry->setCountClicks(($oEntry->getCountClicks+1));
-	// 		$aLastCalls['main'][]	= $_SERVER['REMOTE_ADDR'];
-	// 		if(count($aLastCalls) > 30) unset($aLastCalls['main'][(count($aLastCalls)-1)]);
-	// 		$oEntry->setLastCalls(serialize($aLastCalls));
-	// 	}
-
-	// 	$oEntry->setCountViews(($oEntry->getCountViews() + 1));
-
-	// 	$this->entryRepository->update($oEntry);
-
-	// 	if($oEntry) {
-	// 		$aBreadcrumb		= $this->getBreadcrumb(4, $iUid);
-	// 		$this->view->assign('breadcrumb', $aBreadcrumb);
-	// 		$this->view->assign('result', $oEntry);
-	// 	}
-
-	// 	if($this->settings['googlemaps'] == 1)
-	// 		$this->response->addAdditionalHeaderData('<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>');
-	// }
-
 	public function outAction() {
 		$aRequest		= $this->request->getArguments();
 		$iUid 			= (int)$aRequest['uid'];

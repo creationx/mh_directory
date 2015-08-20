@@ -4,7 +4,7 @@
 		<f:if condition="{request.action}=='detail'">
 			<f:then>
 				<li>
-					<f:link.action class="detail_link" action="index" controller="{from}" arguments="{ref: ref, category: request.category}">
+					<f:link.action class="detail_link" action="index" controller="{from}" arguments="{ref: ref, category: request.category, state: request.state, district: request.district, city: request.city}">
 						<i class="fa fa-angle-double-left"></i> <f:translate key="details_back" />
 					</f:link.action>
 				</li>

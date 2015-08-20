@@ -24,7 +24,7 @@ return array(
         'searchFields' => 'name'
     ),
     'interface' => array(
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, price, image, description, poi_image',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, price, image, description, poi_select, poi_image',
     ),
     'columns' => array(
         'hidden'   => array(
@@ -95,7 +95,29 @@ return array(
                 'minitems' => 0,
                 'maxitems' => 1
             ),
-        ),        
+        ),
+        'poi_select'   => array(
+            'exclude' => 1,
+            'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_type.poi_select',
+            'config' => array(
+                'type' => 'select',
+                'items' => array(
+                        array('Green', 1),
+                        array('Blue', 2),
+                        array('Black', 3),
+                        array('Pink', 4),
+                        array('Purple', 5),
+                        array('Green (square)', 6),
+                        array('Orange (square)', 7),
+                        array('Yellow', 8),
+                        array('Blue (rounded corner)', 9),
+                        array('Hexagonal', 10)
+                ),
+                'size' => 1,
+                'minitems' => 0,
+                'maxitems'  => 1,
+            ),
+        ),  
         'poi_image'   => array(
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_type.poi_image',
@@ -133,7 +155,7 @@ return array(
     ),
 'types' => array(
     '1' => array(
-        'showitem' => 'hidden, name, price, options, image, description, poi_image'),
+        'showitem' => 'hidden, name, price, options, image, description, poi_select, poi_image'),
 ),
 'palettes' => array(
     '1' => array('showitem' => ''),

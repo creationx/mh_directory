@@ -80,7 +80,32 @@ class EntriesRepository
 		/* Only display this type of entries ... */
 		if(isset($aFilter['typesToDisplay']) && strlen($aFilter['typesToDisplay']) > 0) {
 			$aWhere[] = $query->in('relationType', explode(',', $aFilter['typesToDisplay']));
-		}	
+		}
+
+		/* Search-Term */
+		$aWhereSearch	= array();
+		if(isset($aFilter['searchTerm']) && strlen($aFilter['searchTerm']) > 0) {
+			$aSearchTerms	= explode(' ', $aFilter['searchTerm']);
+			$aTmpWhere 		= array();
+			if(count($aSearchTerms) > 0) {
+				foreach($aSearchTerms AS $sVal) {
+					$aWhereSearch[] = $query->like('company', '%' . $sVal . '%');
+					$aWhereSearch[] = $query->like('description', '%' . $sVal . '%');
+					$aWhereSearch[] = $query->like('city', '%' . $sVal . '%');
+					$aWhereSearch[] = $query->like('lastname', '%' . $sVal . '%');
+					$aWhereSearch[] = $query->like('forename', '%' . $sVal . '%');
+					$aWhereSearch[] = $query->like('middlename', '%' . $sVal . '%');
+				}
+			}
+		}
+
+		/* Search-Zip */
+		if(isset($aFilter['searchZip']) && strlen($aFilter['searchZip']) > 0) {
+			$aWhereSearch[] = $query->like('zip', '%' . $aFilter['searchZip'] . '%');
+		}
+
+		if(count($aWhereSearch) > 0)
+			$aWhere[] = $query->logicalOr($aWhereSearch);
 
 		/* Collect all where conditions */
 		if(count($aWhere) > 0) {
@@ -88,6 +113,8 @@ class EntriesRepository
 				$query->logicalAnd($aWhere)
 			);
 		}
+
+		// \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($aWhere);
 
 		/* Order By ... */
 		if(isset($aFilter['orderby']) && strlen($aFilter['orderby']) > 0) {
