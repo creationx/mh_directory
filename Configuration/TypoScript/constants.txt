@@ -42,6 +42,9 @@ plugin.tx_mhdirectory {
 
 		# cat=plugin.tx_mhdirectory//90; type=boolean; label=GoogleMaps: Enable GoogleMaps
 		googlemaps = 1
+
+		# cat=plugin.tx_mhdirectory//91; type=string; label=GoogleMaps: Google API Key
+		googlemaps_apikey = 
 		
 		# cat=plugin.tx_mhdirectory//91; type=boolean; label=GoogleMaps: Enable GoogleMaps in the All-View
 		googlemaps_all = 1
