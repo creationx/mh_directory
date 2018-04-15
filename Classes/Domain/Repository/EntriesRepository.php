@@ -186,8 +186,7 @@ class EntriesRepository
      */
 	public function findByCategories(array $categories) {
 		$query 	= $this->createQuery();
-		$query->getQuerySettings()->setReturnRawQueryResult(TRUE);
 		$query->statement('SELECT `uid_local` FROM `tx_mhdirectory_entries__mm` WHERE FIND_IN_SET(uid_foreign, "' . implode(',', $categories) . '")');
-		return $query->execute();
+		return $query->execute(true);
 	}
 }
