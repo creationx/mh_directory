@@ -1,432 +1,437 @@
 <?php
-return array(
-    'ctrl' => array(
+return [
+    'ctrl' => [
         'title' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries',
         'label' => 'name_intern',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'dividers2tabs' => TRUE,
+        'dividers2tabs' => true,
         'sortby' => 'sorting',
         'versioningWS' => 2,
-        'versioning_followPages' => TRUE,
+        'versioning_followPages' => true,
         'origUid' => 't3_origuid',
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'delete' => 'deleted',
         'requestUpdate' => 'relation_state,relation_district',
-        'enablecolumns' => array(
+        'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
             'endtime' => 'endtime',
-        ),
+        ],
         'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('mh_directory') . 'Resources/Public/Icons/tx_mhdirectory_domain_model_entries.gif',
         'searchFields' => 'name_intern, company, lastname'
-    ),
-    'interface' => array(
+    ],
+    'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name_intern, company, forename, middlename, lastname, address, zip, city, phone, mobile, fax, link, mail, twitter, facebook, xing, linkedin, custom1, custom2, custom3, map_lng, map_lat, opening, image, description, count_clicks, count_views',
-    ),
-    'columns' => array(
-        'hidden'   => array(
+    ],
+    'columns' => [
+        'hidden' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.hidden',
-            'config' => array(
+            'config' => [
                 'type' => 'check',
                 'default' => 0
-            ),
-        ),   
+            ],
+        ],
 
-        'relation_state'   => array(
+        'relation_state' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.relation_state',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                        array('', 0)
-                ),
+                'items' => [
+                        ['', 0]
+                ],
                 'foreign_table' => 'tx_mhdirectory_domain_model_state',
                 'foreign_table_where' => 'ORDER BY name ASC',
                 'size' => 1,
                 'minitems' => 0,
-                'maxitems'  => 1,
-            ),
-        ),
-        
-        'relation_district'   => array(
+                'maxitems' => 1,
+            ],
+        ],
+
+        'relation_district' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.relation_district',
             'displayCond' => 'FIELD:relation_state:>:0',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                        array('', 0)
-                ),
+                'items' => [
+                        ['', 0]
+                ],
                 'foreign_table' => 'tx_mhdirectory_domain_model_district',
                 'foreign_table_where' => 'AND tx_mhdirectory_domain_model_district.relation_state=###REC_FIELD_relation_state### ORDER BY name ASC',
                 'size' => 1,
                 'minitems' => 0,
-                'maxitems'  => 1,
-            ),
-        ),
+                'maxitems' => 1,
+            ],
+        ],
 
-        'relation_city'   => array(
+        'relation_city' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.relation_city',
             'displayCond' => 'FIELD:relation_district:>:0',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                        array('', 0)
-                ),
+                'items' => [
+                        ['', 0]
+                ],
                 'foreign_table' => 'tx_mhdirectory_domain_model_city',
                 'foreign_table_where' => 'AND tx_mhdirectory_domain_model_city.relation_district=###REC_FIELD_relation_district###  ORDER BY name ASC',
                 'size' => 1,
                 'minitems' => 0,
-                'maxitems'  => 1,
-            ),
-        ),
+                'maxitems' => 1,
+            ],
+        ],
 
-        'relation_type'   => array(
+        'relation_type' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.relation_type',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(),
+                'items' => [],
                 'foreign_table' => 'tx_mhdirectory_domain_model_type',
                 'foreign_table_where' => 'ORDER BY name ASC',
                 'size' => 1,
                 'minitems' => 1,
-                'maxitems'  => 1,
-            ),
-        ),
+                'maxitems' => 1,
+            ],
+        ],
 
-        'name_intern'   => array(
+        'name_intern' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.name_intern',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
                 'eval' => 'trim,required'
-            ),
-        ),        
-        'company'   => array(
+            ],
+        ],
+        'company' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.company',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'forename'   => array(
+            ],
+        ],
+        'forename' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.forename',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 10,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'middlename'   => array(
+            ],
+        ],
+        'middlename' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.middlename',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 10,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'lastname'   => array(
+            ],
+        ],
+        'lastname' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.lastname',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 10,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'address'   => array(
+            ],
+        ],
+        'address' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.address',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'zip'   => array(
+            ],
+        ],
+        'zip' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.zip',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 5,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'city'   => array(
+            ],
+        ],
+        'city' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.city',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 15,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'phone'   => array(
+            ],
+        ],
+        'phone' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.phone',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 10,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),            
-        'mobile'   => array(
+            ],
+        ],
+        'mobile' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.mobile',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 10,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'fax'   => array(
+            ],
+        ],
+        'fax' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.fax',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 10,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'link'   => array(
+            ],
+        ],
+        'link' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.link',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
                 'eval' => 'trim',
-                'wizards' => array(
-                    '_PADDING' =>  2,
-                    'link' => array(
+                'wizards' => [
+                    '_PADDING' => 2,
+                    'link' => [
                         'type' => 'popup',
                         'title' => 'Link',
                         'icon' => 'link_popup.gif',
-                        'script' => 'browse_links.php?mode=wizard',
+                        'module' => [
+                            'name' => 'wizard_element_browser',
+                            'urlParameters' => [
+                                'mode' => 'wizard'
+                            ]
+                        ],
                         'JSopenParams' => 'height=350,width=550,status=0,menubar=0,scrollbars=1',
-                    ),
-                ),
+                    ],
+                ],
                 'softref' => 'typolink',
-            ),
-        ),        
-        'mail'   => array(
+            ],
+        ],
+        'mail' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.mail',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'twitter'   => array(
+            ],
+        ],
+        'twitter' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.twitter',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'facebook'   => array(
+            ],
+        ],
+        'facebook' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.facebook',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),         
-        'xing'   => array(
+            ],
+        ],
+        'xing' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.xing',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),         
-        'linkedin'   => array(
+            ],
+        ],
+        'linkedin' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.linkedin',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'custom1'   => array(
+            ],
+        ],
+        'custom1' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.custom1',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 10,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'custom2'   => array(
+            ],
+        ],
+        'custom2' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.custom2',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 10,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'custom3'   => array(
+            ],
+        ],
+        'custom3' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.custom3',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 10,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),
-        'map_lng'   => array(
+            ],
+        ],
+        'map_lng' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.map_lng',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 15,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'map_lat'   => array(
+            ],
+        ],
+        'map_lat' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.map_lat',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 15,
                 'max' => 255,
                 'eval' => 'trim'
-            ),
-        ),        
-        'image'   => array(
+            ],
+        ],
+        'image' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.image',
-            'config' => array(
+            'config' => [
                 'type' => 'group',
                 'internal_type' => 'file',
-                'uploadfolder'  => 'uploads/tx_mhdirectory',
+                'uploadfolder' => 'uploads/tx_mhdirectory',
                 'show_thumbs' => 1,
                 'size' => 5,
                 'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
                 'disallowed' => '',
                 'minitems' => 0,
                 'maxitems' => 5
-            ),
-        ),
-        'last_calls'   => array(
+            ],
+        ],
+        'last_calls' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.last_calls',
-            'config' => array(
+            'config' => [
                 'type' => 'text',
                 'cols' => 40,
                 'rows' => 15
-            ),
-        ),  
-        'description'   => array(
+            ],
+        ],
+        'description' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.description',
-            'config' => array(
+            'config' => [
                 'type' => 'text',
                 'cols' => 40,
                 'rows' => 15
-            ),
-        ),   
-        'opening'   => array(
+            ],
+        ],
+        'opening' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.opening',
-            'config' => array(
+            'config' => [
                 'type' => 'text',
                 'cols' => 40,
                 'rows' => 15
-            ),
-        ), 
-        'count_clicks'   => array(
+            ],
+        ],
+        'count_clicks' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_clicks',
-            'config' => array(
+            'config' => [
                 'type' => 'none',
-            ),
-        ),  
-        'count_views'   => array(
+            ],
+        ],
+        'count_views' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_views',
-            'config' => array(
+            'config' => [
                 'type' => 'none',
-            ),
-        ),    
-        'count_link'   => array(
+            ],
+        ],
+        'count_link' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_link',
-            'config' => array(
+            'config' => [
                 'type' => 'none',
-            ),
-        ),    
-        'count_twitter'   => array(
+            ],
+        ],
+        'count_twitter' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_twitter',
-            'config' => array(
+            'config' => [
                 'type' => 'none',
-            ),
-        ),    
-        'count_facebook'   => array(
+            ],
+        ],
+        'count_facebook' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_facebook',
-            'config' => array(
+            'config' => [
                 'type' => 'none',
-            ),
-        ),      
-        'count_xing'   => array(
+            ],
+        ],
+        'count_xing' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_xing',
-            'config' => array(
+            'config' => [
                 'type' => 'none',
-            ),
-        ),      
-        'count_linkedin'   => array(
+            ],
+        ],
+        'count_linkedin' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.count_linkedin',
-            'config' => array(
+            'config' => [
                 'type' => 'none',
-            ),
-        ),  
-        'categories'    => array(
+            ],
+        ],
+        'categories' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.categories',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
                 'foreign_table' => 'sys_category',
                 'foreign_table_where' => ' AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.sorting ASC',
@@ -435,18 +440,18 @@ return array(
                 'autoSizeMax' => 50,
                 'maxitems' => 9999,
                 'renderMode' => 'tree',
-                'treeConfig' => array(
+                'treeConfig' => [
                     'parentField' => 'parent',
-                    'appearance' => array(
-                        'expandAll' => TRUE,
-                        'showHeader' => TRUE,
-                    ),
-                ),
-            ),
-        ),
-    ),
-'types' => array(
-    '1' => array(
+                    'appearance' => [
+                        'expandAll' => true,
+                        'showHeader' => true,
+                    ],
+                ],
+            ],
+        ],
+    ],
+'types' => [
+    '1' => [
         'showitem' => '--div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_general,
                         hidden, relation_type,--palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_relations;3,name_intern, company, --palette--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.palette_name;1, image, description,
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_address,
@@ -459,13 +464,13 @@ return array(
                         custom1, custom2, custom3,
                         --div--;LLL:EXT:mh_directory/Resources/Private/Language/locallang.xlf:tx_mhdirectory_domain_model_entries.tab_stats,
                         count_clicks, count_views, count_link, count_twitter, count_facebook, count_xing, count_linkedin
-                        '),
-),
-'palettes' => array(
-    '1' => array('showitem' => 'forename, middlename, lastname', 'canNotCollapse' => 1),
-    '2' => array('showitem' => 'zip, city', 'canNotCollapse' => 1),
-    '3' => array('showitem' => 'relation_state, relation_district, relation_city', 'canNotCollapse' => 1),
-    '4' => array('showitem' => 'phone, mobile, fax', 'canNotCollapse' => 1),
-    '5' => array('showitem' => 'map_lat, map_lng', 'canNotCollapse' => 1),
-),
-);
+                        '],
+],
+'palettes' => [
+    '1' => ['showitem' => 'forename, middlename, lastname', 'canNotCollapse' => 1],
+    '2' => ['showitem' => 'zip, city', 'canNotCollapse' => 1],
+    '3' => ['showitem' => 'relation_state, relation_district, relation_city', 'canNotCollapse' => 1],
+    '4' => ['showitem' => 'phone, mobile, fax', 'canNotCollapse' => 1],
+    '5' => ['showitem' => 'map_lat, map_lng', 'canNotCollapse' => 1],
+],
+];

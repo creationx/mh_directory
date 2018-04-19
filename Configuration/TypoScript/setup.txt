@@ -31,6 +31,7 @@ plugin.tx_mhdirectory {
 		recaptcha_private = {$plugin.tx_mhdirectory.settings.recaptcha_private}
 
 		googlemaps = {$plugin.tx_mhdirectory.settings.googlemaps}
+		googlemaps_apikey = {$plugin.tx_mhdirectory.settings.googlemaps_apikey}
 		googlemaps_all = {$plugin.tx_mhdirectory.settings.googlemaps_all}
 		googlemaps_zoom_detail = {$plugin.tx_mhdirectory.settings.googlemaps_zoom_detail}
 		googlemaps_zoom_list = {$plugin.tx_mhdirectory.settings.googlemaps_zoom_list}

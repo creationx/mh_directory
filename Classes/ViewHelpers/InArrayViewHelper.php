@@ -1,6 +1,7 @@
 <?php
+namespace mhdev\MhDirectory\ViewHelpers;
 
-class Tx_MhDirectory_ViewHelpers_InArrayViewHelper 
+class InArrayViewHelper 
 	extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**

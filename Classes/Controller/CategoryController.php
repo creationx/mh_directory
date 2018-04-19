@@ -30,7 +30,7 @@ class CategoryController
 		
 
 		if($this->settings['googlemaps'] == 1)
-			$this->response->addAdditionalHeaderData('<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>');
+			$this->response->addAdditionalHeaderData('<script src="https://maps.googleapis.com/maps/api/js?&key='.$this->settings['googlemaps_apikey'].'&v=3.exp"></script>');
 
 		$this->view->assign('result', $aResults);
 		$this->view->assign('categories', $aCategories);
