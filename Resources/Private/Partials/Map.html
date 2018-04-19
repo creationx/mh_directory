@@ -1,4 +1,4 @@
-{namespace mhdev=Tx_MhDirectory_ViewHelpers}
+{namespace mhdev=mhdev\MhDirectory\ViewHelpers}
 <f:if condition="{mhdev:Type(entry:result, key: 'map')}">
 	<div class="inner_map">
 		<script>
@@ -15,15 +15,17 @@
 			aMapPos[{result.uid}]		= new google.maps.LatLng(lat, lng);
 			var myLatLng_{result.uid} = new google.maps.LatLng(lat, lng);
 
-			map_{result.uid} = new google.maps.Map(document.getElementById('gmap_{result.uid}'),
+			var map_{result.uid} = new google.maps.Map(document.getElementById('gmap_{result.uid}'),
 			mapOptions);
-
-			<![CDATA[var marker = new google.maps.Marker({]]>
+			
+			var marker = new google.maps.Marker(<f:format.raw value="{" />
 				position: myLatLng_{result.uid},
 				map: map_{result.uid},
 				title: "{result.company}",
 				icon: "{mhdev:MapIcon(entry:result)}"
-			 <![CDATA[});]]>
+			 <f:format.raw value="}" />
+);
+
 		}
 		
 		google.maps.event.addDomListener(window, 'load', initialize);
